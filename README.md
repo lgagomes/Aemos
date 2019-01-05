@@ -22,8 +22,4 @@ Features (so far):
    - Dice Roller
    
 # Why "Aemos"?
-In the "Eisenhorn" book series[1] set in the Warhammer 40K universe, Uber Aemos[2] is a character who provides Eisenhorn with useful information and complex computation, which is the goal of this tool, to help players and dungeon masters to save time with boring calculations and / or search the books for specific tables.
-
-[1] http://wh40k.lexicanum.com/wiki/Eisenhorn_(Novel_Series)
-
-[2] http://wh40k.lexicanum.com/wiki/Uber_Aemos
+In the ["Eisenhorn" book series] (http://wh40k.lexicanum.com/wiki/Eisenhorn_(Novel_Series) set in the Warhammer 40K universe, [Uber Aemos] (http://wh40k.lexicanum.com/wiki/Uber_Aemos)is a character who provides Eisenhorn with useful information and complex computation, which is the goal of this tool, to help players and dungeon masters to save time with boring calculations and / or search the books for specific tables.
