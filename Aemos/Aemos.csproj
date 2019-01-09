@@ -60,6 +60,12 @@
     <Compile Include="CharacterClasses\Spellcaster.cs" />
     <Compile Include="CharacterClasses\Warrior.cs" />
     <Compile Include="CharacterClasses\Wizard.cs" />
+    <Compile Include="Forms\frmCarryingCapacity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCarryingCapacity.Designer.cs">
+      <DependentUpon>frmCarryingCapacity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmMainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,12 +89,27 @@
     <Compile Include="Helpers\XpPerLevelHolder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ctrlCarryingCapacity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ctrlCarryingCapacity.Designer.cs">
+      <DependentUpon>ctrlCarryingCapacity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ctrlCharInputHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ctrlCharInputHeader.designer.cs">
+      <DependentUpon>ctrlCharInputHeader.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ctrlSpellcasting.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\ctrlSpellcasting.Designer.cs">
       <DependentUpon>ctrlSpellcasting.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\frmCarryingCapacity.resx">
+      <DependentUpon>frmCarryingCapacity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMainScreen.resx">
       <DependentUpon>frmMainScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +125,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\ctrlCarryingCapacity.resx">
+      <DependentUpon>ctrlCarryingCapacity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ctrlCharInputHeader.resx">
+      <DependentUpon>ctrlCharInputHeader.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ctrlSpellcasting.resx">
       <DependentUpon>ctrlSpellcasting.cs</DependentUpon>
     </EmbeddedResource>

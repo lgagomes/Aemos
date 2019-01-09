@@ -54,9 +54,11 @@
             this.btnCarrying.TabIndex = 1;
             this.btnCarrying.Text = "Carrying Capacity\r\nCalculation";
             this.btnCarrying.UseVisualStyleBackColor = true;
+            this.btnCarrying.Click += new System.EventHandler(this.btnCarrying_Click);
             // 
             // btnBaseAttack
             // 
+            this.btnBaseAttack.Enabled = false;
             this.btnBaseAttack.Location = new System.Drawing.Point(17, 128);
             this.btnBaseAttack.Name = "btnBaseAttack";
             this.btnBaseAttack.Size = new System.Drawing.Size(149, 41);
@@ -66,6 +68,7 @@
             // 
             // btnSkillPoints
             // 
+            this.btnSkillPoints.Enabled = false;
             this.btnSkillPoints.Location = new System.Drawing.Point(241, 128);
             this.btnSkillPoints.Name = "btnSkillPoints";
             this.btnSkillPoints.Size = new System.Drawing.Size(149, 41);
@@ -75,6 +78,7 @@
             // 
             // btnXpCalculator
             // 
+            this.btnXpCalculator.Enabled = false;
             this.btnXpCalculator.Location = new System.Drawing.Point(17, 210);
             this.btnXpCalculator.Name = "btnXpCalculator";
             this.btnXpCalculator.Size = new System.Drawing.Size(149, 41);
@@ -84,6 +88,7 @@
             // 
             // btnDiceRoller
             // 
+            this.btnDiceRoller.Enabled = false;
             this.btnDiceRoller.Location = new System.Drawing.Point(241, 210);
             this.btnDiceRoller.Name = "btnDiceRoller";
             this.btnDiceRoller.Size = new System.Drawing.Size(149, 41);

@@ -23,5 +23,11 @@ namespace Aemos
             frmSpellcasting frmSpellcasting = new frmSpellcasting();
             frmSpellcasting.ShowDialog();
         }
+
+        private void btnCarrying_Click(object sender, EventArgs e)
+        {
+            frmCarryingCapacity frmCarryingCapacity = new frmCarryingCapacity();
+            frmCarryingCapacity.ShowDialog();
+        }
     }
 }

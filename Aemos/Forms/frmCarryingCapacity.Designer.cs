@@ -1,6 +1,6 @@
 ﻿namespace Aemos.Forms
 {
-    partial class frmSpellcasting
+    partial class frmCarryingCapacity
     {
         /// <summary>
         /// Required designer variable.
@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlSpellcasting1 = new Aemos.UserControls.ctrlSpellcasting();
+            this.ctrlCarryingCapacity1 = new Aemos.UserControls.ctrlCarryingCapacity();
             this.SuspendLayout();
             // 
-            // ctrlSpellcasting1
+            // ctrlCarryingCapacity1
             // 
-            this.ctrlSpellcasting1.Location = new System.Drawing.Point(12, 7);
-            this.ctrlSpellcasting1.Name = "ctrlSpellcasting1";
-            this.ctrlSpellcasting1.Size = new System.Drawing.Size(558, 629);
-            this.ctrlSpellcasting1.TabIndex = 0;
+            this.ctrlCarryingCapacity1.Location = new System.Drawing.Point(12, 12);
+            this.ctrlCarryingCapacity1.Name = "ctrlCarryingCapacity1";
+            this.ctrlCarryingCapacity1.Size = new System.Drawing.Size(535, 366);
+            this.ctrlCarryingCapacity1.TabIndex = 0;
             // 
-            // frmSpellcasting
+            // frmCarryingCapacity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 632);
-            this.Controls.Add(this.ctrlSpellcasting1);
-            this.Name = "frmSpellcasting";
-            this.Text = "Spellcasting";
+            this.ClientSize = new System.Drawing.Size(535, 371);
+            this.Controls.Add(this.ctrlCarryingCapacity1);
+            this.Name = "frmCarryingCapacity";
+            this.Text = "frmCarryingCapacity";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private UserControls.ctrlSpellcasting ctrlSpellcasting1;
+        private UserControls.ctrlCarryingCapacity ctrlCarryingCapacity1;
     }
 }

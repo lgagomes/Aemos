@@ -154,7 +154,7 @@
             // labelAttibuteBonus
             // 
             this.labelAttibuteBonus.AutoSize = true;
-            this.labelAttibuteBonus.Location = new System.Drawing.Point(418, 50);
+            this.labelAttibuteBonus.Location = new System.Drawing.Point(401, 50);
             this.labelAttibuteBonus.Name = "labelAttibuteBonus";
             this.labelAttibuteBonus.Size = new System.Drawing.Size(27, 16);
             this.labelAttibuteBonus.TabIndex = 13;
@@ -162,7 +162,7 @@
             // 
             // textBoxKeyAttribute
             // 
-            this.textBoxKeyAttribute.Location = new System.Drawing.Point(380, 47);
+            this.textBoxKeyAttribute.Location = new System.Drawing.Point(363, 47);
             this.textBoxKeyAttribute.Name = "textBoxKeyAttribute";
             this.textBoxKeyAttribute.Size = new System.Drawing.Size(32, 22);
             this.textBoxKeyAttribute.TabIndex = 12;
@@ -172,6 +172,9 @@
             // 
             // labelBaseScore
             // 
+            this.labelBaseScore.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBaseScore.AutoSize = true;
             this.labelBaseScore.Location = new System.Drawing.Point(360, 24);
             this.labelBaseScore.Name = "labelBaseScore";
