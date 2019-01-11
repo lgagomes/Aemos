@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Aemos
 {
+    // TODO: Change Forms' titles in titlebar
     public partial class frmMainScreen : Form
     {
         public frmMainScreen()
@@ -28,6 +29,12 @@ namespace Aemos
         {
             frmCarryingCapacity frmCarryingCapacity = new frmCarryingCapacity();
             frmCarryingCapacity.ShowDialog();
+        }
+
+        private void btnBaseAttack_Click(object sender, EventArgs e)
+        {
+            frmBaseAttackBonus frmBaseAttackBonus = new frmBaseAttackBonus();
+            frmBaseAttackBonus.ShowDialog();
         }
     }
 }

@@ -15,26 +15,71 @@ namespace Aemos.UserControls
     public partial class ctrlCharInputHeader : UserControl
     {
         public event EventHandler ClassChangeEvent;
-       
+        public event EventHandler LevelChangeEvent;
+        public event EventHandler AttributeScoreEvent;
+
         public ctrlCharInputHeader()
         {
             InitializeComponent();
         }
 
-        public void SetLabels(string attributeScore, string attributeBonus)
+        public string ClassName => comboBoxHeaderClasses.Text;
+        public string Level => comboBoxHeaderLevel.Text;
+        public string AttributeScore => textBoxHeaderAttributeScore.Text;
+
+        private void ctrlCharInputHeader_Load(object sender, EventArgs e)
         {
-            labelHeaderAttributeScore.Text = attributeScore;
-            labelHeaderAttibuteBonus.Text = attributeBonus;
+            InitializeClasses();
+            InitializeLevels();
+        }
+               
+        private void InitializeClasses()
+        {
+            comboBoxHeaderClasses.Items.Add("barbarian");
+            comboBoxHeaderClasses.Items.Add("bard");
+            comboBoxHeaderClasses.Items.Add("cleric");
+            comboBoxHeaderClasses.Items.Add("druid");
+            comboBoxHeaderClasses.Items.Add("monk");
+            comboBoxHeaderClasses.Items.Add("paladin");
+            comboBoxHeaderClasses.Items.Add("ranger");
+            comboBoxHeaderClasses.Items.Add("rogue");
+            comboBoxHeaderClasses.Items.Add("sorcerer");
+            comboBoxHeaderClasses.Items.Add("warrior");
+            comboBoxHeaderClasses.Items.Add("wizard");
         }
 
-        public string ClassName
+        private void InitializeLevels()
         {
-            get { return comboHeaderBoxClasses.Text; }
-        }
+            for (int i = 1; i <= 20; i++)
+                comboBoxHeaderLevel.Items.Add(i.ToString());            
+        }                
 
-        private void comboHeaderBoxClasses_SelectedIndexChanged(object sender, EventArgs e)
+        public void SetLabels(string attributeScore)
+        {
+            if (string.Equals(attributeScore, "HIDE"))
+            {
+                labelHeaderAttributeScore.Visible = false;
+                textBoxHeaderAttributeScore.Visible = false;
+            }
+            else
+            {
+                labelHeaderAttributeScore.Text = attributeScore;
+            }
+        }        
+
+        private void comboBoxHeaderClasses_SelectedIndexChanged(object sender, EventArgs e)
         {
             ClassChangeEvent?.Invoke(null, null);
         }
+
+        private void comboBoxHeaderLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LevelChangeEvent?.Invoke(null, null);
+        }
+
+        private void textBoxHeaderAttributeScore_TextChanged(object sender, EventArgs e)
+        {
+            AttributeScoreEvent?.Invoke(null, null);
+        }        
     }
 }

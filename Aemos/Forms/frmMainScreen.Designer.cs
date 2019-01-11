@@ -58,13 +58,13 @@
             // 
             // btnBaseAttack
             // 
-            this.btnBaseAttack.Enabled = false;
             this.btnBaseAttack.Location = new System.Drawing.Point(17, 128);
             this.btnBaseAttack.Name = "btnBaseAttack";
             this.btnBaseAttack.Size = new System.Drawing.Size(149, 41);
             this.btnBaseAttack.TabIndex = 2;
             this.btnBaseAttack.Text = "Base Attack Bonus\r\nCalculation";
             this.btnBaseAttack.UseVisualStyleBackColor = true;
+            this.btnBaseAttack.Click += new System.EventHandler(this.btnBaseAttack_Click);
             // 
             // btnSkillPoints
             // 

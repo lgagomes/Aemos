@@ -29,24 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboHeaderBoxClasses = new System.Windows.Forms.ComboBox();
-            this.comboHeaderBoxLevel = new System.Windows.Forms.ComboBox();
-            this.labelHeaderAttibuteBonus = new System.Windows.Forms.Label();
-            this.textBoxHeaderKeyAttribute = new System.Windows.Forms.TextBox();
+            this.comboBoxHeaderClasses = new System.Windows.Forms.ComboBox();
+            this.comboBoxHeaderLevel = new System.Windows.Forms.ComboBox();
+            this.textBoxHeaderAttributeScore = new System.Windows.Forms.TextBox();
             this.labelHeaderAttributeScore = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelHeaderCharacterLevel = new System.Windows.Forms.Label();
             this.labelHeaderCharacterClass = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboHeaderBoxClasses);
-            this.groupBox1.Controls.Add(this.comboHeaderBoxLevel);
-            this.groupBox1.Controls.Add(this.labelHeaderAttibuteBonus);
-            this.groupBox1.Controls.Add(this.textBoxHeaderKeyAttribute);
+            this.groupBox1.Controls.Add(this.comboBoxHeaderClasses);
+            this.groupBox1.Controls.Add(this.comboBoxHeaderLevel);
+            this.groupBox1.Controls.Add(this.textBoxHeaderAttributeScore);
             this.groupBox1.Controls.Add(this.labelHeaderAttributeScore);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.labelHeaderCharacterLevel);
             this.groupBox1.Controls.Add(this.labelHeaderCharacterClass);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(10, 3);
@@ -56,45 +54,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Character Info";
             // 
-            // comboHeaderBoxClasses
+            // comboBoxHeaderClasses
             // 
-            this.comboHeaderBoxClasses.FormattingEnabled = true;
-            this.comboHeaderBoxClasses.Items.AddRange(new object[] {
-            "cleric",
-            "bard",
-            "wizard"});
-            this.comboHeaderBoxClasses.Location = new System.Drawing.Point(25, 46);
-            this.comboHeaderBoxClasses.Name = "comboHeaderBoxClasses";
-            this.comboHeaderBoxClasses.Size = new System.Drawing.Size(121, 24);
-            this.comboHeaderBoxClasses.TabIndex = 15;
-            this.comboHeaderBoxClasses.Text = "Choose a Class";
-            this.comboHeaderBoxClasses.SelectedIndexChanged += new System.EventHandler(this.comboHeaderBoxClasses_SelectedIndexChanged);
+            this.comboBoxHeaderClasses.FormattingEnabled = true;
+            this.comboBoxHeaderClasses.Location = new System.Drawing.Point(25, 46);
+            this.comboBoxHeaderClasses.Name = "comboBoxHeaderClasses";
+            this.comboBoxHeaderClasses.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxHeaderClasses.TabIndex = 15;
+            this.comboBoxHeaderClasses.Text = "Choose a Class";
+            this.comboBoxHeaderClasses.SelectedIndexChanged += new System.EventHandler(this.comboBoxHeaderClasses_SelectedIndexChanged);
             // 
-            // comboHeaderBoxLevel
+            // comboBoxHeaderLevel
             // 
-            this.comboHeaderBoxLevel.FormattingEnabled = true;
-            this.comboHeaderBoxLevel.Location = new System.Drawing.Point(203, 47);
-            this.comboHeaderBoxLevel.Name = "comboHeaderBoxLevel";
-            this.comboHeaderBoxLevel.Size = new System.Drawing.Size(96, 24);
-            this.comboHeaderBoxLevel.TabIndex = 14;
-            this.comboHeaderBoxLevel.Text = "1";
+            this.comboBoxHeaderLevel.FormattingEnabled = true;
+            this.comboBoxHeaderLevel.Location = new System.Drawing.Point(203, 47);
+            this.comboBoxHeaderLevel.Name = "comboBoxHeaderLevel";
+            this.comboBoxHeaderLevel.Size = new System.Drawing.Size(96, 24);
+            this.comboBoxHeaderLevel.TabIndex = 14;
+            this.comboBoxHeaderLevel.Text = "1";
+            this.comboBoxHeaderLevel.SelectedIndexChanged += new System.EventHandler(this.comboBoxHeaderLevel_SelectedIndexChanged);
             // 
-            // labelHeaderAttibuteBonus
+            // textBoxHeaderAttributeScore
             // 
-            this.labelHeaderAttibuteBonus.AutoSize = true;
-            this.labelHeaderAttibuteBonus.Location = new System.Drawing.Point(418, 50);
-            this.labelHeaderAttibuteBonus.Name = "labelHeaderAttibuteBonus";
-            this.labelHeaderAttibuteBonus.Size = new System.Drawing.Size(22, 16);
-            this.labelHeaderAttibuteBonus.TabIndex = 13;
-            this.labelHeaderAttibuteBonus.Text = "__";
-            // 
-            // textBoxHeaderKeyAttribute
-            // 
-            this.textBoxHeaderKeyAttribute.Location = new System.Drawing.Point(380, 47);
-            this.textBoxHeaderKeyAttribute.Name = "textBoxHeaderKeyAttribute";
-            this.textBoxHeaderKeyAttribute.Size = new System.Drawing.Size(32, 22);
-            this.textBoxHeaderKeyAttribute.TabIndex = 12;
-            this.textBoxHeaderKeyAttribute.Text = "10";
+            this.textBoxHeaderAttributeScore.Location = new System.Drawing.Point(380, 47);
+            this.textBoxHeaderAttributeScore.Name = "textBoxHeaderAttributeScore";
+            this.textBoxHeaderAttributeScore.Size = new System.Drawing.Size(32, 22);
+            this.textBoxHeaderAttributeScore.TabIndex = 12;
+            this.textBoxHeaderAttributeScore.Text = "10";
+            this.textBoxHeaderAttributeScore.TextChanged += new System.EventHandler(this.textBoxHeaderAttributeScore_TextChanged);
             // 
             // labelHeaderAttributeScore
             // 
@@ -105,14 +92,14 @@
             this.labelHeaderAttributeScore.TabIndex = 11;
             this.labelHeaderAttributeScore.Text = "labelAttributeScore";
             // 
-            // label2
+            // labelHeaderCharacterLevel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(200, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 16);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Character Level";
+            this.labelHeaderCharacterLevel.AutoSize = true;
+            this.labelHeaderCharacterLevel.Location = new System.Drawing.Point(200, 24);
+            this.labelHeaderCharacterLevel.Name = "labelHeaderCharacterLevel";
+            this.labelHeaderCharacterLevel.Size = new System.Drawing.Size(97, 16);
+            this.labelHeaderCharacterLevel.TabIndex = 10;
+            this.labelHeaderCharacterLevel.Text = "Character Level";
             // 
             // labelHeaderCharacterClass
             // 
@@ -130,6 +117,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ctrlCharInputHeader";
             this.Size = new System.Drawing.Size(508, 95);
+            this.Load += new System.EventHandler(this.ctrlCharInputHeader_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -139,12 +127,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboHeaderBoxClasses;
-        private System.Windows.Forms.ComboBox comboHeaderBoxLevel;
-        private System.Windows.Forms.Label labelHeaderAttibuteBonus;
-        private System.Windows.Forms.TextBox textBoxHeaderKeyAttribute;
+        private System.Windows.Forms.ComboBox comboBoxHeaderClasses;
+        private System.Windows.Forms.ComboBox comboBoxHeaderLevel;
+        private System.Windows.Forms.TextBox textBoxHeaderAttributeScore;
         private System.Windows.Forms.Label labelHeaderAttributeScore;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelHeaderCharacterLevel;
         private System.Windows.Forms.Label labelHeaderCharacterClass;
     }
 }

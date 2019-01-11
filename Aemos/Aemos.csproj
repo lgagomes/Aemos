@@ -60,6 +60,12 @@
     <Compile Include="CharacterClasses\Spellcaster.cs" />
     <Compile Include="CharacterClasses\Warrior.cs" />
     <Compile Include="CharacterClasses\Wizard.cs" />
+    <Compile Include="Forms\frmBaseAttackBonus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBaseAttackBonus.Designer.cs">
+      <DependentUpon>frmBaseAttackBonus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmCarryingCapacity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     <Compile Include="Helpers\XpPerLevelHolder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ctrlBaseAttackBonus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ctrlBaseAttackBonus.Designer.cs">
+      <DependentUpon>ctrlBaseAttackBonus.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ctrlCarryingCapacity.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,6 +119,9 @@
     <Compile Include="UserControls\ctrlSpellcasting.Designer.cs">
       <DependentUpon>ctrlSpellcasting.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\frmBaseAttackBonus.resx">
+      <DependentUpon>frmBaseAttackBonus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCarryingCapacity.resx">
       <DependentUpon>frmCarryingCapacity.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +140,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\ctrlBaseAttackBonus.resx">
+      <DependentUpon>ctrlBaseAttackBonus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ctrlCarryingCapacity.resx">
       <DependentUpon>ctrlCarryingCapacity.cs</DependentUpon>
     </EmbeddedResource>
