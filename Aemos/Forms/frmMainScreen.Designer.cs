@@ -68,13 +68,13 @@
             // 
             // btnSkillPoints
             // 
-            this.btnSkillPoints.Enabled = false;
             this.btnSkillPoints.Location = new System.Drawing.Point(241, 128);
             this.btnSkillPoints.Name = "btnSkillPoints";
             this.btnSkillPoints.Size = new System.Drawing.Size(149, 41);
             this.btnSkillPoints.TabIndex = 3;
             this.btnSkillPoints.Text = "Skill Points\r\nCalculation";
             this.btnSkillPoints.UseVisualStyleBackColor = true;
+            this.btnSkillPoints.Click += new System.EventHandler(this.btnSkillPoints_Click);
             // 
             // btnXpCalculator
             // 
@@ -108,7 +108,7 @@
             this.Controls.Add(this.btnCarrying);
             this.Controls.Add(this.btnSpellcasting);
             this.Name = "frmMainScreen";
-            this.Text = "Aemos - V1.0";
+            this.Text = "Aemos";
             this.ResumeLayout(false);
 
         }

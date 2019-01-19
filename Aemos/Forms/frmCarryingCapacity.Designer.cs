@@ -45,7 +45,7 @@
             this.ClientSize = new System.Drawing.Size(535, 371);
             this.Controls.Add(this.ctrlCarryingCapacity1);
             this.Name = "frmCarryingCapacity";
-            this.Text = "frmCarryingCapacity";
+            this.Text = "Carrying Capacity";
             this.ResumeLayout(false);
 
         }

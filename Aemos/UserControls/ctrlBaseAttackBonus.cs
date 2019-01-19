@@ -1,13 +1,8 @@
-﻿using System;
+﻿using Aemos.CharacterClasses;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Aemos.CharacterClasses;
 
 namespace Aemos.UserControls
 {
@@ -21,12 +16,6 @@ namespace Aemos.UserControls
         public ctrlBaseAttackBonus()
         {
             InitializeComponent();
-        }
-
-        private void ctrlBaseAttackBonus_Load(object sender, EventArgs e)
-        {
-            Initializations();
-            InstantiateClasses();
         }
 
         public void Initializations()
@@ -46,6 +35,12 @@ namespace Aemos.UserControls
             _actualLevelValue = Convert.ToInt32(level);
             UpdateBaseAttackBonus();
         }
+
+        private void ctrlBaseAttackBonus_Load(object sender, EventArgs e)
+        {
+            Initializations();
+            InstantiateClasses();
+        }        
 
         private void InstantiateClasses()
         {

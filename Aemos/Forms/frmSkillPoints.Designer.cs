@@ -1,6 +1,6 @@
 ﻿namespace Aemos.Forms
 {
-    partial class frmBaseAttackBonus
+    partial class frmSkillPoints
     {
         /// <summary>
         /// Required designer variable.
@@ -29,40 +29,40 @@
         private void InitializeComponent()
         {
             this.ctrlCharInputHeader1 = new Aemos.UserControls.ctrlCharInputHeader();
-            this.ctrlBaseAttackBonus1 = new Aemos.UserControls.ctrlBaseAttackBonus();
+            this.ctrlSkillPoints1 = new Aemos.UserControls.ctrlSkillPoints();
             this.SuspendLayout();
             // 
             // ctrlCharInputHeader1
             // 
-            this.ctrlCharInputHeader1.Location = new System.Drawing.Point(22, 12);
+            this.ctrlCharInputHeader1.Location = new System.Drawing.Point(26, 12);
             this.ctrlCharInputHeader1.Name = "ctrlCharInputHeader1";
             this.ctrlCharInputHeader1.Size = new System.Drawing.Size(508, 95);
-            this.ctrlCharInputHeader1.TabIndex = 0;
+            this.ctrlCharInputHeader1.TabIndex = 1;
             // 
-            // ctrlBaseAttackBonus1
+            // ctrlSkillPoints1
             // 
-            this.ctrlBaseAttackBonus1.Location = new System.Drawing.Point(12, 113);
-            this.ctrlBaseAttackBonus1.Name = "ctrlBaseAttackBonus1";
-            this.ctrlBaseAttackBonus1.Size = new System.Drawing.Size(550, 110);
-            this.ctrlBaseAttackBonus1.TabIndex = 1;
+            this.ctrlSkillPoints1.Location = new System.Drawing.Point(12, 113);
+            this.ctrlSkillPoints1.Name = "ctrlSkillPoints1";
+            this.ctrlSkillPoints1.Size = new System.Drawing.Size(543, 224);
+            this.ctrlSkillPoints1.TabIndex = 0;
             // 
-            // frmBaseAttackBonus
+            // frmSkillPoints
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 227);
-            this.Controls.Add(this.ctrlBaseAttackBonus1);
+            this.ClientSize = new System.Drawing.Size(564, 338);
             this.Controls.Add(this.ctrlCharInputHeader1);
-            this.Name = "frmBaseAttackBonus";
-            this.Text = "Base Attack Bonus";
-            this.Load += new System.EventHandler(this.frmBaseAttackBonus_Load);
+            this.Controls.Add(this.ctrlSkillPoints1);
+            this.Name = "frmSkillPoints";
+            this.Text = "Skill Points";
+            this.Load += new System.EventHandler(this.frmSkillPoints_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private UserControls.ctrlSkillPoints ctrlSkillPoints1;
         private UserControls.ctrlCharInputHeader ctrlCharInputHeader1;
-        private UserControls.ctrlBaseAttackBonus ctrlBaseAttackBonus1;
     }
 }

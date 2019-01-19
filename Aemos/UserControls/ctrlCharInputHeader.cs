@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Aemos.CharacterClasses;
-using Aemos.Helpers;
 
 namespace Aemos.UserControls
 {
@@ -80,6 +71,11 @@ namespace Aemos.UserControls
         private void textBoxHeaderAttributeScore_TextChanged(object sender, EventArgs e)
         {
             AttributeScoreEvent?.Invoke(null, null);
-        }        
+        }
+
+        private void textBoxHeaderAttributeScore_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

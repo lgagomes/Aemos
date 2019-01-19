@@ -1,17 +1,9 @@
 ﻿using Aemos.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Aemos
 {
-    // TODO: Change Forms' titles in titlebar
     public partial class frmMainScreen : Form
     {
         public frmMainScreen()
@@ -35,6 +27,12 @@ namespace Aemos
         {
             frmBaseAttackBonus frmBaseAttackBonus = new frmBaseAttackBonus();
             frmBaseAttackBonus.ShowDialog();
+        }
+
+        private void btnSkillPoints_Click(object sender, EventArgs e)
+        {
+            frmSkillPoints frmSkillPoints = new frmSkillPoints();
+            frmSkillPoints.ShowDialog();
         }
     }
 }

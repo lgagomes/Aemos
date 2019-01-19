@@ -76,12 +76,13 @@
             // 
             // textBoxHeaderAttributeScore
             // 
-            this.textBoxHeaderAttributeScore.Location = new System.Drawing.Point(380, 47);
+            this.textBoxHeaderAttributeScore.Location = new System.Drawing.Point(396, 47);
             this.textBoxHeaderAttributeScore.Name = "textBoxHeaderAttributeScore";
             this.textBoxHeaderAttributeScore.Size = new System.Drawing.Size(32, 22);
             this.textBoxHeaderAttributeScore.TabIndex = 12;
             this.textBoxHeaderAttributeScore.Text = "10";
             this.textBoxHeaderAttributeScore.TextChanged += new System.EventHandler(this.textBoxHeaderAttributeScore_TextChanged);
+            this.textBoxHeaderAttributeScore.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxHeaderAttributeScore_KeyPress);
             // 
             // labelHeaderAttributeScore
             // 
