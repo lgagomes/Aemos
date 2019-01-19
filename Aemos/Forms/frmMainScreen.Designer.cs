@@ -78,13 +78,13 @@
             // 
             // btnXpCalculator
             // 
-            this.btnXpCalculator.Enabled = false;
             this.btnXpCalculator.Location = new System.Drawing.Point(17, 210);
             this.btnXpCalculator.Name = "btnXpCalculator";
             this.btnXpCalculator.Size = new System.Drawing.Size(149, 41);
             this.btnXpCalculator.TabIndex = 4;
             this.btnXpCalculator.Text = "XP Calculator";
             this.btnXpCalculator.UseVisualStyleBackColor = true;
+            this.btnXpCalculator.Click += new System.EventHandler(this.btnXpCalculator_Click);
             // 
             // btnDiceRoller
             // 

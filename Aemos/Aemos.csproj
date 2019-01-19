@@ -90,6 +90,18 @@
     <Compile Include="Forms\frmSpellcasting.Designer.cs">
       <DependentUpon>frmSpellcasting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmXpCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmXpCalculator.Designer.cs">
+      <DependentUpon>frmXpCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmXpProgression.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmXpProgression.Designer.cs">
+      <DependentUpon>frmXpProgression.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\CasterSelector.cs" />
     <Compile Include="Helpers\Dice.cs" />
     <Compile Include="Helpers\DiceRollerManager.cs" />
@@ -131,6 +143,18 @@
     <Compile Include="UserControls\ctrlSpellcasting.Designer.cs">
       <DependentUpon>ctrlSpellcasting.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ctrlXpCalculator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ctrlXpCalculator.Designer.cs">
+      <DependentUpon>ctrlXpCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ctrlXpProgression.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ctrlXpProgression.Designer.cs">
+      <DependentUpon>ctrlXpProgression.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\frmBaseAttackBonus.resx">
       <DependentUpon>frmBaseAttackBonus.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSpellcasting.resx">
       <DependentUpon>frmSpellcasting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmXpCalculator.resx">
+      <DependentUpon>frmXpCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmXpProgression.resx">
+      <DependentUpon>frmXpProgression.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -169,6 +199,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ctrlSpellcasting.resx">
       <DependentUpon>ctrlSpellcasting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ctrlXpCalculator.resx">
+      <DependentUpon>ctrlXpCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ctrlXpProgression.resx">
+      <DependentUpon>ctrlXpProgression.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

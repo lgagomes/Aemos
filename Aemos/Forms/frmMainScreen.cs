@@ -34,5 +34,11 @@ namespace Aemos
             frmSkillPoints frmSkillPoints = new frmSkillPoints();
             frmSkillPoints.ShowDialog();
         }
+
+        private void btnXpCalculator_Click(object sender, EventArgs e)
+        {
+            frmXpCalculator frmXpCalculator = new frmXpCalculator();
+            frmXpCalculator.ShowDialog();
+        }
     }
 }
