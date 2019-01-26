@@ -8,6 +8,8 @@ namespace Aemos.UserControls
         public event EventHandler ClassChangeEvent;
         public event EventHandler LevelChangeEvent;
         public event EventHandler AttributeScoreEvent;
+        private bool _canFireClassChangeEvent;
+        private bool _canFireLevelChangeEvent;
 
         public ctrlCharInputHeader()
         {
@@ -21,11 +23,19 @@ namespace Aemos.UserControls
         private void ctrlCharInputHeader_Load(object sender, EventArgs e)
         {
             InitializeClasses();
+            _canFireClassChangeEvent = false;
+            comboBoxHeaderClasses.SelectedIndex = 0;
+            _canFireClassChangeEvent = true;
+
             InitializeLevels();
+            _canFireLevelChangeEvent = false;
+            comboBoxHeaderLevel.SelectedIndex = 0;
+            _canFireLevelChangeEvent = true;
         }
-               
+
         private void InitializeClasses()
         {
+            comboBoxHeaderClasses.Items.Add("Choose a Class");
             comboBoxHeaderClasses.Items.Add("barbarian");
             comboBoxHeaderClasses.Items.Add("bard");
             comboBoxHeaderClasses.Items.Add("cleric");
@@ -42,8 +52,8 @@ namespace Aemos.UserControls
         private void InitializeLevels()
         {
             for (int i = 1; i <= 20; i++)
-                comboBoxHeaderLevel.Items.Add(i.ToString());            
-        }                
+                comboBoxHeaderLevel.Items.Add(i.ToString());
+        }
 
         public void SetLabels(string attributeScore)
         {
@@ -56,16 +66,18 @@ namespace Aemos.UserControls
             {
                 labelHeaderAttributeScore.Text = attributeScore;
             }
-        }        
+        }
 
         private void comboBoxHeaderClasses_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClassChangeEvent?.Invoke(null, null);
+            if(_canFireClassChangeEvent)
+                ClassChangeEvent?.Invoke(null, null);
         }
 
         private void comboBoxHeaderLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LevelChangeEvent?.Invoke(null, null);
+            if(_canFireLevelChangeEvent)
+                LevelChangeEvent?.Invoke(null, null);
         }
 
         private void textBoxHeaderAttributeScore_TextChanged(object sender, EventArgs e)

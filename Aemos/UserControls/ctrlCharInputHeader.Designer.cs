@@ -56,22 +56,22 @@
             // 
             // comboBoxHeaderClasses
             // 
+            this.comboBoxHeaderClasses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxHeaderClasses.FormattingEnabled = true;
             this.comboBoxHeaderClasses.Location = new System.Drawing.Point(25, 46);
             this.comboBoxHeaderClasses.Name = "comboBoxHeaderClasses";
             this.comboBoxHeaderClasses.Size = new System.Drawing.Size(121, 24);
             this.comboBoxHeaderClasses.TabIndex = 15;
-            this.comboBoxHeaderClasses.Text = "Choose a Class";
             this.comboBoxHeaderClasses.SelectedIndexChanged += new System.EventHandler(this.comboBoxHeaderClasses_SelectedIndexChanged);
             // 
             // comboBoxHeaderLevel
             // 
+            this.comboBoxHeaderLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxHeaderLevel.FormattingEnabled = true;
             this.comboBoxHeaderLevel.Location = new System.Drawing.Point(203, 47);
             this.comboBoxHeaderLevel.Name = "comboBoxHeaderLevel";
             this.comboBoxHeaderLevel.Size = new System.Drawing.Size(96, 24);
             this.comboBoxHeaderLevel.TabIndex = 14;
-            this.comboBoxHeaderLevel.Text = "1";
             this.comboBoxHeaderLevel.SelectedIndexChanged += new System.EventHandler(this.comboBoxHeaderLevel_SelectedIndexChanged);
             // 
             // textBoxHeaderAttributeScore
