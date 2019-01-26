@@ -40,5 +40,11 @@ namespace Aemos
             frmXpCalculator frmXpCalculator = new frmXpCalculator();
             frmXpCalculator.ShowDialog();
         }
+
+        private void btnDiceRoller_Click(object sender, EventArgs e)
+        {
+            frmDiceRoller frmDiceRoller = new frmDiceRoller();
+            frmDiceRoller.ShowDialog();
+        }
     }
 }

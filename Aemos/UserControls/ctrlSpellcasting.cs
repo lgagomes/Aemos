@@ -29,12 +29,12 @@ namespace Aemos.UserControls
         private void ctrlSpellcasting_Load(object sender, EventArgs e)
         {
             InitializeListsAndArrays();
-            InitializeLevels();
+            InitializeLevels();            
             InitializeDCs();            
             InitializeExtraSpells();
             InitializeSpellsPerDay();
             InitializeKnownSpells();
-            InitializeClasses();
+            InitializeClasses();            
             InitializeCastButtons(); 
         }
 
@@ -54,6 +54,7 @@ namespace Aemos.UserControls
         {
             for (int i = 1; i <= TWENTY; i++)
                 comboBoxLevel.Items.Add(i.ToString());
+            comboBoxLevel.SelectedIndex = 0;
         }
 
         private void InitializeDCs()
@@ -104,6 +105,7 @@ namespace Aemos.UserControls
         {
             _currentSpellcaster = new Spellcaster();
             _selector = new CasterSelector();
+            comboBoxClasses.Items.Add("Choose a Class");
 
             Bard bard = new Bard("Bard")
             {
@@ -155,6 +157,8 @@ namespace Aemos.UserControls
                 Intelligence = Convert.ToInt32(textBoxKeyAttribute.Text)
             };
             AddSpellcasterClass(wizard);
+
+            comboBoxClasses.SelectedIndex = 0;
         }
 
         private void InitializeCastButtons()
@@ -310,19 +314,22 @@ namespace Aemos.UserControls
 
         private void comboBoxClasses_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _currentSpellcaster = _spellcastersList.Find(x => x.ClassName == comboBoxClasses.Text.ToString());
+            if (!string.Equals(comboBoxClasses.Text, "Choose a Class"))
+            {
+                _currentSpellcaster = _spellcastersList.Find(x => x.ClassName == comboBoxClasses.Text.ToString());
 
-            labelBaseScore.Text = _currentSpellcaster.KeyAttribute;
-            ShowSpellsDC();
-            ShowExtraSpells();
-            ShowSpellsPerDay();            
+                labelBaseScore.Text = _currentSpellcaster.KeyAttribute;
+                ShowSpellsDC();
+                ShowExtraSpells();
+                ShowSpellsPerDay();
 
-            bool signal = _selector.IsKnownlerOfSpells(_currentSpellcaster);
-            ShowKnownSpells(signal);
-            ResetKnownSpells(signal);
+                bool signal = _selector.IsKnownlerOfSpells(_currentSpellcaster);
+                ShowKnownSpells(signal);
+                ResetKnownSpells(signal);
 
-            buttonRegainSpells.Enabled = true;
-            EnableOnlyNnecessaryButtons();
+                buttonRegainSpells.Enabled = true;
+                EnableOnlyNnecessaryButtons();
+            }
         }
 
         private void textBoxKeyAttribute_TextChanged(object sender, EventArgs e)
@@ -350,7 +357,7 @@ namespace Aemos.UserControls
             {
                 WarningMessage.ShowWarningMessage("Please select a valid class");
             }
-            else
+            else if(!string.IsNullOrEmpty(comboBoxClasses.Text))
             {
                 ShowSpellsPerDay();
 

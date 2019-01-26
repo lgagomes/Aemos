@@ -88,13 +88,13 @@
             // 
             // btnDiceRoller
             // 
-            this.btnDiceRoller.Enabled = false;
             this.btnDiceRoller.Location = new System.Drawing.Point(241, 210);
             this.btnDiceRoller.Name = "btnDiceRoller";
             this.btnDiceRoller.Size = new System.Drawing.Size(149, 41);
             this.btnDiceRoller.TabIndex = 5;
             this.btnDiceRoller.Text = "Dice Roller";
             this.btnDiceRoller.UseVisualStyleBackColor = true;
+            this.btnDiceRoller.Click += new System.EventHandler(this.btnDiceRoller_Click);
             // 
             // frmMainScreen
             // 

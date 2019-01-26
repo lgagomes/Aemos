@@ -133,22 +133,22 @@
             // 
             // comboBoxClasses
             // 
+            this.comboBoxClasses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxClasses.FormattingEnabled = true;
             this.comboBoxClasses.Location = new System.Drawing.Point(25, 46);
             this.comboBoxClasses.Name = "comboBoxClasses";
             this.comboBoxClasses.Size = new System.Drawing.Size(121, 24);
             this.comboBoxClasses.TabIndex = 15;
-            this.comboBoxClasses.Text = "Choose a Class";
             this.comboBoxClasses.SelectedIndexChanged += new System.EventHandler(this.comboBoxClasses_SelectedIndexChanged);
             // 
             // comboBoxLevel
             // 
+            this.comboBoxLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLevel.FormattingEnabled = true;
             this.comboBoxLevel.Location = new System.Drawing.Point(203, 47);
             this.comboBoxLevel.Name = "comboBoxLevel";
             this.comboBoxLevel.Size = new System.Drawing.Size(96, 24);
             this.comboBoxLevel.TabIndex = 14;
-            this.comboBoxLevel.Text = "1";
             this.comboBoxLevel.SelectedIndexChanged += new System.EventHandler(this.comboBoxLevel_SelectedIndexChanged);
             // 
             // labelAttibuteBonus

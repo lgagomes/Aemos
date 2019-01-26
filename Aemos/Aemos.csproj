@@ -72,6 +72,12 @@
     <Compile Include="Forms\frmCarryingCapacity.Designer.cs">
       <DependentUpon>frmCarryingCapacity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmDiceRoller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDiceRoller.Designer.cs">
+      <DependentUpon>frmDiceRoller.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmMainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,12 @@
     <Compile Include="UserControls\ctrlCharInputHeader.designer.cs">
       <DependentUpon>ctrlCharInputHeader.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ctrlDiceRoller.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ctrlDiceRoller.Designer.cs">
+      <DependentUpon>ctrlDiceRoller.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ctrlSkillPoints.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -160,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCarryingCapacity.resx">
       <DependentUpon>frmCarryingCapacity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDiceRoller.resx">
+      <DependentUpon>frmDiceRoller.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMainScreen.resx">
       <DependentUpon>frmMainScreen.cs</DependentUpon>
@@ -193,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ctrlCharInputHeader.resx">
       <DependentUpon>ctrlCharInputHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ctrlDiceRoller.resx">
+      <DependentUpon>ctrlDiceRoller.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ctrlSkillPoints.resx">
       <DependentUpon>ctrlSkillPoints.cs</DependentUpon>
