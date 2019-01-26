@@ -33,16 +33,16 @@
             // 
             // ctrlSpellcasting1
             // 
-            this.ctrlSpellcasting1.Location = new System.Drawing.Point(12, 7);
+            this.ctrlSpellcasting1.Location = new System.Drawing.Point(12, 12);
             this.ctrlSpellcasting1.Name = "ctrlSpellcasting1";
-            this.ctrlSpellcasting1.Size = new System.Drawing.Size(558, 629);
+            this.ctrlSpellcasting1.Size = new System.Drawing.Size(821, 509);
             this.ctrlSpellcasting1.TabIndex = 0;
             // 
             // frmSpellcasting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 632);
+            this.ClientSize = new System.Drawing.Size(836, 521);
             this.Controls.Add(this.ctrlSpellcasting1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

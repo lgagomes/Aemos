@@ -46,5 +46,16 @@ namespace Aemos
             frmDiceRoller frmDiceRoller = new frmDiceRoller();
             frmDiceRoller.ShowDialog();
         }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Copyright© 2018 - 2019 Luiz Gustavo A. Gomes\n\n" +
+               "If you have any questions just contact me at\n" +
+               "\tlgustavogom@gmail.com\n\n" +
+               "This program uses content from the d20 System, with no intention to " +
+               "replace the books for full descriptions, " +
+               "but rather to be a tool to ease the character creation.",
+               "About", MessageBoxButtons.OK);
+        }
     }
 }

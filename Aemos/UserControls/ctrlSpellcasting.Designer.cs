@@ -37,27 +37,6 @@
             this.labelCharacterClass = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBoxKnownSpells9 = new System.Windows.Forms.TextBox();
-            this.textBoxKnownSpells8 = new System.Windows.Forms.TextBox();
-            this.textBoxKnownSpells3 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBoxKnownSpells7 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.textBoxKnownSpells1 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.textBoxKnownSpells6 = new System.Windows.Forms.TextBox();
-            this.textBoxKnownSpells5 = new System.Windows.Forms.TextBox();
-            this.textBoxKnownSpells4 = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.textBoxKnownSpells2 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBoxKnownSpells0 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonRegainSpells = new System.Windows.Forms.Button();
             this.buttonCastLevel9 = new System.Windows.Forms.Button();
@@ -124,11 +103,32 @@
             this.label9 = new System.Windows.Forms.Label();
             this.labelDC0 = new System.Windows.Forms.Label();
             this.labelExtraSpells0 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBoxKnownSpells9 = new System.Windows.Forms.TextBox();
+            this.textBoxKnownSpells8 = new System.Windows.Forms.TextBox();
+            this.textBoxKnownSpells3 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBoxKnownSpells7 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBoxKnownSpells1 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.textBoxKnownSpells6 = new System.Windows.Forms.TextBox();
+            this.textBoxKnownSpells5 = new System.Windows.Forms.TextBox();
+            this.textBoxKnownSpells4 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBoxKnownSpells2 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBoxKnownSpells0 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxClasses
@@ -210,7 +210,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.labelCharacterClass);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 13);
+            this.groupBox1.Location = new System.Drawing.Point(154, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(527, 101);
             this.groupBox1.TabIndex = 16;
@@ -224,229 +224,10 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
             this.groupBox2.Location = new System.Drawing.Point(12, 131);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(527, 485);
+            this.groupBox2.Size = new System.Drawing.Size(790, 364);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Spellcasting info";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.textBoxKnownSpells9);
-            this.groupBox4.Controls.Add(this.textBoxKnownSpells8);
-            this.groupBox4.Controls.Add(this.textBoxKnownSpells3);
-            this.groupBox4.Controls.Add(this.label28);
-            this.groupBox4.Controls.Add(this.textBoxKnownSpells7);
-            this.groupBox4.Controls.Add(this.label32);
-            this.groupBox4.Controls.Add(this.textBoxKnownSpells1);
-            this.groupBox4.Controls.Add(this.label27);
-            this.groupBox4.Controls.Add(this.label34);
-            this.groupBox4.Controls.Add(this.label35);
-            this.groupBox4.Controls.Add(this.textBoxKnownSpells6);
-            this.groupBox4.Controls.Add(this.textBoxKnownSpells5);
-            this.groupBox4.Controls.Add(this.textBoxKnownSpells4);
-            this.groupBox4.Controls.Add(this.label33);
-            this.groupBox4.Controls.Add(this.label30);
-            this.groupBox4.Controls.Add(this.label31);
-            this.groupBox4.Controls.Add(this.textBoxKnownSpells2);
-            this.groupBox4.Controls.Add(this.label29);
-            this.groupBox4.Controls.Add(this.textBoxKnownSpells0);
-            this.groupBox4.Controls.Add(this.label26);
-            this.groupBox4.Location = new System.Drawing.Point(12, 358);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(499, 116);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Known Spells (Bard and Sorcerer only)";
-            // 
-            // textBoxKnownSpells9
-            // 
-            this.textBoxKnownSpells9.Location = new System.Drawing.Point(449, 81);
-            this.textBoxKnownSpells9.Name = "textBoxKnownSpells9";
-            this.textBoxKnownSpells9.ReadOnly = true;
-            this.textBoxKnownSpells9.Size = new System.Drawing.Size(33, 20);
-            this.textBoxKnownSpells9.TabIndex = 43;
-            this.textBoxKnownSpells9.Text = "-";
-            this.textBoxKnownSpells9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxKnownSpells8
-            // 
-            this.textBoxKnownSpells8.Location = new System.Drawing.Point(355, 81);
-            this.textBoxKnownSpells8.Name = "textBoxKnownSpells8";
-            this.textBoxKnownSpells8.ReadOnly = true;
-            this.textBoxKnownSpells8.Size = new System.Drawing.Size(33, 20);
-            this.textBoxKnownSpells8.TabIndex = 42;
-            this.textBoxKnownSpells8.Text = "-";
-            this.textBoxKnownSpells8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxKnownSpells3
-            // 
-            this.textBoxKnownSpells3.Location = new System.Drawing.Point(355, 39);
-            this.textBoxKnownSpells3.Name = "textBoxKnownSpells3";
-            this.textBoxKnownSpells3.ReadOnly = true;
-            this.textBoxKnownSpells3.Size = new System.Drawing.Size(33, 20);
-            this.textBoxKnownSpells3.TabIndex = 35;
-            this.textBoxKnownSpells3.Text = "-";
-            this.textBoxKnownSpells3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(307, 42);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(42, 13);
-            this.label28.TabIndex = 33;
-            this.label28.Text = "Level 3";
-            // 
-            // textBoxKnownSpells7
-            // 
-            this.textBoxKnownSpells7.Location = new System.Drawing.Point(252, 81);
-            this.textBoxKnownSpells7.Name = "textBoxKnownSpells7";
-            this.textBoxKnownSpells7.ReadOnly = true;
-            this.textBoxKnownSpells7.Size = new System.Drawing.Size(33, 20);
-            this.textBoxKnownSpells7.TabIndex = 35;
-            this.textBoxKnownSpells7.Text = "-";
-            this.textBoxKnownSpells7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(204, 84);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(42, 13);
-            this.label32.TabIndex = 33;
-            this.label32.Text = "Level 7";
-            // 
-            // textBoxKnownSpells1
-            // 
-            this.textBoxKnownSpells1.Location = new System.Drawing.Point(152, 39);
-            this.textBoxKnownSpells1.Name = "textBoxKnownSpells1";
-            this.textBoxKnownSpells1.ReadOnly = true;
-            this.textBoxKnownSpells1.Size = new System.Drawing.Size(33, 20);
-            this.textBoxKnownSpells1.TabIndex = 31;
-            this.textBoxKnownSpells1.Text = "-";
-            this.textBoxKnownSpells1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(104, 42);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(42, 13);
-            this.label27.TabIndex = 29;
-            this.label27.Text = "Level 1";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(401, 84);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(42, 13);
-            this.label34.TabIndex = 41;
-            this.label34.Text = "Level 9";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(307, 84);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(42, 13);
-            this.label35.TabIndex = 40;
-            this.label35.Text = "Level 8";
-            // 
-            // textBoxKnownSpells6
-            // 
-            this.textBoxKnownSpells6.Location = new System.Drawing.Point(152, 81);
-            this.textBoxKnownSpells6.Name = "textBoxKnownSpells6";
-            this.textBoxKnownSpells6.ReadOnly = true;
-            this.textBoxKnownSpells6.Size = new System.Drawing.Size(33, 20);
-            this.textBoxKnownSpells6.TabIndex = 34;
-            this.textBoxKnownSpells6.Text = "-";
-            this.textBoxKnownSpells6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxKnownSpells5
-            // 
-            this.textBoxKnownSpells5.Location = new System.Drawing.Point(56, 81);
-            this.textBoxKnownSpells5.Name = "textBoxKnownSpells5";
-            this.textBoxKnownSpells5.ReadOnly = true;
-            this.textBoxKnownSpells5.Size = new System.Drawing.Size(33, 20);
-            this.textBoxKnownSpells5.TabIndex = 39;
-            this.textBoxKnownSpells5.Text = "-";
-            this.textBoxKnownSpells5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxKnownSpells4
-            // 
-            this.textBoxKnownSpells4.Location = new System.Drawing.Point(449, 39);
-            this.textBoxKnownSpells4.Name = "textBoxKnownSpells4";
-            this.textBoxKnownSpells4.ReadOnly = true;
-            this.textBoxKnownSpells4.Size = new System.Drawing.Size(33, 20);
-            this.textBoxKnownSpells4.TabIndex = 38;
-            this.textBoxKnownSpells4.Text = "-";
-            this.textBoxKnownSpells4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(104, 84);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(42, 13);
-            this.label33.TabIndex = 32;
-            this.label33.Text = "Level 6";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(8, 84);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(42, 13);
-            this.label30.TabIndex = 37;
-            this.label30.Text = "Level 5";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(401, 42);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(42, 13);
-            this.label31.TabIndex = 36;
-            this.label31.Text = "Level 4";
-            // 
-            // textBoxKnownSpells2
-            // 
-            this.textBoxKnownSpells2.Location = new System.Drawing.Point(252, 39);
-            this.textBoxKnownSpells2.Name = "textBoxKnownSpells2";
-            this.textBoxKnownSpells2.ReadOnly = true;
-            this.textBoxKnownSpells2.Size = new System.Drawing.Size(33, 20);
-            this.textBoxKnownSpells2.TabIndex = 34;
-            this.textBoxKnownSpells2.Text = "-";
-            this.textBoxKnownSpells2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(204, 42);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(42, 13);
-            this.label29.TabIndex = 32;
-            this.label29.Text = "Level 2";
-            // 
-            // textBoxKnownSpells0
-            // 
-            this.textBoxKnownSpells0.Location = new System.Drawing.Point(56, 38);
-            this.textBoxKnownSpells0.Name = "textBoxKnownSpells0";
-            this.textBoxKnownSpells0.ReadOnly = true;
-            this.textBoxKnownSpells0.Size = new System.Drawing.Size(33, 20);
-            this.textBoxKnownSpells0.TabIndex = 30;
-            this.textBoxKnownSpells0.Text = "-";
-            this.textBoxKnownSpells0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(8, 41);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(42, 13);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "Level 0";
             // 
             // groupBox3
             // 
@@ -790,8 +571,6 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 11;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
@@ -1221,6 +1000,225 @@
             this.labelExtraSpells0.Text = "-";
             this.labelExtraSpells0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.textBoxKnownSpells9);
+            this.groupBox4.Controls.Add(this.textBoxKnownSpells8);
+            this.groupBox4.Controls.Add(this.textBoxKnownSpells3);
+            this.groupBox4.Controls.Add(this.label28);
+            this.groupBox4.Controls.Add(this.textBoxKnownSpells7);
+            this.groupBox4.Controls.Add(this.label32);
+            this.groupBox4.Controls.Add(this.textBoxKnownSpells1);
+            this.groupBox4.Controls.Add(this.label27);
+            this.groupBox4.Controls.Add(this.label34);
+            this.groupBox4.Controls.Add(this.label35);
+            this.groupBox4.Controls.Add(this.textBoxKnownSpells6);
+            this.groupBox4.Controls.Add(this.textBoxKnownSpells5);
+            this.groupBox4.Controls.Add(this.textBoxKnownSpells4);
+            this.groupBox4.Controls.Add(this.label33);
+            this.groupBox4.Controls.Add(this.label30);
+            this.groupBox4.Controls.Add(this.label31);
+            this.groupBox4.Controls.Add(this.textBoxKnownSpells2);
+            this.groupBox4.Controls.Add(this.label29);
+            this.groupBox4.Controls.Add(this.textBoxKnownSpells0);
+            this.groupBox4.Controls.Add(this.label26);
+            this.groupBox4.Location = new System.Drawing.Point(533, 19);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(237, 330);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Known Spells (Bard and Sorcerer only)";
+            // 
+            // textBoxKnownSpells9
+            // 
+            this.textBoxKnownSpells9.Location = new System.Drawing.Point(178, 287);
+            this.textBoxKnownSpells9.Name = "textBoxKnownSpells9";
+            this.textBoxKnownSpells9.ReadOnly = true;
+            this.textBoxKnownSpells9.Size = new System.Drawing.Size(33, 20);
+            this.textBoxKnownSpells9.TabIndex = 43;
+            this.textBoxKnownSpells9.Text = "-";
+            this.textBoxKnownSpells9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxKnownSpells8
+            // 
+            this.textBoxKnownSpells8.Location = new System.Drawing.Point(178, 230);
+            this.textBoxKnownSpells8.Name = "textBoxKnownSpells8";
+            this.textBoxKnownSpells8.ReadOnly = true;
+            this.textBoxKnownSpells8.Size = new System.Drawing.Size(33, 20);
+            this.textBoxKnownSpells8.TabIndex = 42;
+            this.textBoxKnownSpells8.Text = "-";
+            this.textBoxKnownSpells8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxKnownSpells3
+            // 
+            this.textBoxKnownSpells3.Location = new System.Drawing.Point(56, 230);
+            this.textBoxKnownSpells3.Name = "textBoxKnownSpells3";
+            this.textBoxKnownSpells3.ReadOnly = true;
+            this.textBoxKnownSpells3.Size = new System.Drawing.Size(33, 20);
+            this.textBoxKnownSpells3.TabIndex = 35;
+            this.textBoxKnownSpells3.Text = "-";
+            this.textBoxKnownSpells3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(8, 233);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(42, 13);
+            this.label28.TabIndex = 33;
+            this.label28.Text = "Level 3";
+            // 
+            // textBoxKnownSpells7
+            // 
+            this.textBoxKnownSpells7.Location = new System.Drawing.Point(178, 166);
+            this.textBoxKnownSpells7.Name = "textBoxKnownSpells7";
+            this.textBoxKnownSpells7.ReadOnly = true;
+            this.textBoxKnownSpells7.Size = new System.Drawing.Size(33, 20);
+            this.textBoxKnownSpells7.TabIndex = 35;
+            this.textBoxKnownSpells7.Text = "-";
+            this.textBoxKnownSpells7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(130, 169);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(42, 13);
+            this.label32.TabIndex = 33;
+            this.label32.Text = "Level 7";
+            // 
+            // textBoxKnownSpells1
+            // 
+            this.textBoxKnownSpells1.Location = new System.Drawing.Point(56, 102);
+            this.textBoxKnownSpells1.Name = "textBoxKnownSpells1";
+            this.textBoxKnownSpells1.ReadOnly = true;
+            this.textBoxKnownSpells1.Size = new System.Drawing.Size(33, 20);
+            this.textBoxKnownSpells1.TabIndex = 31;
+            this.textBoxKnownSpells1.Text = "-";
+            this.textBoxKnownSpells1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(8, 105);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(42, 13);
+            this.label27.TabIndex = 29;
+            this.label27.Text = "Level 1";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(130, 290);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(42, 13);
+            this.label34.TabIndex = 41;
+            this.label34.Text = "Level 9";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(130, 233);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(42, 13);
+            this.label35.TabIndex = 40;
+            this.label35.Text = "Level 8";
+            // 
+            // textBoxKnownSpells6
+            // 
+            this.textBoxKnownSpells6.Location = new System.Drawing.Point(178, 102);
+            this.textBoxKnownSpells6.Name = "textBoxKnownSpells6";
+            this.textBoxKnownSpells6.ReadOnly = true;
+            this.textBoxKnownSpells6.Size = new System.Drawing.Size(33, 20);
+            this.textBoxKnownSpells6.TabIndex = 34;
+            this.textBoxKnownSpells6.Text = "-";
+            this.textBoxKnownSpells6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxKnownSpells5
+            // 
+            this.textBoxKnownSpells5.Location = new System.Drawing.Point(178, 38);
+            this.textBoxKnownSpells5.Name = "textBoxKnownSpells5";
+            this.textBoxKnownSpells5.ReadOnly = true;
+            this.textBoxKnownSpells5.Size = new System.Drawing.Size(33, 20);
+            this.textBoxKnownSpells5.TabIndex = 39;
+            this.textBoxKnownSpells5.Text = "-";
+            this.textBoxKnownSpells5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxKnownSpells4
+            // 
+            this.textBoxKnownSpells4.Location = new System.Drawing.Point(56, 287);
+            this.textBoxKnownSpells4.Name = "textBoxKnownSpells4";
+            this.textBoxKnownSpells4.ReadOnly = true;
+            this.textBoxKnownSpells4.Size = new System.Drawing.Size(33, 20);
+            this.textBoxKnownSpells4.TabIndex = 38;
+            this.textBoxKnownSpells4.Text = "-";
+            this.textBoxKnownSpells4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(130, 105);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(42, 13);
+            this.label33.TabIndex = 32;
+            this.label33.Text = "Level 6";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(130, 41);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(42, 13);
+            this.label30.TabIndex = 37;
+            this.label30.Text = "Level 5";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(8, 290);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(42, 13);
+            this.label31.TabIndex = 36;
+            this.label31.Text = "Level 4";
+            // 
+            // textBoxKnownSpells2
+            // 
+            this.textBoxKnownSpells2.Location = new System.Drawing.Point(56, 166);
+            this.textBoxKnownSpells2.Name = "textBoxKnownSpells2";
+            this.textBoxKnownSpells2.ReadOnly = true;
+            this.textBoxKnownSpells2.Size = new System.Drawing.Size(33, 20);
+            this.textBoxKnownSpells2.TabIndex = 34;
+            this.textBoxKnownSpells2.Text = "-";
+            this.textBoxKnownSpells2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(8, 169);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(42, 13);
+            this.label29.TabIndex = 32;
+            this.label29.Text = "Level 2";
+            // 
+            // textBoxKnownSpells0
+            // 
+            this.textBoxKnownSpells0.Location = new System.Drawing.Point(56, 38);
+            this.textBoxKnownSpells0.Name = "textBoxKnownSpells0";
+            this.textBoxKnownSpells0.ReadOnly = true;
+            this.textBoxKnownSpells0.Size = new System.Drawing.Size(33, 20);
+            this.textBoxKnownSpells0.TabIndex = 30;
+            this.textBoxKnownSpells0.Text = "-";
+            this.textBoxKnownSpells0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(8, 41);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(42, 13);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Level 0";
+            // 
             // ctrlSpellcasting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1228,17 +1226,17 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ctrlSpellcasting";
-            this.Size = new System.Drawing.Size(558, 629);
+            this.Size = new System.Drawing.Size(821, 509);
             this.Load += new System.EventHandler(this.ctrlSpellcasting_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1254,27 +1252,6 @@
         private System.Windows.Forms.Label labelCharacterClass;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBoxKnownSpells9;
-        private System.Windows.Forms.TextBox textBoxKnownSpells8;
-        private System.Windows.Forms.TextBox textBoxKnownSpells3;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBoxKnownSpells7;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox textBoxKnownSpells1;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox textBoxKnownSpells6;
-        private System.Windows.Forms.TextBox textBoxKnownSpells5;
-        private System.Windows.Forms.TextBox textBoxKnownSpells4;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBoxKnownSpells2;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBoxKnownSpells0;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button buttonRegainSpells;
         private System.Windows.Forms.Button buttonCastLevel9;
@@ -1341,5 +1318,26 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelDC0;
         private System.Windows.Forms.Label labelExtraSpells0;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox textBoxKnownSpells9;
+        private System.Windows.Forms.TextBox textBoxKnownSpells8;
+        private System.Windows.Forms.TextBox textBoxKnownSpells3;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBoxKnownSpells7;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox textBoxKnownSpells1;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox textBoxKnownSpells6;
+        private System.Windows.Forms.TextBox textBoxKnownSpells5;
+        private System.Windows.Forms.TextBox textBoxKnownSpells4;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox textBoxKnownSpells2;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBoxKnownSpells0;
+        private System.Windows.Forms.Label label26;
     }
 }

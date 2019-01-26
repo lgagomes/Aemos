@@ -34,6 +34,7 @@
             this.btnSkillPoints = new System.Windows.Forms.Button();
             this.btnXpCalculator = new System.Windows.Forms.Button();
             this.btnDiceRoller = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSpellcasting
@@ -96,11 +97,22 @@
             this.btnDiceRoller.UseVisualStyleBackColor = true;
             this.btnDiceRoller.Click += new System.EventHandler(this.btnDiceRoller_Click);
             // 
+            // btnAbout
+            // 
+            this.btnAbout.Location = new System.Drawing.Point(127, 252);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(149, 41);
+            this.btnAbout.TabIndex = 6;
+            this.btnAbout.Text = "About";
+            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
             // frmMainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 249);
+            this.ClientSize = new System.Drawing.Size(409, 305);
+            this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnDiceRoller);
             this.Controls.Add(this.btnXpCalculator);
             this.Controls.Add(this.btnSkillPoints);
@@ -123,6 +135,7 @@
         private System.Windows.Forms.Button btnSkillPoints;
         private System.Windows.Forms.Button btnXpCalculator;
         private System.Windows.Forms.Button btnDiceRoller;
+        private System.Windows.Forms.Button btnAbout;
     }
 }
 
