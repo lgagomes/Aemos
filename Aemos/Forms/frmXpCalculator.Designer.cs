@@ -44,6 +44,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 234);
             this.Controls.Add(this.ctrlXpCalculator1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmXpCalculator";
             this.Text = "Xp Calculator";
             this.ResumeLayout(false);

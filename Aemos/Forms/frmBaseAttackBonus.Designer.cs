@@ -53,6 +53,8 @@
             this.ClientSize = new System.Drawing.Size(558, 227);
             this.Controls.Add(this.ctrlBaseAttackBonus1);
             this.Controls.Add(this.ctrlCharInputHeader1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmBaseAttackBonus";
             this.Text = "Base Attack Bonus";
             this.Load += new System.EventHandler(this.frmBaseAttackBonus_Load);

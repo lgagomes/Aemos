@@ -38,7 +38,7 @@
             // 
             // btnSpellcasting
             // 
-            this.btnSpellcasting.Location = new System.Drawing.Point(17, 45);
+            this.btnSpellcasting.Location = new System.Drawing.Point(17, 19);
             this.btnSpellcasting.Name = "btnSpellcasting";
             this.btnSpellcasting.Size = new System.Drawing.Size(149, 41);
             this.btnSpellcasting.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // btnCarrying
             // 
-            this.btnCarrying.Location = new System.Drawing.Point(241, 45);
+            this.btnCarrying.Location = new System.Drawing.Point(241, 19);
             this.btnCarrying.Name = "btnCarrying";
             this.btnCarrying.Size = new System.Drawing.Size(149, 41);
             this.btnCarrying.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // btnBaseAttack
             // 
-            this.btnBaseAttack.Location = new System.Drawing.Point(17, 128);
+            this.btnBaseAttack.Location = new System.Drawing.Point(17, 102);
             this.btnBaseAttack.Name = "btnBaseAttack";
             this.btnBaseAttack.Size = new System.Drawing.Size(149, 41);
             this.btnBaseAttack.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             // btnSkillPoints
             // 
-            this.btnSkillPoints.Location = new System.Drawing.Point(241, 128);
+            this.btnSkillPoints.Location = new System.Drawing.Point(241, 102);
             this.btnSkillPoints.Name = "btnSkillPoints";
             this.btnSkillPoints.Size = new System.Drawing.Size(149, 41);
             this.btnSkillPoints.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             // btnXpCalculator
             // 
-            this.btnXpCalculator.Location = new System.Drawing.Point(17, 210);
+            this.btnXpCalculator.Location = new System.Drawing.Point(17, 184);
             this.btnXpCalculator.Name = "btnXpCalculator";
             this.btnXpCalculator.Size = new System.Drawing.Size(149, 41);
             this.btnXpCalculator.TabIndex = 4;
@@ -88,7 +88,7 @@
             // 
             // btnDiceRoller
             // 
-            this.btnDiceRoller.Location = new System.Drawing.Point(241, 210);
+            this.btnDiceRoller.Location = new System.Drawing.Point(241, 184);
             this.btnDiceRoller.Name = "btnDiceRoller";
             this.btnDiceRoller.Size = new System.Drawing.Size(149, 41);
             this.btnDiceRoller.TabIndex = 5;
@@ -100,13 +100,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 282);
+            this.ClientSize = new System.Drawing.Size(409, 249);
             this.Controls.Add(this.btnDiceRoller);
             this.Controls.Add(this.btnXpCalculator);
             this.Controls.Add(this.btnSkillPoints);
             this.Controls.Add(this.btnBaseAttack);
             this.Controls.Add(this.btnCarrying);
             this.Controls.Add(this.btnSpellcasting);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmMainScreen";
             this.Text = "Aemos";
             this.ResumeLayout(false);

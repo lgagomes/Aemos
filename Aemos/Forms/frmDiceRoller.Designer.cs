@@ -44,6 +44,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1117, 375);
             this.Controls.Add(this.ctrlDiceRoller1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmDiceRoller";
             this.Text = "Dice Roller";
             this.ResumeLayout(false);

@@ -44,6 +44,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 492);
             this.Controls.Add(this.ctrlXpProgression1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmXpProgression";
             this.Text = "Xp Progression";
             this.ResumeLayout(false);

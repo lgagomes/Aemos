@@ -53,6 +53,8 @@
             this.ClientSize = new System.Drawing.Size(564, 338);
             this.Controls.Add(this.ctrlCharInputHeader1);
             this.Controls.Add(this.ctrlSkillPoints1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmSkillPoints";
             this.Text = "Skill Points";
             this.Load += new System.EventHandler(this.frmSkillPoints_Load);
