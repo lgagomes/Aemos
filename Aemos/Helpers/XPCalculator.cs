@@ -4,9 +4,11 @@ namespace Aemos.Helpers
 {
     public class XPCalculator
     {
+        private const int XP_CONSTANT = 500;
+
         public long CalculateXPByLevel(long level)
         {
-            return level * (level - 1) * 500;
+            return level * (level - 1) * XP_CONSTANT;
         }
 
         public long CalculateLevelByXP(long xpAmmount)
@@ -24,7 +26,7 @@ namespace Aemos.Helpers
              * Math.Abs((-b + squareRootDelta) / (2 * a)) + 1 or simply 
              * (-b - squareRootDelta) / (2 * a) */
 
-            long a = -500, b = 500, delta, squareRootDelta, res;
+            long a = -XP_CONSTANT, b = XP_CONSTANT, delta, squareRootDelta, res;
 
             delta = GetDelta(a, b, xpAmmount);
             squareRootDelta = (long)Math.Sqrt(delta);

@@ -10,7 +10,7 @@ namespace Aemos.Helpers
         public int NumberOfRolls { get; set; }
         public int NumberOfDiceFaces { get; set; }
         public int Modifier { get; set; } = 0;
-        public bool AddEachRoll { get; set; }
+        public bool AddEachRoll { get; set; } // defines if we add the modifier after all rolls or after each roll separately
         private Dice Dice { get; set; }
 
         public void AccumulateValues()
@@ -27,11 +27,7 @@ namespace Aemos.Helpers
             }
 
             TotalRolledValues = Rolls.Sum();
-
-            /* if "addEachRoll" is true, "modifier" is added on each roll separately, or in this case, we just 
-             * get "modifier * numberOfRolls", which has the same effect
-             * 
-             * if "addEachRoll" is false, "modifier" is added only after all rolls are obtained */
+           
             if (!AddEachRoll)
                 TotalRolledValues += Modifier;
             else
