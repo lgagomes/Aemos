@@ -196,7 +196,7 @@ namespace Aemos.UserControls
             else
             {
                 _selector.Select(_currentSpellcaster, labelBaseScore.Text, Convert.ToInt32(textBoxKeyAttribute.Text));
-                _currentSpellcaster.UpdateSpellsDC();
+                _currentSpellcaster.GetSpellsDC();
 
                 int i = 0;
                 foreach (var item in _spellDCs)
@@ -212,7 +212,7 @@ namespace Aemos.UserControls
         private void ShowExtraSpells()
         {
             _selector.Select(_currentSpellcaster, labelBaseScore.Text, Convert.ToInt32(textBoxKeyAttribute.Text));
-            _currentSpellcaster.UpdateExtraSpells();
+            _currentSpellcaster.GetExtraSpells();
 
             int i = 0;
             foreach (var item in _extraSpells)
@@ -232,7 +232,7 @@ namespace Aemos.UserControls
 
         private void LoadSpells()
         {
-            _currentSpellcaster.UpdateSpellsPerDay();
+            _currentSpellcaster.GetSpellsPerDay();
         }
 
         private void FillSpellcyclesTextBox()

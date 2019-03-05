@@ -31,7 +31,7 @@ namespace Aemos.CharacterClasses
                     DailySpells[i, j] = -1;
         }
 
-        public void UpdateSpellsPerDay()
+        public void GetSpellsPerDay()
         {
             try
             {
@@ -57,13 +57,13 @@ namespace Aemos.CharacterClasses
             }
         }
 
-        public void UpdateExtraSpells()
+        public void GetExtraSpells()
         {
             for (int i = 1; i < MaxSpellCycle; i++)
                 ExtraSpells[i] = Math.Ceiling((KeyAttributeModifier - (i - 1)) / 4);
         }
 
-        public void UpdateSpellsDC()
+        public void GetSpellsDC()
         {
             for (int i = FirstDC; i < MaxSpellCycle; i++)
                 SpellsDC[i] = 10 + (int)KeyAttributeModifier + i;
