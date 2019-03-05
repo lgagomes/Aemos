@@ -34,7 +34,7 @@ namespace AemosUnitTest
             try
             {
                 // Act
-                bard.UpdateSpellsPerDay();
+                bard.GetSpellsPerDay();
 
                 // Assert            
                 Assert.Equal(SpellsPerDayBard, bard.DailySpells);
@@ -71,7 +71,7 @@ namespace AemosUnitTest
             try
             {
                 // Act
-                sorcerer.UpdateSpellsPerDay();
+                sorcerer.GetSpellsPerDay();
 
                 // Assert            
                 Assert.Equal(SpellsPerDaySorcerer, sorcerer.DailySpells);
@@ -107,7 +107,7 @@ namespace AemosUnitTest
             try
             {
                 // Act
-                cleric.UpdateSpellsPerDay();
+                cleric.GetSpellsPerDay();
 
                 // Assert            
                 Assert.Equal(SpellsPerDayCleric, cleric.DailySpells);
@@ -144,7 +144,7 @@ namespace AemosUnitTest
             try
             {
                 // Act
-                druid.UpdateSpellsPerDay();
+                druid.GetSpellsPerDay();
 
                 // Assert            
                 Assert.Equal(SpellsPerDayDruid, druid.DailySpells);
@@ -181,7 +181,7 @@ namespace AemosUnitTest
             try
             {
                 // Act
-                wizard.UpdateSpellsPerDay();
+                wizard.GetSpellsPerDay();
 
                 // Assert            
                 Assert.Equal(SpellsPerDayWizard, wizard.DailySpells);
@@ -218,7 +218,7 @@ namespace AemosUnitTest
             try
             {
                 // Act
-                paladin.UpdateSpellsPerDay();
+                paladin.GetSpellsPerDay();
 
                 // Assert            
                 Assert.Equal(SpellsPerDayPaladin, paladin.DailySpells);
@@ -255,7 +255,7 @@ namespace AemosUnitTest
             try
             {
                 // Act
-                ranger.UpdateSpellsPerDay();
+                ranger.GetSpellsPerDay();
 
                 // Assert           
                 Assert.Equal(SpellsPerDayRanger, ranger.DailySpells);
@@ -275,7 +275,7 @@ namespace AemosUnitTest
             try
             {
                 // Act
-                bard.UpdateSpellsPerDay();
+                bard.GetSpellsPerDay();
 
                 // Assert            
                 returnedSpellsPerDay = Enumerable.Range(0, bard.DailySpells.GetLength(0))
@@ -297,7 +297,7 @@ namespace AemosUnitTest
             decimal[] extraSpells = new decimal[10] { 0, 3, 3, 3, 2, 2, 2, -1, -1, -1 };
 
             // Act
-            bard.UpdateExtraSpells();
+            bard.GetExtraSpells();
 
             // Assert
             Assert.Equal(extraSpells, bard.ExtraSpells);
@@ -311,7 +311,7 @@ namespace AemosUnitTest
             int[] spellsDc = new int[10] { 21, 22, 23, 24, 25, 26, 27, -1, -1, -1 };
 
             // Act
-            bard.UpdateSpellsDC();
+            bard.GetSpellsDC();
 
             // Assert
             Assert.Equal(spellsDc, bard.SpellsDC);
@@ -421,7 +421,7 @@ namespace AemosUnitTest
             try
             {
                 // Act
-                cleric.UpdateSpellsPerDay();
+                cleric.GetSpellsPerDay();
                 cleric.CastSpell(cleric.CharacterLevel, spellCycle);
 
                 // Assert            
