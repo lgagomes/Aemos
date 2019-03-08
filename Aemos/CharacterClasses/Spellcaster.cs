@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aemos.Repository;
+using System;
 using System.Data;
 using System.Windows.Forms;
 using System.Xml;
@@ -14,6 +15,7 @@ namespace Aemos.CharacterClasses
         public decimal[] ExtraSpells { get; set; }
         public int[,] DailySpells { get; set; }
         public int FirstDC { get; set; }
+        public int [] CurrentDailySpells { get; set;}
 
         public Spellcaster()
         {
@@ -57,6 +59,11 @@ namespace Aemos.CharacterClasses
             }
         }
 
+        public void GetSpellsPerDayDB()
+        {
+            CurrentDailySpells = SpellsRepository.GetSpellsPerDay(ClassName, CharacterLevel, MaxSpellCycle);
+        }
+
         public void GetExtraSpells()
         {
             for (int i = 1; i < MaxSpellCycle; i++)
@@ -78,6 +85,12 @@ namespace Aemos.CharacterClasses
             }
             else
                 return false;                   
+        }
+
+        public void CastSpell(int spellCycle)
+        {
+            if (CurrentDailySpells[spellCycle] > 0)
+                CurrentDailySpells[spellCycle]--;
         }
     }
 }
