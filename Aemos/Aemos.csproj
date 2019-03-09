@@ -140,6 +140,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SpellsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ctrlBaseAttackBonus.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -221,6 +226,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Resources\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ctrlBaseAttackBonus.resx">
       <DependentUpon>ctrlBaseAttackBonus.cs</DependentUpon>
     </EmbeddedResource>

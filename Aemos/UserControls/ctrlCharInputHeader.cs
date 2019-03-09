@@ -36,17 +36,17 @@ namespace Aemos.UserControls
         private void InitializeClasses()
         {
             comboBoxHeaderClasses.Items.Add("Choose a Class");
-            comboBoxHeaderClasses.Items.Add("barbarian");
-            comboBoxHeaderClasses.Items.Add("bard");
-            comboBoxHeaderClasses.Items.Add("cleric");
-            comboBoxHeaderClasses.Items.Add("druid");
-            comboBoxHeaderClasses.Items.Add("monk");
-            comboBoxHeaderClasses.Items.Add("paladin");
-            comboBoxHeaderClasses.Items.Add("ranger");
-            comboBoxHeaderClasses.Items.Add("rogue");
-            comboBoxHeaderClasses.Items.Add("sorcerer");
-            comboBoxHeaderClasses.Items.Add("warrior");
-            comboBoxHeaderClasses.Items.Add("wizard");
+            comboBoxHeaderClasses.Items.Add("Barbarian");
+            comboBoxHeaderClasses.Items.Add("Bard");
+            comboBoxHeaderClasses.Items.Add("Cleric");
+            comboBoxHeaderClasses.Items.Add("Druid");
+            comboBoxHeaderClasses.Items.Add("Monk");
+            comboBoxHeaderClasses.Items.Add("Paladin");
+            comboBoxHeaderClasses.Items.Add("Ranger");
+            comboBoxHeaderClasses.Items.Add("Rogue");
+            comboBoxHeaderClasses.Items.Add("Sorcerer");
+            comboBoxHeaderClasses.Items.Add("Warrior");
+            comboBoxHeaderClasses.Items.Add("Wizard");
         }
 
         private void InitializeLevels()

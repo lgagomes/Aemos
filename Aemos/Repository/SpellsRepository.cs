@@ -8,7 +8,7 @@ namespace Aemos.Repository
 {
     public static class SpellsRepository
     {
-        public static int[] GetSpellsPerDay(string className, int characterLevel, int maxSpellCycle)
+        public static int[] GetSpells(string className, int characterLevel, int maxSpellCycle, string tableComplement)
         {
             int[] spells = new int[10] { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 };
 
@@ -22,12 +22,11 @@ namespace Aemos.Repository
                     {
                         using (var sqlCommand = new SqlCommand())
                         {
-                            string classNameTable = FormatClassName(className);
                             sqlCommand.Connection = connection;
                             sqlCommand.CommandText = 
                                     $"SELECT * " +
-                                    $"FROM {classNameTable}DailySpells " +
-                                    $"WHERE {classNameTable}DailySpells.Id = {characterLevel}";
+                                    $"FROM {className}{tableComplement} " +
+                                    $"WHERE {className}{tableComplement}.Id = {characterLevel}";
 
                             using (var reader = sqlCommand.ExecuteReader())
                             {
@@ -48,11 +47,6 @@ namespace Aemos.Repository
                 WarningMessage.ShowWarningMessage(ex.Message);
             }
             return spells;
-        }
-
-        private static string FormatClassName(string className)
-        {
-            return $"{className.First().ToString().ToUpper()}{className.Substring(1)}";
         }
     }
 }

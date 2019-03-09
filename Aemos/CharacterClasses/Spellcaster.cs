@@ -1,8 +1,5 @@
 ﻿using Aemos.Repository;
 using System;
-using System.Data;
-using System.Windows.Forms;
-using System.Xml;
 
 namespace Aemos.CharacterClasses
 {
@@ -23,9 +20,9 @@ namespace Aemos.CharacterClasses
             KeyAttributeModifier = 0;
         }
 
-        public void GetSpellsPerDay()
+        public void GetDailySpells()
         {
-            CurrentDailySpells = SpellsRepository.GetSpellsPerDay(ClassName, CharacterLevel, MaxSpellCycle);
+            CurrentDailySpells = SpellsRepository.GetSpells(ClassName, CharacterLevel, MaxSpellCycle, Resources.Resources.DailySpellsComplement);
         }
 
         public void GetExtraSpells()

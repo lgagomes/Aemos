@@ -4,7 +4,7 @@
     {
         public Bard(string classname)
         {
-            ClassName = classname.ToLower();
+            ClassName = classname;
             MaxSpellCycle = 7;
             FirstDC = 0;
             KeyAttribute = "Charisma";

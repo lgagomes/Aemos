@@ -44,17 +44,17 @@ namespace Aemos.UserControls
 
         private void InstantiateClasses()
         {
-            Barbarian barbarian = new Barbarian("barbarian");
-            Bard bard = new Bard("bard");
-            Cleric cleric = new Cleric("cleric");
-            Druid druid = new Druid("druid");
-            Monk monk = new Monk("monk");
-            Paladin paladin = new Paladin("paladin");
-            Ranger ranger = new Ranger("ranger");
-            Rogue rogue = new Rogue("rogue");
-            Sorcerer sorcerer = new Sorcerer("sorcerer");
-            Warrior warrior = new Warrior("warrior");
-            Wizard wizard = new Wizard("wizard");
+            Barbarian barbarian = new Barbarian("Barbarian");
+            Bard bard = new Bard("Bard");
+            Cleric cleric = new Cleric("Cleric");
+            Druid druid = new Druid("Druid");
+            Monk monk = new Monk("Monk");
+            Paladin paladin = new Paladin("Paladin");
+            Ranger ranger = new Ranger("Ranger");
+            Rogue rogue = new Rogue("Rogue");
+            Sorcerer sorcerer = new Sorcerer("Sorcerer");
+            Warrior warrior = new Warrior("Warrior");
+            Wizard wizard = new Wizard("Wizard");
 
             AddClass(barbarian);            
             AddClass(bard);

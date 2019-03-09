@@ -26,6 +26,7 @@ namespace Aemos.UserControls
             InitializeComponent();
         }
 
+        #region Initializations
         private void ctrlSpellcasting_Load(object sender, EventArgs e)
         {
             InitializeListsAndArrays();
@@ -37,8 +38,7 @@ namespace Aemos.UserControls
             InitializeClasses();            
             InitializeCastButtons(); 
         }
-
-        #region Initializations
+        
         private void InitializeListsAndArrays()
         {
             _spellcastersList = new List<Spellcaster>();
@@ -233,7 +233,7 @@ namespace Aemos.UserControls
         private void LoadSpells()
         {
             _currentSpellcaster.CharacterLevel = Convert.ToInt32(comboBoxLevel.Text);
-            _currentSpellcaster.GetSpellsPerDay();
+            _currentSpellcaster.GetDailySpells();
         }
 
         private void FillSpellcyclesTextBox()
@@ -251,15 +251,14 @@ namespace Aemos.UserControls
             if (signal)
             {
                 KnowlerOfSpells character = _knowlers.Find(x => x.ClassName == comboBoxClasses.Text.ToString());
-                int level = Convert.ToInt32(comboBoxLevel.Text);
-
-                character.UpdateKnownSpells();
+                character.CharacterLevel = Convert.ToInt32(comboBoxLevel.Text);
+                character.GetKnownSpells();
 
                 int i = 0;
                 foreach (var item in _knownSpells)
                 {
-                    item.Text = (character.KnownSpells[level - 1, i] > 0)
-                        ? character.KnownSpells[level - 1, i].ToString()
+                    item.Text = (character.CurrentKnownSpells[i] > 0)
+                        ? character.CurrentKnownSpells[i].ToString()
                         : "-";
                     i++;
                 }

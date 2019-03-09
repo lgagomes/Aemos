@@ -22,7 +22,7 @@ namespace AemosTesterForms
         {
             Cleric character = new Cleric("Cleric");
             character.CharacterLevel = 20;
-            character.GetSpellsPerDay();
+            character.GetDailySpells();
 
             PrintSpells(character.CurrentDailySpells);
         }
@@ -31,7 +31,7 @@ namespace AemosTesterForms
         {
             Cleric character = new Cleric("Cleric");
             character.CharacterLevel = 20;
-            character.GetSpellsPerDay();
+            character.GetDailySpells();
 
             PrintSpells(character.CurrentDailySpells);
 

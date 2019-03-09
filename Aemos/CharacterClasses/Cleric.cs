@@ -4,7 +4,7 @@
     {
         public Cleric(string classname)
         {
-            ClassName = classname.ToLower();
+            ClassName = classname;
             MaxSpellCycle = 10;
             FirstDC = 0;
             KeyAttribute = "Wisdom";

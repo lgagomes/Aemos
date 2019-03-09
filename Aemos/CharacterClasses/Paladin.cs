@@ -4,7 +4,7 @@
     {
         public Paladin(string classname)
         {
-            ClassName = classname.ToLower();
+            ClassName = classname;
             MaxSpellCycle = 5;
             FirstDC = 1;
             KeyAttribute = "Charisma";
