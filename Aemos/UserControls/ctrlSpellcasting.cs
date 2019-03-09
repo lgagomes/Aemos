@@ -233,7 +233,7 @@ namespace Aemos.UserControls
         private void LoadSpells()
         {
             _currentSpellcaster.CharacterLevel = Convert.ToInt32(comboBoxLevel.Text);
-            _currentSpellcaster.GetSpellsPerDayDB();
+            _currentSpellcaster.GetSpellsPerDay();
         }
 
         private void FillSpellcyclesTextBox()
