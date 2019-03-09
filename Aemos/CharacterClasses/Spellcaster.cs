@@ -87,10 +87,17 @@ namespace Aemos.CharacterClasses
                 return false;                   
         }
 
-        public void CastSpell(int spellCycle)
+        public bool CastSpell(int spellCycle)
         {
             if (CurrentDailySpells[spellCycle] > 0)
+            {
                 CurrentDailySpells[spellCycle]--;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

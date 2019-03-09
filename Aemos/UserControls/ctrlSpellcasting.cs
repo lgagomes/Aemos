@@ -232,17 +232,16 @@ namespace Aemos.UserControls
 
         private void LoadSpells()
         {
-            _currentSpellcaster.GetSpellsPerDay();
+            _currentSpellcaster.CharacterLevel = Convert.ToInt32(comboBoxLevel.Text);
+            _currentSpellcaster.GetSpellsPerDayDB();
         }
 
         private void FillSpellcyclesTextBox()
         {
-            int level = Convert.ToInt32(comboBoxLevel.Text);
-
             for (int i = 0; i < _spellsPerDay.Length; i++)
             {
-                _spellsPerDay[i].Text = (_currentSpellcaster.DailySpells[level - 1, i] > 0)
-                    ? _currentSpellcaster.DailySpells[level - 1, i].ToString()
+                _spellsPerDay[i].Text = (_currentSpellcaster.CurrentDailySpells[i] > 0)
+                    ? _currentSpellcaster.CurrentDailySpells[i].ToString()
                     : "-";
             }
         }
@@ -294,14 +293,13 @@ namespace Aemos.UserControls
         private void Cast(object sender, EventArgs e)
         {
             Button buttonSender = sender as Button;
-            string buttonName = buttonSender.Name;
-            int spellCycle = (int)char.GetNumericValue(buttonName[buttonName.Length - 1]);
-            int level = Convert.ToInt32(comboBoxLevel.Text);
-
-            bool castStatus = _currentSpellcaster.CastSpell(level, spellCycle);
+            int spellCycle = GetSpellCycleFromButton(buttonSender.Name);
+            bool castStatus = _currentSpellcaster.CastSpell(spellCycle);
 
             if (castStatus)
-                _spellsPerDay[spellCycle].Text = _currentSpellcaster.DailySpells[level - 1, spellCycle].ToString();
+            {
+                _spellsPerDay[spellCycle].Text = _currentSpellcaster.CurrentDailySpells[spellCycle].ToString();
+            }
             else
             {
                 WarningMessage.ShowWarningMessage("You don't have enough spells slots or " +
@@ -310,6 +308,11 @@ namespace Aemos.UserControls
                 _spellsPerDay[spellCycle].Text = "-";
                 buttonSender.Enabled = false;
             }
+        }
+
+        private int GetSpellCycleFromButton(string buttonName)
+        {
+            return (int)char.GetNumericValue(buttonName[buttonName.Length - 1]);
         }
 
         private void comboBoxClasses_SelectedIndexChanged(object sender, EventArgs e)
