@@ -65,7 +65,7 @@ namespace Aemos.Repository
 
                         sqlCommand.Parameters.AddWithValue("@Name", $"%{spellFIlter.SpellName}%");
 
-                        if (string.IsNullOrWhiteSpace(spellFIlter.ClassLevel))
+                        if (!string.IsNullOrWhiteSpace(spellFIlter.ClassLevel))
                         {
                             sqlCommand.Parameters.AddWithValue("@Level", $"%{spellFIlter.ClassName} {spellFIlter.ClassLevel}%");
                         }
