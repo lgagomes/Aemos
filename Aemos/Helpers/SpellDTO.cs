@@ -33,6 +33,5 @@ namespace Aemos.Helpers
         public string DruidFocus { get; set; }
         public string SorcererFocus { get; set; }
         public string WizardFocus { get; set; }
-        public string Source { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Aemos.Helpers;
+using Aemos.Repository;
 using System;
 using System.Windows.Forms;
 
@@ -67,6 +68,7 @@ namespace Aemos.UserControls
             {
                 SpellFIlter spellFIlter = new SpellFIlter();
                 PrepareFilter(spellFIlter);
+                var ret = SpellsRepository.GetSpellsDetailed(spellFIlter);
             }
         }
 

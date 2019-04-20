@@ -120,6 +120,42 @@
   <data name="DailySpellsComplement" xml:space="preserve">
     <value>DailySpells</value>
   </data>
+  <data name="GetSpellsDetailed" xml:space="preserve">
+    <value>SELECT 
+	   Id,
+	   Name,
+	   School,
+	   SubSchool,
+	   Descriptor,
+	   Level,
+	   Components,
+	   CastingTime,
+	   Range,
+	   Target,
+	   Effect,
+	   Area,
+	   Duration,
+	   SavingThrow,
+	   SpellResistance,
+	   BriefDescription,
+	   MaterialComponents,
+	   ArcaneMaterialComponents,
+	   XpCost,
+	   Focus,
+	   ArcaneFocus,
+	   BardFocus,
+	   ClericFocus,
+	   DruidFocus,
+	   SorcererFocus,
+	   WizardFocus
+FROM
+	  SpellsCompendium
+
+WHERE 
+	  Name LIKE @Name
+	  AND Level LIKE @Level
+	  AND School LIKE @School</value>
+  </data>
   <data name="KnownSpellsComplement" xml:space="preserve">
     <value>KnownSpells</value>
   </data>

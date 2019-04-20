@@ -12174,4 +12174,8 @@ SELECT  name, school, subschool, descriptor,level,
 FROM spell
 GO
 
+UPDATE SpellsCompendium
+SET Level = ''
+WHERE Level IS NULL
+
 DROP TABLE spell

@@ -70,6 +70,47 @@ namespace Aemos.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SELECT 
+        ///	   Id,
+        ///	   Name,
+        ///	   School,
+        ///	   SubSchool,
+        ///	   Descriptor,
+        ///	   Level,
+        ///	   Components,
+        ///	   CastingTime,
+        ///	   Range,
+        ///	   Target,
+        ///	   Effect,
+        ///	   Area,
+        ///	   Duration,
+        ///	   SavingThrow,
+        ///	   SpellResistance,
+        ///	   BriefDescription,
+        ///	   MaterialComponents,
+        ///	   ArcaneMaterialComponents,
+        ///	   XpCost,
+        ///	   Focus,
+        ///	   ArcaneFocus,
+        ///	   BardFocus,
+        ///	   ClericFocus,
+        ///	   DruidFocus,
+        ///	   SorcererFocus,
+        ///	   WizardFocus
+        ///FROM
+        ///	  SpellsCompendium
+        ///
+        ///WHERE 
+        ///	  Name LIKE @Name
+        ///	  AND Level LIKE @ [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string GetSpellsDetailed {
+            get {
+                return ResourceManager.GetString("GetSpellsDetailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a KnownSpells.
         /// </summary>
         internal static string KnownSpellsComplement {

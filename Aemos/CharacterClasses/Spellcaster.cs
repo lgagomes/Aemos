@@ -22,7 +22,7 @@ namespace Aemos.CharacterClasses
 
         public void GetDailySpells()
         {
-            CurrentDailySpells = SpellsRepository.GetSpells(ClassName, CharacterLevel, MaxSpellCycle, Resources.SpellResources.DailySpellsComplement);
+            CurrentDailySpells = SpellsRepository.GetSpellsSlots(ClassName, CharacterLevel, MaxSpellCycle, Resources.SpellResources.DailySpellsComplement);
         }
 
         public void GetExtraSpells()
