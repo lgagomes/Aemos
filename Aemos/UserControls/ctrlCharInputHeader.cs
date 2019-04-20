@@ -23,14 +23,7 @@ namespace Aemos.UserControls
         private void ctrlCharInputHeader_Load(object sender, EventArgs e)
         {
             InitializeClasses();
-            _canFireClassChangeEvent = false;
-            comboBoxHeaderClasses.SelectedIndex = 0;
-            _canFireClassChangeEvent = true;
-
             InitializeLevels();
-            _canFireLevelChangeEvent = false;
-            comboBoxHeaderLevel.SelectedIndex = 0;
-            _canFireLevelChangeEvent = true;
         }
 
         private void InitializeClasses()
@@ -47,12 +40,20 @@ namespace Aemos.UserControls
             comboBoxHeaderClasses.Items.Add("Sorcerer");
             comboBoxHeaderClasses.Items.Add("Warrior");
             comboBoxHeaderClasses.Items.Add("Wizard");
+
+            _canFireClassChangeEvent = false;
+            comboBoxHeaderClasses.SelectedIndex = 0;
+            _canFireClassChangeEvent = true;
         }
 
         private void InitializeLevels()
         {
             for (int i = 1; i <= 20; i++)
                 comboBoxHeaderLevel.Items.Add(i.ToString());
+
+            _canFireLevelChangeEvent = false;
+            comboBoxHeaderLevel.SelectedIndex = 0;
+            _canFireLevelChangeEvent = true;
         }
 
         public void SetLabels(string attributeScore)

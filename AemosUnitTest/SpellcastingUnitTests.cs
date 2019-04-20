@@ -11,33 +11,15 @@ namespace AemosUnitTest
         {
             // Arrange
             Bard bard = new Bard("bard");
-            int[,] SpellsPerDayBard = new int[20, 10] { {2,0,0,0,0,0,0,0,0,0},
-                                                    {3,0,0,0,0,0,0,0,0,0},
-                                                    {3,1,0,0,0,0,0,0,0,0},
-                                                    {3,2,0,0,0,0,0,0,0,0},
-                                                    {3,3,1,0,0,0,0,0,0,0},
-                                                    {3,3,2,0,0,0,0,0,0,0},
-                                                    {3,3,2,0,0,0,0,0,0,0},
-                                                    {3,3,3,1,0,0,0,0,0,0},
-                                                    {3,3,3,2,0,0,0,0,0,0},
-                                                    {3,3,3,2,0,0,0,0,0,0},
-                                                    {3,3,3,3,1,0,0,0,0,0},
-                                                    {3,3,3,3,2,0,0,0,0,0},
-                                                    {3,3,3,3,2,0,0,0,0,0},
-                                                    {4,3,3,3,3,1,0,0,0,0},
-                                                    {4,4,3,3,3,2,0,0,0,0},
-                                                    {4,4,4,3,3,2,0,0,0,0},
-                                                    {4,4,4,4,3,3,1,0,0,0},
-                                                    {4,4,4,4,4,3,2,0,0,0},
-                                                    {4,4,4,4,4,4,3,0,0,0},
-                                                    {4,4,4,4,4,4,4,0,0,0}};
+            bard.CharacterLevel = 5;
+            int[] SpellsPerDayBard = new int[] { 3, 3, 1, 0, 0, 0, 0, 0, 0, 0 };
             try
             {
                 // Act
                 bard.GetDailySpells();
 
                 // Assert            
-                Assert.Equal(SpellsPerDayBard, bard.DailySpells);
+                Assert.Equal(SpellsPerDayBard, bard.CurrentDailySpells);
             }
             catch { }
         }
@@ -47,26 +29,8 @@ namespace AemosUnitTest
         {
             // Arrange
             Sorcerer sorcerer = new Sorcerer("sorcerer");
-            int[,] SpellsPerDaySorcerer = new int[20, 10] { {5,3,0,0,0,0,0,0,0,0},
-                                                            {6,4,0,0,0,0,0,0,0,0},
-                                                            {6,5,0,0,0,0,0,0,0,0},
-                                                            {6,6,3,0,0,0,0,0,0,0},
-                                                            {6,6,4,0,0,0,0,0,0,0},
-                                                            {6,6,5,3,0,0,0,0,0,0},
-                                                            {6,6,6,4,0,0,0,0,0,0},
-                                                            {6,6,6,5,3,0,0,0,0,0},
-                                                            {6,6,6,6,4,0,0,0,0,0},
-                                                            {6,6,6,6,5,3,0,0,0,0},
-                                                            {6,6,6,6,6,4,0,0,0,0},
-                                                            {6,6,6,6,6,5,3,0,0,0},
-                                                            {6,6,6,6,6,6,4,0,0,0},
-                                                            {6,6,6,6,6,6,5,3,0,0},
-                                                            {6,6,6,6,6,6,6,4,0,0},
-                                                            {6,6,6,6,6,6,6,5,3,0},
-                                                            {6,6,6,6,6,6,6,6,4,0},
-                                                            {6,6,6,6,6,6,6,6,5,3},
-                                                            {6,6,6,6,6,6,6,6,6,4},
-                                                            {6,6,6,6,6,6,6,6,6,6}};
+            sorcerer.CharacterLevel = 10;
+            int[] SpellsPerDaySorcerer = new int[] { 6, 6, 6, 6, 5, 3, 0, 0, 0, 0 };
 
             try
             {
@@ -74,7 +38,7 @@ namespace AemosUnitTest
                 sorcerer.GetDailySpells();
 
                 // Assert            
-                Assert.Equal(SpellsPerDaySorcerer, sorcerer.DailySpells);
+                Assert.Equal(SpellsPerDaySorcerer, sorcerer.CurrentDailySpells);
             }
             catch { }
         }
@@ -84,33 +48,16 @@ namespace AemosUnitTest
         {
             // Arrange
             Cleric cleric = new Cleric("cleric");
-            int[,] SpellsPerDayCleric = new int[20, 10] {   {3,1,0,0,0,0,0,0,0,0},
-                                                            {4,2,0,0,0,0,0,0,0,0},
-                                                            {4,2,1,0,0,0,0,0,0,0},
-                                                            {5,3,2,0,0,0,0,0,0,0},
-                                                            {5,3,2,1,0,0,0,0,0,0},
-                                                            {5,3,3,2,0,0,0,0,0,0},
-                                                            {6,4,3,2,1,0,0,0,0,0},
-                                                            {6,4,3,3,2,0,0,0,0,0},
-                                                            {6,4,4,3,2,1,0,0,0,0},
-                                                            {6,4,4,3,2,2,0,0,0,0},
-                                                            {6,5,4,4,3,2,1,0,0,0},
-                                                            {6,5,4,4,3,3,2,0,0,0},
-                                                            {6,5,5,4,4,3,2,1,0,0},
-                                                            {6,5,5,4,4,3,3,2,0,0},
-                                                            {6,5,5,5,4,4,3,2,1,0},
-                                                            {6,5,5,5,4,4,3,3,2,0},
-                                                            {6,5,5,5,5,4,4,3,2,1},
-                                                            {6,5,5,5,5,4,4,3,3,2},
-                                                            {6,5,5,5,5,5,4,4,3,3},
-                                                            {6,5,5,5,5,5,4,4,4,4}};
+            cleric.CharacterLevel = 20;
+            int[] SpellsPerDayCleric = new int[] { 6, 5, 5, 5, 5, 5, 4, 4, 4, 4 };
+
             try
             {
                 // Act
                 cleric.GetDailySpells();
 
                 // Assert            
-                Assert.Equal(SpellsPerDayCleric, cleric.DailySpells);
+                Assert.Equal(SpellsPerDayCleric, cleric.CurrentDailySpells);
             }
             catch { }
         }
@@ -120,34 +67,16 @@ namespace AemosUnitTest
         {
             // Arrange
             Druid druid = new Druid("druid");
-            int[,] SpellsPerDayDruid = new int[20, 10] {   {3,1,0,0,0,0,0,0,0,0},
-                                                            {4,2,0,0,0,0,0,0,0,0},
-                                                            {4,2,1,0,0,0,0,0,0,0},
-                                                            {5,3,2,0,0,0,0,0,0,0},
-                                                            {5,3,2,1,0,0,0,0,0,0},
-                                                            {5,3,3,2,0,0,0,0,0,0},
-                                                            {6,4,3,2,1,0,0,0,0,0},
-                                                            {6,4,3,3,2,0,0,0,0,0},
-                                                            {6,4,4,3,2,1,0,0,0,0},
-                                                            {6,4,4,3,2,2,0,0,0,0},
-                                                            {6,5,4,4,3,2,1,0,0,0},
-                                                            {6,5,4,4,3,3,2,0,0,0},
-                                                            {6,5,5,4,4,3,2,1,0,0},
-                                                            {6,5,5,4,4,3,3,2,0,0},
-                                                            {6,5,5,5,4,4,3,2,1,0},
-                                                            {6,5,5,5,4,4,3,3,2,0},
-                                                            {6,5,5,5,5,4,4,3,2,1},
-                                                            {6,5,5,5,5,4,4,3,3,2},
-                                                            {6,5,5,5,5,5,4,4,3,3},
-                                                            {6,5,5,5,5,5,4,4,4,4}};
-        
+            druid.CharacterLevel = 15;
+            int[] SpellsPerDayDruid = new int[] { 6, 5, 5, 5, 4, 4, 3, 2, 1, 0 };
+
             try
             {
                 // Act
                 druid.GetDailySpells();
 
                 // Assert            
-                Assert.Equal(SpellsPerDayDruid, druid.DailySpells);
+                Assert.Equal(SpellsPerDayDruid, druid.CurrentDailySpells);
             }
             catch { }
         }
@@ -157,26 +86,8 @@ namespace AemosUnitTest
         {
             // Arrange
             Wizard wizard = new Wizard("wizard");
-            int[,] SpellsPerDayWizard = new int[20, 10] {{3,1,0,0,0,0,0,0,0,0},
-                                                        {4,2,0,0,0,0,0,0,0,0},
-                                                        {4,2,1,0,0,0,0,0,0,0},
-                                                        {4,3,2,0,0,0,0,0,0,0},
-                                                        {4,3,2,1,0,0,0,0,0,0},
-                                                        {4,3,3,2,0,0,0,0,0,0},
-                                                        {4,4,3,2,1,0,0,0,0,0},
-                                                        {4,4,3,3,2,0,0,0,0,0},
-                                                        {4,4,4,3,2,1,0,0,0,0},
-                                                        {4,4,4,3,2,2,0,0,0,0},
-                                                        {4,4,4,4,3,2,1,0,0,0},
-                                                        {4,4,4,4,3,3,2,0,0,0},
-                                                        {4,4,4,4,4,3,2,1,0,0},
-                                                        {4,4,4,4,4,3,3,2,0,0},
-                                                        {4,4,4,4,4,4,3,2,1,0},
-                                                        {4,4,4,4,4,4,3,3,2,0},
-                                                        {4,4,4,4,4,4,4,3,2,1},
-                                                        {4,4,4,4,4,4,4,3,3,2},
-                                                        {4,4,4,4,4,4,4,4,3,3},
-                                                        {4,4,4,4,4,4,4,4,4,4}};
+            wizard.CharacterLevel = 2;
+            int[] SpellsPerDayWizard = new int[] { 4, 2, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             try
             {
@@ -184,7 +95,7 @@ namespace AemosUnitTest
                 wizard.GetDailySpells();
 
                 // Assert            
-                Assert.Equal(SpellsPerDayWizard, wizard.DailySpells);
+                Assert.Equal(SpellsPerDayWizard, wizard.CurrentDailySpells);
             }
             catch { }
         }
@@ -194,26 +105,8 @@ namespace AemosUnitTest
         {
             // Arrange
             Paladin paladin = new Paladin("Paladin");
-            int[,] SpellsPerDayPaladin = new int[20, 10] {{0,0,0,0,0,0,0,0,0,0},
-                                                        {0,0,0,0,0,0,0,0,0,0},
-                                                        {0,0,0,0,0,0,0,0,0,0},
-                                                        {0,0,0,0,0,0,0,0,0,0},
-                                                        {0,0,0,0,0,0,0,0,0,0},
-                                                        {0,0,0,0,0,0,0,0,0,0},
-                                                        {0,1,0,0,0,0,0,0,0,0},
-                                                        {0,1,0,0,0,0,0,0,0,0},
-                                                        {0,1,0,0,0,0,0,0,0,0},
-                                                        {0,1,0,0,0,0,0,0,0,0},
-                                                        {0,1,1,0,0,0,0,0,0,0},
-                                                        {0,1,1,1,0,0,0,0,0,0},
-                                                        {0,1,1,1,0,0,0,0,0,0},
-                                                        {0,2,1,1,0,0,0,0,0,0},
-                                                        {0,2,2,1,1,0,0,0,0,0},
-                                                        {0,2,2,1,1,0,0,0,0,0},
-                                                        {0,2,2,2,1,0,0,0,0,0},
-                                                        {0,3,2,2,1,0,0,0,0,0},
-                                                        {0,3,3,3,2,0,0,0,0,0},
-                                                        {0,3,3,3,3,0,0,0,0,0}};
+            paladin.CharacterLevel = 14;
+            int[] SpellsPerDayPaladin = new int[] { 0, 2, 1, 1, 0, 0, 0, 0, 0, 0 };
 
             try
             {
@@ -221,7 +114,7 @@ namespace AemosUnitTest
                 paladin.GetDailySpells();
 
                 // Assert            
-                Assert.Equal(SpellsPerDayPaladin, paladin.DailySpells);
+                Assert.Equal(SpellsPerDayPaladin, paladin.CurrentDailySpells);
             }
             catch { }
         }
@@ -231,26 +124,8 @@ namespace AemosUnitTest
         {
             // Arrange
             Ranger ranger = new Ranger("ranger");
-            int[,] SpellsPerDayRanger = new int[20, 10] {{0,0,0,0,0,0,0,0,0,0},
-                                                        {0,0,0,0,0,0,0,0,0,0},
-                                                        {0,0,0,0,0,0,0,0,0,0},
-                                                        {0,0,0,0,0,0,0,0,0,0},
-                                                        {0,0,0,0,0,0,0,0,0,0},
-                                                        {0,0,0,0,0,0,0,0,0,0},
-                                                        {0,1,0,0,0,0,0,0,0,0},
-                                                        {0,1,0,0,0,0,0,0,0,0},
-                                                        {0,1,0,0,0,0,0,0,0,0},
-                                                        {0,1,0,0,0,0,0,0,0,0},
-                                                        {0,1,1,0,0,0,0,0,0,0},
-                                                        {0,1,1,1,0,0,0,0,0,0},
-                                                        {0,1,1,1,0,0,0,0,0,0},
-                                                        {0,2,1,1,0,0,0,0,0,0},
-                                                        {0,2,2,1,1,0,0,0,0,0},
-                                                        {0,2,2,1,1,0,0,0,0,0},
-                                                        {0,2,2,2,1,0,0,0,0,0},
-                                                        {0,3,2,2,1,0,0,0,0,0},
-                                                        {0,3,3,3,2,0,0,0,0,0},
-                                                        {0,3,3,3,3,0,0,0,0,0}};
+            ranger.CharacterLevel = 11;
+            int[] SpellsPerDayRanger = new int[] { 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 };
 
             try
             {
@@ -258,31 +133,7 @@ namespace AemosUnitTest
                 ranger.GetDailySpells();
 
                 // Assert           
-                Assert.Equal(SpellsPerDayRanger, ranger.DailySpells);
-            }
-            catch { }
-        }
-
-        [Fact]
-        public void TestUpdateSpellsPerDayByCharacterLevel()
-        {
-            // Arrange
-            Bard bard = new Bard("bard") { CharacterLevel = 11 };
-            int[] expectedSpellsPerDayLevel = new int[10] { 3, 3, 3, 3, 1, 0, 0, 0, 0, 0 },
-                  returnedSpellsPerDay = new int[10];
-            
-
-            try
-            {
-                // Act
-                bard.GetDailySpells();
-
-                // Assert            
-                returnedSpellsPerDay = Enumerable.Range(0, bard.DailySpells.GetLength(0))
-                                        .Select(spellCycle => bard.DailySpells[bard.CharacterLevel - 1, spellCycle])
-                                        .ToArray();
-
-                Assert.Equal(expectedSpellsPerDayLevel, returnedSpellsPerDay);
+                Assert.Equal(SpellsPerDayRanger, ranger.CurrentDailySpells);
             }
             catch { }
         }
@@ -291,8 +142,10 @@ namespace AemosUnitTest
         public void TestUpdateExtraSpells()
         {
             // Arrange
-            Bard bard = new Bard("bard") { Charisma = 32 
-};
+            Bard bard = new Bard("bard")
+            {
+                Charisma = 32
+            };
             bard.KeyAttributeModifier = bard.GetModifier(bard.Charisma);
             decimal[] extraSpells = new decimal[10] { 0, 3, 3, 3, 2, 2, 2, -1, -1, -1 };
 
@@ -317,69 +170,15 @@ namespace AemosUnitTest
             Assert.Equal(spellsDc, bard.SpellsDC);
 
         }
-
-        [Fact]
-        public void TesBardKnownSpells()
-        {
-            // Arrange
-            Bard bard = new Bard("bard");
-            int[,] spellsKnownBard = new int[20, 10] { {4,0,0,0,0,0,0,0,0,0},
-                                                    {5,2,0,0,0,0,0,0,0,0},
-                                                    {6,3,0,0,0,0,0,0,0,0},
-                                                    {6,3,2,0,0,0,0,0,0,0},
-                                                    {6,4,3,0,0,0,0,0,0,0},
-                                                    {6,4,3,0,0,0,0,0,0,0},
-                                                    {6,4,4,2,0,0,0,0,0,0},
-                                                    {6,4,4,3,0,0,0,0,0,0},
-                                                    {6,4,4,3,0,0,0,0,0,0},
-                                                    {6,4,4,4,2,0,0,0,0,0},
-                                                    {6,4,4,4,3,0,0,0,0,0},
-                                                    {6,4,4,4,3,0,0,0,0,0},
-                                                    {6,4,4,4,4,2,0,0,0,0},
-                                                    {6,4,4,4,4,3,0,0,0,0},
-                                                    {6,4,4,4,4,3,0,0,0,0},
-                                                    {6,5,4,4,4,4,2,0,0,0},
-                                                    {6,5,5,4,4,4,3,0,0,0},
-                                                    {6,5,5,5,4,4,3,0,0,0},
-                                                    {6,5,5,5,5,4,4,0,0,0},
-                                                    {6,5,5,5,5,5,4,0,0,0}};
-            try
-            {
-                // Act
-                bard.GetKnownSpells();
-
-                // Assert            
-                Assert.Equal(spellsKnownBard, bard.KnownSpells);
-            }
-            catch { }
-        }
-
+        
         [Fact]
         public void TestUpdateKnownSpells()
         {
 
             // Arrange
             Sorcerer sorcerer = new Sorcerer("sorcerer");
-            int[,] spellsKnownSorcerer = new int[20, 10] {  {4,2,0,0,0,0,0,0,0,0},
-                                                            {5,2,0,0,0,0,0,0,0,0},
-                                                            {5,3,0,0,0,0,0,0,0,0},
-                                                            {6,3,1,0,0,0,0,0,0,0},
-                                                            {6,4,2,0,0,0,0,0,0,0},
-                                                            {7,4,2,1,0,0,0,0,0,0},
-                                                            {7,5,3,2,0,0,0,0,0,0},
-                                                            {8,5,3,2,1,0,0,0,0,0},
-                                                            {8,5,4,3,2,0,0,0,0,0},
-                                                            {9,5,4,3,2,1,0,0,0,0},
-                                                            {9,5,5,4,3,2,0,0,0,0},
-                                                            {9,5,5,4,3,2,1,0,0,0},
-                                                            {9,5,5,4,4,3,2,0,0,0},
-                                                            {9,5,5,4,4,3,2,1,0,0},
-                                                            {9,5,5,4,4,4,3,2,0,0},
-                                                            {9,5,5,4,4,4,3,2,1,0},
-                                                            {9,5,5,4,4,4,3,3,2,0},
-                                                            {9,5,5,4,4,4,3,3,2,1},
-                                                            {9,5,5,4,4,4,3,3,3,2},
-                                                            {9,5,5,4,4,4,3,3,3,3}};
+            sorcerer.CharacterLevel = 1;
+            int[] spellsKnownSorcerer = new int[]   {4,2,0,0,0,0,0,0,0,0};
 
             try
             {
@@ -387,7 +186,7 @@ namespace AemosUnitTest
                 sorcerer.GetKnownSpells();
 
                 // Assert           
-                Assert.Equal(spellsKnownSorcerer, sorcerer.KnownSpells);
+                Assert.Equal(spellsKnownSorcerer, sorcerer.CurrentKnownSpells);
             }
             catch { }
         }
@@ -398,34 +197,15 @@ namespace AemosUnitTest
             // Arrange
             Cleric cleric = new Cleric("cleric") { CharacterLevel = 7 };
             int spellCycle = 1;
-            int[,] SpellsPerDayAfterUser = new int[20, 10] {{3,1,0,0,0,0,0,0,0,0},
-                                                            {4,2,0,0,0,0,0,0,0,0},
-                                                            {4,2,1,0,0,0,0,0,0,0},
-                                                            {5,3,2,0,0,0,0,0,0,0},
-                                                            {5,3,2,1,0,0,0,0,0,0},
-                                                            {5,3,3,2,0,0,0,0,0,0},
-                                                            {6,3,3,2,1,0,0,0,0,0}, // <-- HERE!
-                                                            {6,4,3,3,2,0,0,0,0,0},
-                                                            {6,4,4,3,2,1,0,0,0,0},
-                                                            {6,4,4,3,2,2,0,0,0,0},
-                                                            {6,5,4,4,3,2,1,0,0,0},
-                                                            {6,5,4,4,3,3,2,0,0,0},
-                                                            {6,5,5,4,4,3,2,1,0,0},
-                                                            {6,5,5,4,4,3,3,2,0,0},
-                                                            {6,5,5,5,4,4,3,2,1,0},
-                                                            {6,5,5,5,4,4,3,3,2,0},
-                                                            {6,5,5,5,5,4,4,3,2,1},
-                                                            {6,5,5,5,5,4,4,3,3,2},
-                                                            {6,5,5,5,5,5,4,4,3,3},
-                                                            {6,5,5,5,5,5,4,4,4,4}};
+            int[] SpellsPerDayAfterUser = new int[] { 6, 3, 3, 2, 1, 0, 0, 0, 0, 0 };
             try
             {
                 // Act
                 cleric.GetDailySpells();
-                cleric.CastSpell(cleric.CharacterLevel, spellCycle);
+                cleric.CastSpell(spellCycle);
 
                 // Assert            
-                Assert.Equal(SpellsPerDayAfterUser, cleric.DailySpells);
+                Assert.Equal(SpellsPerDayAfterUser, cleric.CurrentDailySpells);
             }
             catch { }
         }

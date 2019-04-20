@@ -22,19 +22,23 @@ namespace Aemos.CharacterClasses
 
         public void GetDailySpells()
         {
-            CurrentDailySpells = SpellsRepository.GetSpells(ClassName, CharacterLevel, MaxSpellCycle, Resources.Resources.DailySpellsComplement);
+            CurrentDailySpells = SpellsRepository.GetSpells(ClassName, CharacterLevel, MaxSpellCycle, Resources.SpellResources.DailySpellsComplement);
         }
 
         public void GetExtraSpells()
         {
             for (int i = 1; i < MaxSpellCycle; i++)
+            {
                 ExtraSpells[i] = Math.Ceiling((KeyAttributeModifier - (i - 1)) / 4);
+            }
         }
 
         public void GetSpellsDC()
         {
             for (int i = FirstDC; i < MaxSpellCycle; i++)
+            {
                 SpellsDC[i] = 10 + (int)KeyAttributeModifier + i;
+            }
         }
 
         public bool CastSpell(int spellCycle)

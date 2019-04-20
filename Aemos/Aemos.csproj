@@ -105,11 +105,23 @@
     <Compile Include="Forms\frmSkillPoints.Designer.cs">
       <DependentUpon>frmSkillPoints.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmSpellcastingSubMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSpellcastingSubMenu.Designer.cs">
+      <DependentUpon>frmSpellcastingSubMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmSpellcasting.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmSpellcasting.Designer.cs">
       <DependentUpon>frmSpellcasting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSpellCompendium.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSpellCompendium.Designer.cs">
+      <DependentUpon>frmSpellCompendium.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmXpCalculator.cs">
       <SubType>Form</SubType>
@@ -129,6 +141,8 @@
     <Compile Include="Helpers\IntelligenceBonuses.cs" />
     <Compile Include="Helpers\LoadCalculator.cs" />
     <Compile Include="Helpers\SkillPointsCalculator.cs" />
+    <Compile Include="Helpers\SpellDTO.cs" />
+    <Compile Include="Helpers\SpellFIlter.cs" />
     <Compile Include="Helpers\WarningMessage.cs" />
     <Compile Include="Helpers\XPCalculator.cs" />
     <Compile Include="Helpers\XpPerLevelHolder.cs" />
@@ -140,10 +154,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SpellsDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Resources.Designer.cs">
+    <Compile Include="Resources\SpellResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>SpellResources.resx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ctrlBaseAttackBonus.cs">
       <SubType>UserControl</SubType>
@@ -181,6 +195,12 @@
     <Compile Include="UserControls\ctrlSpellcasting.Designer.cs">
       <DependentUpon>ctrlSpellcasting.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ctrlSpellCompendium.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ctrlSpellCompendium.Designer.cs">
+      <DependentUpon>ctrlSpellCompendium.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ctrlXpCalculator.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,6 +231,12 @@
     <EmbeddedResource Include="Forms\frmSpellcasting.resx">
       <DependentUpon>frmSpellcasting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSpellcastingSubMenu.resx">
+      <DependentUpon>frmSpellcastingSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSpellCompendium.resx">
+      <DependentUpon>frmSpellCompendium.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmXpCalculator.resx">
       <DependentUpon>frmXpCalculator.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,9 +252,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Resources\Resources.resx">
+    <EmbeddedResource Include="Resources\SpellResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>SpellResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ctrlBaseAttackBonus.resx">
       <DependentUpon>ctrlBaseAttackBonus.cs</DependentUpon>
@@ -247,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ctrlSpellcasting.resx">
       <DependentUpon>ctrlSpellcasting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ctrlSpellCompendium.resx">
+      <DependentUpon>ctrlSpellCompendium.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ctrlXpCalculator.resx">
       <DependentUpon>ctrlXpCalculator.cs</DependentUpon>
@@ -279,6 +308,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DatabaseTables\SpellsCompendiumScript.sql" />
     <Content Include="DatabaseTables\Spells.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

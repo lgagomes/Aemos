@@ -13,8 +13,8 @@ namespace Aemos
 
         private void btnSpellcasting_Click(object sender, EventArgs e)
         {
-            frmSpellcasting frmSpellcasting = new frmSpellcasting();
-            frmSpellcasting.ShowDialog();
+            frmSpellcastingSubMenu frmSpellcastingSubMenu = new frmSpellcastingSubMenu();
+            frmSpellcastingSubMenu.ShowDialog();
         }
 
         private void btnCarrying_Click(object sender, EventArgs e)
