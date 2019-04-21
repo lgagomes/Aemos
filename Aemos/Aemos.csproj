@@ -141,6 +141,7 @@
     <Compile Include="Helpers\IntelligenceBonuses.cs" />
     <Compile Include="Helpers\LoadCalculator.cs" />
     <Compile Include="Helpers\SkillPointsCalculator.cs" />
+    <Compile Include="Helpers\SpellDetailedCreator.cs" />
     <Compile Include="Helpers\SpellDTO.cs" />
     <Compile Include="Helpers\SpellFIlter.cs" />
     <Compile Include="Helpers\WarningMessage.cs" />

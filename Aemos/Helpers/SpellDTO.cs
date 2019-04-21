@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Aemos.Helpers
+﻿namespace Aemos.Helpers
 {
     public class SpellDTO
     {
@@ -14,7 +8,7 @@ namespace Aemos.Helpers
         public string Descriptor { get; set; }
         public string Level { get; set; }
         public string Components { get; set; }
-        public string CastingTimee{ get; set; }
+        public string CastingTime{ get; set; }
         public string Range { get; set; }
         public string Target { get; set; }
         public string Effect { get; set; }

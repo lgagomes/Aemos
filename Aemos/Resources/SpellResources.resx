@@ -150,11 +150,12 @@
 	   WizardFocus
 FROM
 	  SpellsCompendium
-
 WHERE 
 	  Name LIKE @Name
 	  AND Level LIKE @Level
-	  AND School LIKE @School</value>
+	  AND School LIKE @School
+ORDER BY
+                    Name</value>
   </data>
   <data name="KnownSpellsComplement" xml:space="preserve">
     <value>KnownSpells</value>

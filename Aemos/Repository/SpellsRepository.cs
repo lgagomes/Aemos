@@ -11,7 +11,7 @@ namespace Aemos.Repository
     {
         public static int[] GetSpellsSlots(string className, int characterLevel, int maxSpellCycle, string tableComplement)
         {
-            int[] spells = new int[10] { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 };
+            int[] spellSlots = new int[10] { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 };
 
             try
             {
@@ -35,7 +35,7 @@ namespace Aemos.Repository
                                 {
                                     for (int i = 0; i < maxSpellCycle; i++)
                                     {
-                                        spells[i] = (int)reader["Level" + i];
+                                        spellSlots[i] = (int)reader["Level" + i];
                                     }
                                 }
                             }
@@ -47,14 +47,15 @@ namespace Aemos.Repository
             {
                 WarningMessage.ShowWarningMessage(ex.Message);
             }
-            return spells;
+            return spellSlots;
         }
 
         public static List<SpellDTO> GetSpellsDetailed(SpellFIlter spellFIlter)
         {
+            List<SpellDTO> spellsDetailed = new List<SpellDTO>();
             try
             {
-                string connectionString = Properties.Settings.Default.SpellsConnectionString;
+                string connectionString = Properties.Settings.Default.SpellsConnectionString;                
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -76,9 +77,12 @@ namespace Aemos.Repository
 
                         sqlCommand.Parameters.AddWithValue("@School", $"%{spellFIlter.SpellSchool}%");
 
-                        using (var reader = sqlCommand.ExecuteReader())
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
                         {
-                            // TODO: fill and return a list of SpellDTO
+                            while (reader.Read())
+                            {
+                                spellsDetailed.Add(SpellDetailedCreator.GetSpellDetailed(reader));                                
+                            }
                         }
                     }
                 }
@@ -87,7 +91,7 @@ namespace Aemos.Repository
             {
                 WarningMessage.ShowWarningMessage(ex.Message);
             }
-            return null;
+            return spellsDetailed;
         }
     }
 }

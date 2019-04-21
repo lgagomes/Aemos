@@ -99,10 +99,9 @@ namespace Aemos.Resources {
         ///	   WizardFocus
         ///FROM
         ///	  SpellsCompendium
-        ///
         ///WHERE 
         ///	  Name LIKE @Name
-        ///	  AND Level LIKE @ [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///	  AND Level LIKE @Le [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string GetSpellsDetailed {
             get {
