@@ -35,14 +35,14 @@
             // 
             this.ctrlSpellCompendium1.Location = new System.Drawing.Point(0, -4);
             this.ctrlSpellCompendium1.Name = "ctrlSpellCompendium1";
-            this.ctrlSpellCompendium1.Size = new System.Drawing.Size(483, 444);
+            this.ctrlSpellCompendium1.Size = new System.Drawing.Size(792, 444);
             this.ctrlSpellCompendium1.TabIndex = 0;
             // 
             // frmSpellCompendium
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 452);
+            this.ClientSize = new System.Drawing.Size(795, 452);
             this.Controls.Add(this.ctrlSpellCompendium1);
             this.MaximizeBox = false;
             this.Name = "frmSpellCompendium";

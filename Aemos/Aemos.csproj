@@ -123,6 +123,12 @@
     <Compile Include="Forms\frmSpellCompendium.Designer.cs">
       <DependentUpon>frmSpellCompendium.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmSpellDetailed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSpellDetailed.Designer.cs">
+      <DependentUpon>frmSpellDetailed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmXpCalculator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,11 +156,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\SpellsRepository.cs" />
-    <Compile Include="DatabaseTables\SpellsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SpellsDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Resources\SpellResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -238,6 +239,9 @@
     <EmbeddedResource Include="Forms\frmSpellCompendium.resx">
       <DependentUpon>frmSpellCompendium.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSpellDetailed.resx">
+      <DependentUpon>frmSpellDetailed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmXpCalculator.resx">
       <DependentUpon>frmXpCalculator.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +288,7 @@
     <EmbeddedResource Include="UserControls\ctrlXpProgression.resx">
       <DependentUpon>ctrlXpProgression.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Aemos.Helpers.SpellDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -293,17 +298,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="DatabaseTables\SpellsDataSet.xsc">
-      <DependentUpon>SpellsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseTables\SpellsDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SpellsDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DatabaseTables\SpellsDataSet.xss">
-      <DependentUpon>SpellsDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

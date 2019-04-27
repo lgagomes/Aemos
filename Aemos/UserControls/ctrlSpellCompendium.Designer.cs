@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxSpellName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,10 +41,37 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnClearSpellsGrid = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewSpellsDetailed = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.schoolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subSchoolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.levelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.componentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.castingTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rangeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.targetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.effectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.areaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.savingThrowDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spellResistanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.briefDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialComponentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arcaneMaterialComponentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xpCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.focusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arcaneFocusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bardFocusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clericFocusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.druidFocusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sorcererFocusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wizardFocusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spellDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSpellsDetailed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spellDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 26);
+            this.label2.Location = new System.Drawing.Point(229, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 2;
@@ -83,7 +111,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 63);
+            this.label3.Location = new System.Drawing.Point(446, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 4;
@@ -93,7 +121,7 @@
             // 
             this.comboBoxClassToSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxClassToSearch.FormattingEnabled = true;
-            this.comboBoxClassToSearch.Location = new System.Drawing.Point(94, 60);
+            this.comboBoxClassToSearch.Location = new System.Drawing.Point(504, 21);
             this.comboBoxClassToSearch.Name = "comboBoxClassToSearch";
             this.comboBoxClassToSearch.Size = new System.Drawing.Size(94, 21);
             this.comboBoxClassToSearch.TabIndex = 5;
@@ -101,24 +129,24 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(228, 63);
+            this.label4.Location = new System.Drawing.Point(619, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Level";
+            this.label4.Text = "Spell Cycle";
             // 
             // comboBoxLevelToSearch
             // 
             this.comboBoxLevelToSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLevelToSearch.FormattingEnabled = true;
-            this.comboBoxLevelToSearch.Location = new System.Drawing.Point(315, 60);
+            this.comboBoxLevelToSearch.Location = new System.Drawing.Point(684, 21);
             this.comboBoxLevelToSearch.Name = "comboBoxLevelToSearch";
             this.comboBoxLevelToSearch.Size = new System.Drawing.Size(74, 21);
             this.comboBoxLevelToSearch.TabIndex = 7;
             // 
             // btnSearchSpell
             // 
-            this.btnSearchSpell.Location = new System.Drawing.Point(183, 107);
+            this.btnSearchSpell.Location = new System.Drawing.Point(315, 60);
             this.btnSearchSpell.Name = "btnSearchSpell";
             this.btnSearchSpell.Size = new System.Drawing.Size(75, 23);
             this.btnSearchSpell.TabIndex = 8;
@@ -139,7 +167,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(15, 17);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(452, 151);
+            this.groupBox1.Size = new System.Drawing.Size(767, 97);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Spell\'s Info";
@@ -147,30 +175,239 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnClearSpellsGrid);
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(15, 174);
+            this.groupBox2.Controls.Add(this.dataGridViewSpellsDetailed);
+            this.groupBox2.Location = new System.Drawing.Point(15, 120);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(452, 249);
+            this.groupBox2.Size = new System.Drawing.Size(767, 310);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Spells Found";
             // 
             // btnClearSpellsGrid
             // 
-            this.btnClearSpellsGrid.Location = new System.Drawing.Point(180, 220);
+            this.btnClearSpellsGrid.Location = new System.Drawing.Point(339, 281);
             this.btnClearSpellsGrid.Name = "btnClearSpellsGrid";
             this.btnClearSpellsGrid.Size = new System.Drawing.Size(96, 23);
             this.btnClearSpellsGrid.TabIndex = 1;
             this.btnClearSpellsGrid.Text = "Clear Results";
             this.btnClearSpellsGrid.UseVisualStyleBackColor = true;
+            this.btnClearSpellsGrid.Click += new System.EventHandler(this.btnClearSpellsGrid_Click);
             // 
-            // dataGridView1
+            // dataGridViewSpellsDetailed
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(437, 183);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewSpellsDetailed.AutoGenerateColumns = false;
+            this.dataGridViewSpellsDetailed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSpellsDetailed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.schoolDataGridViewTextBoxColumn,
+            this.subSchoolDataGridViewTextBoxColumn,
+            this.descriptorDataGridViewTextBoxColumn,
+            this.levelDataGridViewTextBoxColumn,
+            this.componentsDataGridViewTextBoxColumn,
+            this.castingTimeDataGridViewTextBoxColumn,
+            this.rangeDataGridViewTextBoxColumn,
+            this.targetDataGridViewTextBoxColumn,
+            this.effectDataGridViewTextBoxColumn,
+            this.areaDataGridViewTextBoxColumn,
+            this.durationDataGridViewTextBoxColumn,
+            this.savingThrowDataGridViewTextBoxColumn,
+            this.spellResistanceDataGridViewTextBoxColumn,
+            this.briefDescriptionDataGridViewTextBoxColumn,
+            this.materialComponentsDataGridViewTextBoxColumn,
+            this.arcaneMaterialComponentsDataGridViewTextBoxColumn,
+            this.xpCostDataGridViewTextBoxColumn,
+            this.focusDataGridViewTextBoxColumn,
+            this.arcaneFocusDataGridViewTextBoxColumn,
+            this.bardFocusDataGridViewTextBoxColumn,
+            this.clericFocusDataGridViewTextBoxColumn,
+            this.druidFocusDataGridViewTextBoxColumn,
+            this.sorcererFocusDataGridViewTextBoxColumn,
+            this.wizardFocusDataGridViewTextBoxColumn});
+            this.dataGridViewSpellsDetailed.DataSource = this.spellDTOBindingSource;
+            this.dataGridViewSpellsDetailed.Location = new System.Drawing.Point(9, 23);
+            this.dataGridViewSpellsDetailed.Name = "dataGridViewSpellsDetailed";
+            this.dataGridViewSpellsDetailed.Size = new System.Drawing.Size(749, 252);
+            this.dataGridViewSpellsDetailed.TabIndex = 0;
+            this.dataGridViewSpellsDetailed.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSpellsDetailed_CellContentDoubleClick);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Spell Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // schoolDataGridViewTextBoxColumn
+            // 
+            this.schoolDataGridViewTextBoxColumn.DataPropertyName = "School";
+            this.schoolDataGridViewTextBoxColumn.HeaderText = "School";
+            this.schoolDataGridViewTextBoxColumn.Name = "schoolDataGridViewTextBoxColumn";
+            this.schoolDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // subSchoolDataGridViewTextBoxColumn
+            // 
+            this.subSchoolDataGridViewTextBoxColumn.DataPropertyName = "SubSchool";
+            this.subSchoolDataGridViewTextBoxColumn.HeaderText = "SubSchool";
+            this.subSchoolDataGridViewTextBoxColumn.Name = "subSchoolDataGridViewTextBoxColumn";
+            this.subSchoolDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descriptorDataGridViewTextBoxColumn
+            // 
+            this.descriptorDataGridViewTextBoxColumn.DataPropertyName = "Descriptor";
+            this.descriptorDataGridViewTextBoxColumn.HeaderText = "Descriptor";
+            this.descriptorDataGridViewTextBoxColumn.Name = "descriptorDataGridViewTextBoxColumn";
+            this.descriptorDataGridViewTextBoxColumn.Visible = false;
+            this.descriptorDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // levelDataGridViewTextBoxColumn
+            // 
+            this.levelDataGridViewTextBoxColumn.DataPropertyName = "Level";
+            this.levelDataGridViewTextBoxColumn.HeaderText = "Classes and Level";
+            this.levelDataGridViewTextBoxColumn.Name = "levelDataGridViewTextBoxColumn";
+            this.levelDataGridViewTextBoxColumn.Width = 235;
+            // 
+            // componentsDataGridViewTextBoxColumn
+            // 
+            this.componentsDataGridViewTextBoxColumn.DataPropertyName = "Components";
+            this.componentsDataGridViewTextBoxColumn.HeaderText = "Components";
+            this.componentsDataGridViewTextBoxColumn.Name = "componentsDataGridViewTextBoxColumn";
+            this.componentsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // castingTimeDataGridViewTextBoxColumn
+            // 
+            this.castingTimeDataGridViewTextBoxColumn.DataPropertyName = "CastingTime";
+            this.castingTimeDataGridViewTextBoxColumn.HeaderText = "CastingTime";
+            this.castingTimeDataGridViewTextBoxColumn.Name = "castingTimeDataGridViewTextBoxColumn";
+            this.castingTimeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // rangeDataGridViewTextBoxColumn
+            // 
+            this.rangeDataGridViewTextBoxColumn.DataPropertyName = "Range";
+            this.rangeDataGridViewTextBoxColumn.HeaderText = "Range";
+            this.rangeDataGridViewTextBoxColumn.Name = "rangeDataGridViewTextBoxColumn";
+            this.rangeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // targetDataGridViewTextBoxColumn
+            // 
+            this.targetDataGridViewTextBoxColumn.DataPropertyName = "Target";
+            this.targetDataGridViewTextBoxColumn.HeaderText = "Target";
+            this.targetDataGridViewTextBoxColumn.Name = "targetDataGridViewTextBoxColumn";
+            this.targetDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // effectDataGridViewTextBoxColumn
+            // 
+            this.effectDataGridViewTextBoxColumn.DataPropertyName = "Effect";
+            this.effectDataGridViewTextBoxColumn.HeaderText = "Effect";
+            this.effectDataGridViewTextBoxColumn.Name = "effectDataGridViewTextBoxColumn";
+            this.effectDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // areaDataGridViewTextBoxColumn
+            // 
+            this.areaDataGridViewTextBoxColumn.DataPropertyName = "Area";
+            this.areaDataGridViewTextBoxColumn.HeaderText = "Area";
+            this.areaDataGridViewTextBoxColumn.Name = "areaDataGridViewTextBoxColumn";
+            this.areaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // durationDataGridViewTextBoxColumn
+            // 
+            this.durationDataGridViewTextBoxColumn.DataPropertyName = "Duration";
+            this.durationDataGridViewTextBoxColumn.HeaderText = "Duration";
+            this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
+            this.durationDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // savingThrowDataGridViewTextBoxColumn
+            // 
+            this.savingThrowDataGridViewTextBoxColumn.DataPropertyName = "SavingThrow";
+            this.savingThrowDataGridViewTextBoxColumn.HeaderText = "SavingThrow";
+            this.savingThrowDataGridViewTextBoxColumn.Name = "savingThrowDataGridViewTextBoxColumn";
+            this.savingThrowDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // spellResistanceDataGridViewTextBoxColumn
+            // 
+            this.spellResistanceDataGridViewTextBoxColumn.DataPropertyName = "SpellResistance";
+            this.spellResistanceDataGridViewTextBoxColumn.HeaderText = "SpellResistance";
+            this.spellResistanceDataGridViewTextBoxColumn.Name = "spellResistanceDataGridViewTextBoxColumn";
+            this.spellResistanceDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // briefDescriptionDataGridViewTextBoxColumn
+            // 
+            this.briefDescriptionDataGridViewTextBoxColumn.DataPropertyName = "BriefDescription";
+            this.briefDescriptionDataGridViewTextBoxColumn.HeaderText = "Brief Description";
+            this.briefDescriptionDataGridViewTextBoxColumn.Name = "briefDescriptionDataGridViewTextBoxColumn";
+            this.briefDescriptionDataGridViewTextBoxColumn.Width = 350;
+            // 
+            // materialComponentsDataGridViewTextBoxColumn
+            // 
+            this.materialComponentsDataGridViewTextBoxColumn.DataPropertyName = "MaterialComponents";
+            this.materialComponentsDataGridViewTextBoxColumn.HeaderText = "MaterialComponents";
+            this.materialComponentsDataGridViewTextBoxColumn.Name = "materialComponentsDataGridViewTextBoxColumn";
+            this.materialComponentsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // arcaneMaterialComponentsDataGridViewTextBoxColumn
+            // 
+            this.arcaneMaterialComponentsDataGridViewTextBoxColumn.DataPropertyName = "ArcaneMaterialComponents";
+            this.arcaneMaterialComponentsDataGridViewTextBoxColumn.HeaderText = "ArcaneMaterialComponents";
+            this.arcaneMaterialComponentsDataGridViewTextBoxColumn.Name = "arcaneMaterialComponentsDataGridViewTextBoxColumn";
+            this.arcaneMaterialComponentsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // xpCostDataGridViewTextBoxColumn
+            // 
+            this.xpCostDataGridViewTextBoxColumn.DataPropertyName = "XpCost";
+            this.xpCostDataGridViewTextBoxColumn.HeaderText = "XpCost";
+            this.xpCostDataGridViewTextBoxColumn.Name = "xpCostDataGridViewTextBoxColumn";
+            this.xpCostDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // focusDataGridViewTextBoxColumn
+            // 
+            this.focusDataGridViewTextBoxColumn.DataPropertyName = "Focus";
+            this.focusDataGridViewTextBoxColumn.HeaderText = "Focus";
+            this.focusDataGridViewTextBoxColumn.Name = "focusDataGridViewTextBoxColumn";
+            this.focusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // arcaneFocusDataGridViewTextBoxColumn
+            // 
+            this.arcaneFocusDataGridViewTextBoxColumn.DataPropertyName = "ArcaneFocus";
+            this.arcaneFocusDataGridViewTextBoxColumn.HeaderText = "ArcaneFocus";
+            this.arcaneFocusDataGridViewTextBoxColumn.Name = "arcaneFocusDataGridViewTextBoxColumn";
+            this.arcaneFocusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // bardFocusDataGridViewTextBoxColumn
+            // 
+            this.bardFocusDataGridViewTextBoxColumn.DataPropertyName = "BardFocus";
+            this.bardFocusDataGridViewTextBoxColumn.HeaderText = "BardFocus";
+            this.bardFocusDataGridViewTextBoxColumn.Name = "bardFocusDataGridViewTextBoxColumn";
+            this.bardFocusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // clericFocusDataGridViewTextBoxColumn
+            // 
+            this.clericFocusDataGridViewTextBoxColumn.DataPropertyName = "ClericFocus";
+            this.clericFocusDataGridViewTextBoxColumn.HeaderText = "ClericFocus";
+            this.clericFocusDataGridViewTextBoxColumn.Name = "clericFocusDataGridViewTextBoxColumn";
+            this.clericFocusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // druidFocusDataGridViewTextBoxColumn
+            // 
+            this.druidFocusDataGridViewTextBoxColumn.DataPropertyName = "DruidFocus";
+            this.druidFocusDataGridViewTextBoxColumn.HeaderText = "DruidFocus";
+            this.druidFocusDataGridViewTextBoxColumn.Name = "druidFocusDataGridViewTextBoxColumn";
+            this.druidFocusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sorcererFocusDataGridViewTextBoxColumn
+            // 
+            this.sorcererFocusDataGridViewTextBoxColumn.DataPropertyName = "SorcererFocus";
+            this.sorcererFocusDataGridViewTextBoxColumn.HeaderText = "SorcererFocus";
+            this.sorcererFocusDataGridViewTextBoxColumn.Name = "sorcererFocusDataGridViewTextBoxColumn";
+            this.sorcererFocusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // wizardFocusDataGridViewTextBoxColumn
+            // 
+            this.wizardFocusDataGridViewTextBoxColumn.DataPropertyName = "WizardFocus";
+            this.wizardFocusDataGridViewTextBoxColumn.HeaderText = "WizardFocus";
+            this.wizardFocusDataGridViewTextBoxColumn.Name = "wizardFocusDataGridViewTextBoxColumn";
+            this.wizardFocusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // spellDTOBindingSource
+            // 
+            this.spellDTOBindingSource.DataSource = typeof(Aemos.Helpers.SpellDTO);
             // 
             // ctrlSpellCompendium
             // 
@@ -179,12 +416,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ctrlSpellCompendium";
-            this.Size = new System.Drawing.Size(483, 444);
+            this.Size = new System.Drawing.Size(794, 444);
             this.Load += new System.EventHandler(this.ctrlSpellCompendium_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSpellsDetailed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spellDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -202,7 +440,33 @@
         private System.Windows.Forms.Button btnSearchSpell;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewSpellsDetailed;
         private System.Windows.Forms.Button btnClearSpellsGrid;
+        private System.Windows.Forms.BindingSource spellDTOBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn schoolDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subSchoolDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn levelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn componentsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn castingTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rangeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn targetDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn effectDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn areaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn savingThrowDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn spellResistanceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn briefDescriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materialComponentsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arcaneMaterialComponentsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xpCostDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn focusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arcaneFocusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bardFocusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clericFocusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn druidFocusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sorcererFocusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wizardFocusDataGridViewTextBoxColumn;
     }
 }
