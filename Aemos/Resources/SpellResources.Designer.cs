@@ -110,6 +110,19 @@ namespace Aemos.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a SELECT Level0, Level1, Level2, Level3, Level4, Level5, Level6, Level7, Level8, Level9
+        ///
+        ///FROM @TableName
+        ///
+        ///WHERE @TableName.Id = @CharacterLevel.
+        /// </summary>
+        internal static string GetSpellsSlots {
+            get {
+                return ResourceManager.GetString("GetSpellsSlots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a KnownSpells.
         /// </summary>
         internal static string KnownSpellsComplement {

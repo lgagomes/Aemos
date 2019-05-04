@@ -7,6 +7,7 @@ namespace Aemos.Forms
         public frmXpCalculator()
         {
             InitializeComponent();
+            CenterToParent();
         }
     }
 }

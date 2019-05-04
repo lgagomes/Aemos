@@ -8,6 +8,7 @@ namespace Aemos.Forms
         public frmSpellcastingSubMenu()
         {
             InitializeComponent();
+            CenterToParent();
         }
 
         private void btnSpellcastingClasses_Click(object sender, EventArgs e)

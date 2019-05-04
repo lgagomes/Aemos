@@ -8,7 +8,7 @@ namespace Aemos.CharacterClasses
 
         public void GetKnownSpells()
         {
-            CurrentKnownSpells = SpellsRepository.GetSpellsSlots(ClassName, CharacterLevel, MaxSpellCycle, Resources.SpellResources.KnownSpellsComplement);
+            CurrentKnownSpells = SpellsRepository.GetSpellsSlots(ClassName, CharacterLevel, Resources.SpellResources.KnownSpellsComplement);
         }
     }
 }

@@ -9,6 +9,7 @@ namespace Aemos
         public frmMainScreen()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void btnSpellcasting_Click(object sender, EventArgs e)

@@ -8,6 +8,7 @@ namespace Aemos.Forms
         public frmSkillPoints()
         {
             InitializeComponent();
+            CenterToParent();
             ctrlCharInputHeader1.ClassChangeEvent += OnClassChangeEvent;
             ctrlCharInputHeader1.LevelChangeEvent += OnLevelChangeEvent;
             ctrlCharInputHeader1.AttributeScoreEvent += OnIntScoreChangeEvent;

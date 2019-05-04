@@ -4,6 +4,7 @@ using System;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using Aemos.Forms;
 
 namespace Aemos.UserControls
 {
@@ -38,10 +39,6 @@ namespace Aemos.UserControls
 
         private void InitializeLevels()
         {
-            /* TODO: adjust to suit the selected class max spell cycle
-             * i.e.: druid has spell cycles from 0 to 9 and 
-             * ranger from 0 to 4 */
-
             for (int i = 1; i <= 9; i++)
             {
                 comboBoxLevelToSearch.Items.Add(i.ToString());
@@ -57,7 +54,7 @@ namespace Aemos.UserControls
                 "Illusion", "Necromancy", "Transmutation", "Universal"
             };
 
-            foreach (var school in schools)
+            foreach (string school in schools)
             {
                 comboBoxSpellSchool.Items.Add(school);
             }
@@ -107,15 +104,26 @@ namespace Aemos.UserControls
             string className = comboBoxClassToSearch.Text;
             string classLevel = comboBoxLevelToSearch.Text;
             string spellSchool = comboBoxClassToSearch.Text;
+            int.TryParse(comboBoxLevelToSearch.Text, out int level);
 
             if (string.IsNullOrWhiteSpace(spellName) && string.Equals(className, "Choose a Class") && string.Equals(spellSchool, "Select a School"))
             {
-                errors.AppendLine("Please inform at least a spell name or a spell class");
+                errors.AppendLine("Please inform at least a spell name, a class or a spell school");
             }
 
             if (!string.IsNullOrWhiteSpace(classLevel) && string.Equals(className, "Choose a Class"))
             {
                 errors.AppendLine("Need to inform the class as well if you inform the level");
+            }
+
+            if(string.Equals(className,"Bard") && level > 6)
+            {
+                errors.AppendLine("A Bard doesn't have spell cycles above 6. Please select another value");
+            }
+            
+            if((string.Equals(className, "Paladin") || string.Equals(className, "Ranger")) && level > 4)
+            {
+                errors.AppendLine($"A {className} doesn't have spell cycles above 4. Please select another value");
             }
 
             return CheckErrors(errors);
@@ -143,6 +151,11 @@ namespace Aemos.UserControls
         private void dataGridViewSpellsDetailed_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             SpellDTO spellDTO = (SpellDTO)dataGridViewSpellsDetailed.CurrentRow.DataBoundItem;
+
+            using (var formSpellDetail = new frmSpellDetailed(spellDTO))
+            {
+                formSpellDetail.ShowDialog();
+            }
         }
     }
 }

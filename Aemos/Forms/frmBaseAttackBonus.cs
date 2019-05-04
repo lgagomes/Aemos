@@ -8,6 +8,7 @@ namespace Aemos.Forms
         public frmBaseAttackBonus()
         {
             InitializeComponent();
+            CenterToParent();
             ctrlCharInputHeader1.ClassChangeEvent += OnClassChangeEvent;
             ctrlCharInputHeader1.LevelChangeEvent += OnLevelChangeEvent;
         }

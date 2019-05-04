@@ -7,7 +7,8 @@ namespace Aemos.Forms
     {
         public frmSpellcasting()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            CenterToParent();
         }       
     }
 }

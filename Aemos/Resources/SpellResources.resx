@@ -157,6 +157,13 @@ WHERE
 ORDER BY
                     Name</value>
   </data>
+  <data name="GetSpellsSlots" xml:space="preserve">
+    <value>SELECT Level0, Level1, Level2, Level3, Level4, Level5, Level6, Level7, Level8, Level9
+
+FROM @TableName
+
+WHERE @TableName.Id = @CharacterLevel</value>
+  </data>
   <data name="KnownSpellsComplement" xml:space="preserve">
     <value>KnownSpells</value>
   </data>
