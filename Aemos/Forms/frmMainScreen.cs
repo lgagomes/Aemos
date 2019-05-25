@@ -55,7 +55,10 @@ namespace Aemos
                "\tlgustavogom@gmail.com\n\n" +
                "This program uses content from the d20 System, with no intention to " +
                "replace the books for full descriptions, " +
-               "but rather to be a tool to ease the character creation.",
+               "but rather to be a tool to ease the character creation.\n\n" +
+               "Thanks to:\n" +
+               "Melissa Avery-Weir's d20 3.5 SRD Spell Lists (http://thecharonsheet.com/d20-spell-lists/) for inspiration;\n\n" +
+               "Andargor's SQL script with SRD spells (http://www.andargor.com)",
                "About", MessageBoxButtons.OK);
         }
     }
