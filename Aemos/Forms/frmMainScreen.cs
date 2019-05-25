@@ -50,7 +50,7 @@ namespace Aemos
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Copyright© 2018 - 2019 Luiz Gustavo A. Gomes\n\n" +
+            MessageBox.Show("Copyright© 2018 Luiz Gustavo A. Gomes\n\n" +
                "If you have any questions just contact me at\n" +
                "\tlgustavogom@gmail.com\n\n" +
                "This program uses content from the d20 System, with no intention to " +
