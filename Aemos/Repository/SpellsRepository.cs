@@ -10,6 +10,7 @@ namespace Aemos.Repository
     {
         private static readonly string _connectionString = Properties.Settings.Default.SpellsConnectionString;
         private static readonly int _maxSpellCycle = 9;
+        private static string _spellLevelParameter;
 
         public static int[] GetSpellsSlots(string className, int characterLevel, string tableComplement)
         {
@@ -61,17 +62,9 @@ namespace Aemos.Repository
                         string query = $"{Resources.SpellResources.GetSpellsDetailed}";
                         SqlCommand sqlCommand = new SqlCommand(query, connection);
 
+                        GetSpellLevelCommandParameters(spellFilter);
                         sqlCommand.Parameters.AddWithValue("@Name", $"%{spellFilter.SpellName}%");
-
-                        if (!string.IsNullOrWhiteSpace(spellFilter.ClassLevel))
-                        {
-                            sqlCommand.Parameters.AddWithValue("@Level", $"%{spellFilter.ClassName} {spellFilter.ClassLevel}%");
-                        }
-                        else
-                        {
-                            sqlCommand.Parameters.AddWithValue("@Level", $"%{spellFilter.ClassName}%");
-                        }
-
+                        sqlCommand.Parameters.AddWithValue("@Level", _spellLevelParameter);
                         sqlCommand.Parameters.AddWithValue("@School", $"%{spellFilter.SpellSchool}%");
 
                         using (SqlDataReader reader = sqlCommand.ExecuteReader())
@@ -89,6 +82,18 @@ namespace Aemos.Repository
                 WarningMessage.ShowWarningMessage(ex.Message);
             }
             return spellsDetailed;
+        }
+
+        private static void GetSpellLevelCommandParameters(SpellFIlter spellFilter)
+        {
+            if (string.Equals(spellFilter.ClassName, "Sorcerer") || string.Equals(spellFilter.ClassName, "Wizard"))
+            {
+                spellFilter.ClassName = "Sorcerer/Wizard";
+            }
+
+            _spellLevelParameter = (!string.IsNullOrWhiteSpace(spellFilter.ClassLevel))
+                ? _spellLevelParameter = $"%{spellFilter.ClassName} {spellFilter.ClassLevel}%"
+                : _spellLevelParameter = $"%{spellFilter.ClassName}%";
         }
     }
 }

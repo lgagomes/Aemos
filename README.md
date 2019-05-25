@@ -20,11 +20,13 @@ Features (so far):
    - Class / non-class skill max rank points, based on character level
    - XP calculation for character level up (NOT  Challenge Rating (CR) / Encounter calculation).
    - Dice Roller
+   - Spell Compendium: an (almost) complete database of spells in Player's Handbook, Complete Divine and Epic Level's book
    
 # Why "Aemos"?
 In the [Eisenhorn book series](http://wh40k.lexicanum.com/wiki/Eisenhorn_(Novel_Series)) set in the [Warhammer 40K](http://wh40k.lexicanum.com/wiki/Warhammer_40,000) universe, [Uber Aemos](http://wh40k.lexicanum.com/wiki/Uber_Aemos) is a character who provides Eisenhorn with useful information and complex computation. That's the goal of this tool, to help players and dungeon masters to save time when dealing with boring calculations and / or searching the books for specific tables.
 
 # Changelog:
+- v 1.8.3: Finished the spell's details form and fixes a bug when serching for wizard or sorcerer spells returns no results
 - v 1.8.2: Finished spells compendium, refactoring in the repository class and adds a new form to show the spell's detail when doubled
 clicked in spells compendium screen
 - v 1.8: Beginning of new feature addition: spell compendium, a database with (almost) every spell PHB, Complete Divine and Epic Level's Book
