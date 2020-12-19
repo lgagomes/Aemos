@@ -162,7 +162,7 @@ ORDER BY
 
 FROM @TableName
 
-WHERE @TableName.Id = @CharacterLevel</value>
+WHERE @TableName.CharLevel = @CharacterLevel</value>
   </data>
   <data name="KnownSpellsComplement" xml:space="preserve">
     <value>KnownSpells</value>

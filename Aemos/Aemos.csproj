@@ -304,6 +304,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DatabaseTables\SpellsCompendiumScript.sql" />
+    <Content Include="DatabaseTables\CreateBardDailySpellsTable.sql" />
+    <Content Include="DatabaseTables\CreateBardKnownSpellsTable.sql" />
+    <Content Include="DatabaseTables\CreateClericDailySpellsTable.sql" />
+    <Content Include="DatabaseTables\CreateDruidDailySpellsTable.sql" />
+    <Content Include="DatabaseTables\CreatePaladinDailySpellsTable.sql" />
+    <Content Include="DatabaseTables\CreateRangerDailySpellsTable.sql" />
+    <Content Include="DatabaseTables\CreateSorcererDailySpellsTable.sql" />
+    <Content Include="DatabaseTables\CreateSorcererKnownSpellsTable.sql" />
+    <Content Include="DatabaseTables\CreateWizardDailySpellsTable.sql" />
     <Content Include="DatabaseTables\Spells.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
