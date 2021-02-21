@@ -5,6 +5,7 @@ namespace Aemos.CharacterClasses
 {
     public class BaseClass
     {
+        public int Id { get; set; }
         public string ClassName { get; set; }
         public int CharacterLevel { get; set; }
         public int Charisma { get; set; }

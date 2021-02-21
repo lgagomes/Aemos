@@ -120,6 +120,65 @@
   <data name="DailySpellsComplement" xml:space="preserve">
     <value>DailySpells</value>
   </data>
+  <data name="GetSpellcastingClasses" xml:space="preserve">
+    <value>SELECT DISTINCT
+	Classes.IdClass AS Id, 
+	Classes.ClassName 
+FROM
+	Classes 
+	INNER JOIN ClassSpells ON ClassSpells.IdClass = Classes.IdClass
+	INNER JOIN SpellsCompendium ON SpellsCompendium.Id = ClassSpells.IdSpell
+ORDER BY
+	Classes.ClassName</value>
+  </data>
+  <data name="GetSpells" xml:space="preserve">
+    <value>SELECT DISTINCT
+	Id,
+	Name,
+	School,
+	SubSchool,
+	Descriptor,
+	Level,
+	Components,
+	CastingTime,
+	Range,
+	Target,
+	Effect,
+	Area,
+	Duration,
+	SavingThrow,
+	SpellResistance,
+	BriefDescription,
+	MaterialComponents,
+	ArcaneMaterialComponents,
+	XpCost,
+	Focus,
+	ArcaneFocus,
+	BardFocus,
+	ClericFocus,
+	DruidFocus,
+	SorcererFocus,
+	WizardFocus
+FROM
+	SpellsCompendium
+	LEFT JOIN ClassSpells ON ClassSpells.IdSpell = SpellsCompendium.Id
+	LEFT JOIN DomainSpells ON DomainSpells.IdSpell = ClassSpells.IdSpell
+	LEFT JOIN SchoolSpells ON SchoolSpells.IdSpell = SpellsCompendium.Id
+WHERE 
+	1=1
+	--@Filter	
+ORDER BY
+	SpellsCompendium.Name</value>
+  </data>
+  <data name="GetSpellSchools" xml:space="preserve">
+    <value>SELECT 
+	Schools.IdSchool AS Id,
+	Schools.SchoolName
+FROM
+	Schools
+ORDER BY
+	Schools.SchoolName</value>
+  </data>
   <data name="GetSpellsDetailed" xml:space="preserve">
     <value>SELECT 
 	   Id,
@@ -149,7 +208,7 @@
 	   SorcererFocus,
 	   WizardFocus
 FROM
-	  SpellsCompendium
+	  Spells
 WHERE 
 	  Name LIKE @Name
 	  AND Level LIKE @Level
@@ -166,5 +225,14 @@ WHERE @TableName.CharLevel = @CharacterLevel</value>
   </data>
   <data name="KnownSpellsComplement" xml:space="preserve">
     <value>KnownSpells</value>
+  </data>
+  <data name="GetSpellDomains" xml:space="preserve">
+    <value>SELECT 
+	IdDomain AS Id,
+	DomainName 
+FROM 
+	Domains
+ORDER BY 
+	DomainName</value>
   </data>
 </root>
