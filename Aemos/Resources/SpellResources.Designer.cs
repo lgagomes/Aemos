@@ -70,6 +70,92 @@ namespace Aemos.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SELECT DISTINCT
+        ///	Classes.IdClass AS Id, 
+        ///	Classes.ClassName 
+        ///FROM
+        ///	Classes 
+        ///	INNER JOIN ClassSpells ON ClassSpells.IdClass = Classes.IdClass
+        ///	INNER JOIN SpellsCompendium ON SpellsCompendium.Id = ClassSpells.IdSpell
+        ///ORDER BY
+        ///	Classes.ClassName.
+        /// </summary>
+        internal static string GetSpellcastingClasses {
+            get {
+                return ResourceManager.GetString("GetSpellcastingClasses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT 
+        ///	IdDomain AS Id,
+        ///	DomainName 
+        ///FROM 
+        ///	Domains
+        ///ORDER BY 
+        ///	DomainName.
+        /// </summary>
+        internal static string GetSpellDomains {
+            get {
+                return ResourceManager.GetString("GetSpellDomains", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT DISTINCT
+        ///	Id,
+        ///	Name,
+        ///	School,
+        ///	SubSchool,
+        ///	Descriptor,
+        ///	Level,
+        ///	Components,
+        ///	CastingTime,
+        ///	Range,
+        ///	Target,
+        ///	Effect,
+        ///	Area,
+        ///	Duration,
+        ///	SavingThrow,
+        ///	SpellResistance,
+        ///	BriefDescription,
+        ///	MaterialComponents,
+        ///	ArcaneMaterialComponents,
+        ///	XpCost,
+        ///	Focus,
+        ///	ArcaneFocus,
+        ///	BardFocus,
+        ///	ClericFocus,
+        ///	DruidFocus,
+        ///	SorcererFocus,
+        ///	WizardFocus
+        ///FROM
+        ///	SpellsCompendium
+        ///	LEFT JOIN ClassSpells ON ClassSpells.IdSpell = SpellsCompendium.Id
+        ///	LEFT JOIN DomainSpells ON DomainSpells.IdSpell = Cl [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string GetSpells {
+            get {
+                return ResourceManager.GetString("GetSpells", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT 
+        ///	Schools.IdSchool AS Id,
+        ///	Schools.SchoolName
+        ///FROM
+        ///	Schools
+        ///ORDER BY
+        ///	Schools.SchoolName.
+        /// </summary>
+        internal static string GetSpellSchools {
+            get {
+                return ResourceManager.GetString("GetSpellSchools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SELECT 
         ///	   Id,
         ///	   Name,
@@ -98,10 +184,11 @@ namespace Aemos.Resources {
         ///	   SorcererFocus,
         ///	   WizardFocus
         ///FROM
-        ///	  SpellsCompendium
+        ///	  Spells
         ///WHERE 
         ///	  Name LIKE @Name
-        ///	  AND Level LIKE @Le [rest of string was truncated]&quot;;.
+        ///	  AND Level LIKE @Level
+        ///	  AN [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string GetSpellsDetailed {
             get {

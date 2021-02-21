@@ -32,16 +32,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxSpellName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxSpellSchool = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxClassToSearch = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxLevelToSearch = new System.Windows.Forms.ComboBox();
+            this.comboBoxSpellLevel = new System.Windows.Forms.ComboBox();
             this.btnSearchSpell = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxSchools = new System.Windows.Forms.ComboBox();
+            this.comboBoxClasses = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnClearSpellsGrid = new System.Windows.Forms.Button();
             this.dataGridViewSpellsDetailed = new System.Windows.Forms.DataGridView();
+            this.comboBoxDomain = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.schoolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subSchoolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,62 +96,44 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(229, 24);
+            this.label2.Location = new System.Drawing.Point(7, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Spell School";
             // 
-            // comboBoxSpellSchool
-            // 
-            this.comboBoxSpellSchool.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSpellSchool.FormattingEnabled = true;
-            this.comboBoxSpellSchool.Location = new System.Drawing.Point(315, 21);
-            this.comboBoxSpellSchool.Name = "comboBoxSpellSchool";
-            this.comboBoxSpellSchool.Size = new System.Drawing.Size(114, 21);
-            this.comboBoxSpellSchool.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(446, 24);
+            this.label3.Location = new System.Drawing.Point(236, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Class";
             // 
-            // comboBoxClassToSearch
-            // 
-            this.comboBoxClassToSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxClassToSearch.FormattingEnabled = true;
-            this.comboBoxClassToSearch.Location = new System.Drawing.Point(504, 21);
-            this.comboBoxClassToSearch.Name = "comboBoxClassToSearch";
-            this.comboBoxClassToSearch.Size = new System.Drawing.Size(94, 21);
-            this.comboBoxClassToSearch.TabIndex = 5;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(619, 24);
+            this.label4.Location = new System.Drawing.Point(436, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Spell Cycle";
             // 
-            // comboBoxLevelToSearch
+            // comboBoxSpellLevel
             // 
-            this.comboBoxLevelToSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLevelToSearch.FormattingEnabled = true;
-            this.comboBoxLevelToSearch.Location = new System.Drawing.Point(684, 21);
-            this.comboBoxLevelToSearch.Name = "comboBoxLevelToSearch";
-            this.comboBoxLevelToSearch.Size = new System.Drawing.Size(74, 21);
-            this.comboBoxLevelToSearch.TabIndex = 7;
+            this.comboBoxSpellLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSpellLevel.FormattingEnabled = true;
+            this.comboBoxSpellLevel.Location = new System.Drawing.Point(501, 41);
+            this.comboBoxSpellLevel.Name = "comboBoxSpellLevel";
+            this.comboBoxSpellLevel.Size = new System.Drawing.Size(74, 21);
+            this.comboBoxSpellLevel.TabIndex = 7;
             // 
             // btnSearchSpell
             // 
-            this.btnSearchSpell.Location = new System.Drawing.Point(315, 60);
+            this.btnSearchSpell.Location = new System.Drawing.Point(615, 39);
             this.btnSearchSpell.Name = "btnSearchSpell";
-            this.btnSearchSpell.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchSpell.Size = new System.Drawing.Size(100, 23);
             this.btnSearchSpell.TabIndex = 8;
             this.btnSearchSpell.Text = "Search";
             this.btnSearchSpell.UseVisualStyleBackColor = true;
@@ -156,12 +141,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBoxDomain);
+            this.groupBox1.Controls.Add(this.comboBoxSchools);
+            this.groupBox1.Controls.Add(this.comboBoxClasses);
             this.groupBox1.Controls.Add(this.btnSearchSpell);
-            this.groupBox1.Controls.Add(this.comboBoxLevelToSearch);
+            this.groupBox1.Controls.Add(this.comboBoxSpellLevel);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBoxClassToSearch);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.comboBoxSpellSchool);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBoxSpellName);
             this.groupBox1.Controls.Add(this.label1);
@@ -170,7 +158,27 @@
             this.groupBox1.Size = new System.Drawing.Size(767, 97);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Spell\'s Info";
+            this.groupBox1.Text = "Spell\'s Filter";
+            // 
+            // comboBoxSchools
+            // 
+            this.comboBoxSchools.DisplayMember = "SchoolName";
+            this.comboBoxSchools.FormattingEnabled = true;
+            this.comboBoxSchools.Location = new System.Drawing.Point(94, 60);
+            this.comboBoxSchools.Name = "comboBoxSchools";
+            this.comboBoxSchools.Size = new System.Drawing.Size(114, 21);
+            this.comboBoxSchools.TabIndex = 10;
+            this.comboBoxSchools.ValueMember = "Id";
+            // 
+            // comboBoxClasses
+            // 
+            this.comboBoxClasses.DisplayMember = "ClassName";
+            this.comboBoxClasses.FormattingEnabled = true;
+            this.comboBoxClasses.Location = new System.Drawing.Point(286, 22);
+            this.comboBoxClasses.Name = "comboBoxClasses";
+            this.comboBoxClasses.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxClasses.TabIndex = 9;
+            this.comboBoxClasses.ValueMember = "Id";
             // 
             // groupBox2
             // 
@@ -229,6 +237,34 @@
             this.dataGridViewSpellsDetailed.Size = new System.Drawing.Size(749, 252);
             this.dataGridViewSpellsDetailed.TabIndex = 0;
             this.dataGridViewSpellsDetailed.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSpellsDetailed_CellContentDoubleClick);
+            // 
+            // comboBoxDomain
+            // 
+            this.comboBoxDomain.DisplayMember = "DomainName";
+            this.comboBoxDomain.FormattingEnabled = true;
+            this.comboBoxDomain.Location = new System.Drawing.Point(286, 61);
+            this.comboBoxDomain.Name = "comboBoxDomain";
+            this.comboBoxDomain.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDomain.TabIndex = 11;
+            this.comboBoxDomain.ValueMember = "IdDomain";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(236, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Class";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(236, 65);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Domain";
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -432,11 +468,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxSpellName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxSpellSchool;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBoxClassToSearch;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBoxLevelToSearch;
+        private System.Windows.Forms.ComboBox comboBoxSpellLevel;
         private System.Windows.Forms.Button btnSearchSpell;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -468,5 +502,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn druidFocusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sorcererFocusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wizardFocusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox comboBoxClasses;
+        private System.Windows.Forms.ComboBox comboBoxSchools;
+        private System.Windows.Forms.ComboBox comboBoxDomain;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

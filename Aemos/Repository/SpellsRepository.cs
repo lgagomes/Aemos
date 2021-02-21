@@ -1,8 +1,13 @@
-﻿using Aemos.Helpers;
+﻿using Aemos.CharacterClasses;
+using Aemos.DomainClasses;
+using Aemos.DomainClasses.DTOs;
+using Aemos.Helpers;
+using Aemos.Repository.Creators;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
 
 namespace Aemos.Repository
 {
@@ -10,7 +15,6 @@ namespace Aemos.Repository
     {
         private static readonly string _connectionString = Properties.Settings.Default.SpellsConnectionString;
         private static readonly int _maxSpellCycle = 9;
-        private static string _spellLevelParameter;
 
         public static int[] GetSpellsSlots(string className, int characterLevel, string tableComplement)
         {
@@ -23,7 +27,7 @@ namespace Aemos.Repository
                     connection.Open();
                     if (connection.State == ConnectionState.Open)
                     {
-                        string query = $"{Resources.SpellResources.GetSpellsSlots}";
+                        string query = Resources.SpellResources.GetSpellsSlots;
                         string tableName = $"{className}{tableComplement}";
 
                         SqlCommand sqlCommand = new SqlCommand(query.Replace("@TableName", tableName), connection);
@@ -47,11 +51,11 @@ namespace Aemos.Repository
                 WarningMessage.ShowWarningMessage(ex.Message);
             }
             return spellSlots;
-        }
+        }        
 
-        public static List<SpellDTO> GetSpellsDetailed(SpellFIlter spellFilter)
+        public static List<SpellDTO> GetSpells(SpellFIlter spellFilter)
         {
-            List<SpellDTO> spellsDetailed = new List<SpellDTO>();
+            List<SpellDTO> spells = new List<SpellDTO>();
             try
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -59,19 +63,33 @@ namespace Aemos.Repository
                     connection.Open();
                     if (connection.State == ConnectionState.Open)
                     {
-                        string query = $"{Resources.SpellResources.GetSpellsDetailed}";
-                        SqlCommand sqlCommand = new SqlCommand(query, connection);
+                        var query = Resources.SpellResources.GetSpells;                        
 
-                        GetSpellLevelCommandParameters(spellFilter);
-                        sqlCommand.Parameters.AddWithValue("@Name", $"%{spellFilter.SpellName}%");
-                        sqlCommand.Parameters.AddWithValue("@Level", _spellLevelParameter);
-                        sqlCommand.Parameters.AddWithValue("@School", $"%{spellFilter.SpellSchool}%");
+                        var whereFilter = new StringBuilder()
+                            .AppendLine(spellFilter.IdClass > 0 ? "AND ClassSpells.IdClass = @IdClass" : string.Empty)
+                            .AppendLine(spellFilter.SpellLevel > 0 ? "AND ClassSpells.ClassLevel = @ClassLevel" : string.Empty)
+                            .AppendLine(spellFilter.IdDomain > 0 ? "AND DomainSpells.IdDomain = @IdDomain" : string.Empty)
+                            .AppendLine(!string.IsNullOrWhiteSpace(spellFilter.SpellName) ? "AND SpellsCompendium.Name LIKE @SpellName" : string.Empty)
+                            .AppendLine(spellFilter.IdSchool > 0 ? "AND SchoolSpells.IdSchool = @IdSchool" : string.Empty)
+                            .ToString();
+
+                        if (!string.IsNullOrWhiteSpace(whereFilter))
+                        {
+                            query = query.Replace("--@Filter", whereFilter);
+                        }
+
+                        SqlCommand sqlCommand = new SqlCommand(query, connection);
+                        sqlCommand.Parameters.AddWithValue("@IdClass", spellFilter.IdClass);
+                        sqlCommand.Parameters.AddWithValue("@ClassLevel", spellFilter.SpellLevel);
+                        sqlCommand.Parameters.AddWithValue("@IdDomain", spellFilter.IdDomain);
+                        sqlCommand.Parameters.AddWithValue("@SpellName", $"%{spellFilter.SpellName}%");
+                        sqlCommand.Parameters.AddWithValue("@IdSchool", spellFilter.IdSchool);
 
                         using (SqlDataReader reader = sqlCommand.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                spellsDetailed.Add(SpellDetailedCreator.GetSpellDetailed(reader));
+                                spells.Add(SpellDetailedCreator.GetSpellDetailed(reader));
                             }
                         }
                     }
@@ -81,19 +99,103 @@ namespace Aemos.Repository
             {
                 WarningMessage.ShowWarningMessage(ex.Message);
             }
-            return spellsDetailed;
-        }
+            return spells;
+        }       
 
-        private static void GetSpellLevelCommandParameters(SpellFIlter spellFilter)
+        public static List<BaseClass> GetSpellcastingClasses()
         {
-            if (string.Equals(spellFilter.ClassName, "Sorcerer") || string.Equals(spellFilter.ClassName, "Wizard"))
+            var spellcasters = new List<BaseClass>();
+
+            try
             {
-                spellFilter.ClassName = "Sorcerer/Wizard";
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    connection.Open();
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        string query = Resources.SpellResources.GetSpellcastingClasses;
+                        SqlCommand sqlCommand = new SqlCommand(query, connection);
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                spellcasters.Add(ClassCreator.GetSpellcaster(reader));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                WarningMessage.ShowWarningMessage(ex.Message);
             }
 
-            _spellLevelParameter = (!string.IsNullOrWhiteSpace(spellFilter.ClassLevel))
-                ? _spellLevelParameter = $"%{spellFilter.ClassName} {spellFilter.ClassLevel}%"
-                : _spellLevelParameter = $"%{spellFilter.ClassName}%";
+            return spellcasters;
+        }
+
+        public static List<SpellSchool> GetSpellSchools()
+        {
+            var schools = new List<SpellSchool>();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    connection.Open();
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        string query = Resources.SpellResources.GetSpellSchools;
+                        SqlCommand sqlCommand = new SqlCommand(query, connection);
+                        
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                schools.Add(SchoolCreator.GetSchool(reader));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                WarningMessage.ShowWarningMessage(ex.Message);
+            }
+
+            return schools;
+        }
+
+        public static List<SpellDomain> GetSpellDomains()
+        {
+            var domais = new List<SpellDomain>();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    connection.Open();
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        string query = Resources.SpellResources.GetSpellDomains;
+                        SqlCommand sqlCommand = new SqlCommand(query, connection);
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                domais.Add(SpellDomainCreator.GetDomain(reader));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                WarningMessage.ShowWarningMessage(ex.Message);
+            }
+
+            return domais;
         }
     }
 }

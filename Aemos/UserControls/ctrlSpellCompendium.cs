@@ -5,6 +5,10 @@ using System.Text;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using Aemos.Forms;
+using System.Linq;
+using Aemos.CharacterClasses;
+using Aemos.DomainClasses;
+using Aemos.DomainClasses.DTOs;
 
 namespace Aemos.UserControls
 {
@@ -18,119 +22,94 @@ namespace Aemos.UserControls
 
         private void ctrlSpellCompendium_Load(object sender, EventArgs e)
         {
-            InitializeClasses();
             InitializeLevels();
-            InitializeSpellsSchools();
+            GetSpellcasters();
+            GetSchools();
+            GetDomains();
         }
 
-        private void InitializeClasses()
+        private void GetDomains()
         {
-            comboBoxClassToSearch.Items.Add("Choose a Class");
-            comboBoxClassToSearch.Items.Add("Bard");
-            comboBoxClassToSearch.Items.Add("Cleric");
-            comboBoxClassToSearch.Items.Add("Druid");
-            comboBoxClassToSearch.Items.Add("Paladin");
-            comboBoxClassToSearch.Items.Add("Ranger");
-            comboBoxClassToSearch.Items.Add("Sorcerer");
-            comboBoxClassToSearch.Items.Add("Wizard");
+            var domains = new List<SpellDomain>() { new SpellDomain { IdDomain = 0, DomainName = "Choose a Domain" } };
+            domains.AddRange(SpellsRepository.GetSpellDomains());
 
-            comboBoxClassToSearch.SelectedIndex = 0;
+            comboBoxDomain.DataSource = domains;
         }
 
+        private void GetSpellcasters()
+        {
+            var spellcasters = new List<BaseClass>() { new BaseClass { Id = 0, ClassName = "Choose a Class" } };
+            spellcasters.AddRange(SpellsRepository.GetSpellcastingClasses());
+
+            comboBoxClasses.DataSource = spellcasters;
+        }
+
+        private void GetSchools()
+        {
+            var schools = new List<SpellSchool>() { new SpellSchool { Id = 0, SchoolName = "Choose a School" } };
+            schools.AddRange(SpellsRepository.GetSpellSchools());
+
+            comboBoxSchools.DataSource = schools;
+        }
+       
         private void InitializeLevels()
         {
             for (int i = 1; i <= 9; i++)
             {
-                comboBoxLevelToSearch.Items.Add(i.ToString());
+                comboBoxSpellLevel.Items.Add(i.ToString());
             }
-        }
-
-        private void InitializeSpellsSchools()
-        {
-            List<string> schools = new List<string>
-            {
-                "Select a School", "Abjuration", "Conjuration",
-                "Divination", "Enchantment", "Evocation",
-                "Illusion", "Necromancy", "Transmutation", "Universal"
-            };
-
-            foreach (string school in schools)
-            {
-                comboBoxSpellSchool.Items.Add(school);
-            }
-
-            comboBoxSpellSchool.SelectedIndex = 0;
-        }
+        }     
 
         private void btnSearchSpell_Click(object sender, EventArgs e)
         {
             if (ValidateFields())
             {
-                SpellFIlter spellFilter = new SpellFIlter();
-                PrepareFilter(spellFilter);
-                List<SpellDTO> spellsDetailed = SpellsRepository.GetSpellsDetailed(spellFilter);
-
-                dataGridViewSpellsDetailed.DataSource = spellsDetailed;
+                dataGridViewSpellsDetailed.DataSource = SpellsRepository.GetSpells(PrepareFilter());
             }
         }
 
-        private void PrepareFilter(SpellFIlter spellFIlter)
+        private SpellFIlter PrepareFilter()
         {
-            if (!string.IsNullOrWhiteSpace(textBoxSpellName.Text))
+            return new SpellFIlter
             {
-                spellFIlter.SpellName = textBoxSpellName.Text;
-            }
-
-            if (!string.Equals(comboBoxSpellSchool.Text, "Select a School"))
-            {
-                spellFIlter.SpellSchool = comboBoxSpellSchool.Text;
-            }
-
-            if (!string.IsNullOrWhiteSpace(comboBoxLevelToSearch.Text))
-            {
-                spellFIlter.ClassLevel = Convert.ToInt32(comboBoxLevelToSearch.Text).ToString();
-            }
-
-            if (!string.Equals(comboBoxClassToSearch.Text, "Choose a Class"))
-            {
-                spellFIlter.ClassName = comboBoxClassToSearch.Text;
-            }
+                IdClass = ((BaseClass)comboBoxClasses.SelectedItem)?.Id ?? 0,
+                IdSchool = ((SpellSchool)comboBoxSchools.SelectedItem)?.Id ?? 0,
+                SpellName = textBoxSpellName.Text,
+                SpellLevel = !string.IsNullOrWhiteSpace(comboBoxSpellLevel.Text) ? Convert.ToInt32(comboBoxSpellLevel.Text) : 0,
+                IdDomain = ((SpellDomain)comboBoxDomain.SelectedItem)?.IdDomain ?? 0
+            };
         }
 
         private bool ValidateFields()
         {
             StringBuilder errors = new StringBuilder();
             string spellName = textBoxSpellName.Text;
-            string className = comboBoxClassToSearch.Text;
-            string classLevel = comboBoxLevelToSearch.Text;
-            string spellSchool = comboBoxClassToSearch.Text;
-            int.TryParse(comboBoxLevelToSearch.Text, out int level);
+            string classLevel = comboBoxSpellLevel.Text;
+            int.TryParse(comboBoxSpellLevel.Text, out int level);
+            var selectedClass = ((BaseClass)comboBoxClasses.SelectedItem);
+            var idSelectedSchool = ((SpellSchool)comboBoxSchools.SelectedItem)?.Id ?? 0;
 
-            if (string.IsNullOrWhiteSpace(spellName) && string.Equals(className, "Choose a Class") && string.Equals(spellSchool, "Select a School"))
+
+            if (string.IsNullOrWhiteSpace(spellName) && selectedClass?.Id == 0 && idSelectedSchool == 0)
             {
                 errors.AppendLine("Please inform at least a spell name, a class or a spell school");
             }
 
-            if (!string.IsNullOrWhiteSpace(classLevel) && string.Equals(className, "Choose a Class"))
+            if (!string.IsNullOrWhiteSpace(classLevel) && selectedClass?.Id == 0)
             {
                 errors.AppendLine("Need to inform the class as well if you inform the level");
             }
 
-            if(string.Equals(className,"Bard") && level > 6)
+            if (string.Equals(selectedClass?.ClassName, "Bard") && level > 6)
             {
                 errors.AppendLine("A Bard doesn't have spell cycles above 6. Please select another value");
             }
-            
-            if((string.Equals(className, "Paladin") || string.Equals(className, "Ranger")) && level > 4)
+
+            if ((string.Equals(selectedClass?.ClassName, "Paladin") || string.Equals(selectedClass?.ClassName, "Ranger")) && level > 4)
             {
-                errors.AppendLine($"A {className} doesn't have spell cycles above 4. Please select another value");
+                errors.AppendLine($"A {selectedClass.ClassName} doesn't have spell cycles above 4. Please select another value");
             }
 
-            return CheckErrors(errors);
-        }
-
-        private bool CheckErrors(StringBuilder errors)
-        {
             if (string.IsNullOrWhiteSpace(errors.ToString()))
             {
                 return true;
@@ -141,6 +120,7 @@ namespace Aemos.UserControls
                 return false;
             }
         }
+       
 
         private void btnClearSpellsGrid_Click(object sender, EventArgs e)
         {
