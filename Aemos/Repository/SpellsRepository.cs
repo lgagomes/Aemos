@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using Dapper;
+using System.Linq;
 
 namespace Aemos.Repository
 {
@@ -61,38 +63,33 @@ namespace Aemos.Repository
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
-                    if (connection.State == ConnectionState.Open)
+
+                    var query = Resources.SpellResources.GetSpells;
+
+                    var whereFilter = new StringBuilder()
+                        .AppendLine(spellFilter.IdClass > 0 ? "AND ClassSpells.IdClass = @IdClass" : string.Empty)
+                        .AppendLine(spellFilter.SpellLevel > 0 ? "AND ClassSpells.ClassLevel = @ClassLevel" : string.Empty)
+                        .AppendLine(spellFilter.IdDomain > 0 ? "AND DomainSpells.IdDomain = @IdDomain" : string.Empty)
+                        .AppendLine(!string.IsNullOrWhiteSpace(spellFilter.SpellName) ? "AND SpellsCompendium.Name LIKE @SpellName" : string.Empty)
+                        .AppendLine(spellFilter.IdSchool > 0 ? "AND SchoolSpells.IdSchool = @IdSchool" : string.Empty)
+                        .ToString();
+
+                    if (!string.IsNullOrWhiteSpace(whereFilter))
                     {
-                        var query = Resources.SpellResources.GetSpells;                        
-
-                        var whereFilter = new StringBuilder()
-                            .AppendLine(spellFilter.IdClass > 0 ? "AND ClassSpells.IdClass = @IdClass" : string.Empty)
-                            .AppendLine(spellFilter.SpellLevel > 0 ? "AND ClassSpells.ClassLevel = @ClassLevel" : string.Empty)
-                            .AppendLine(spellFilter.IdDomain > 0 ? "AND DomainSpells.IdDomain = @IdDomain" : string.Empty)
-                            .AppendLine(!string.IsNullOrWhiteSpace(spellFilter.SpellName) ? "AND SpellsCompendium.Name LIKE @SpellName" : string.Empty)
-                            .AppendLine(spellFilter.IdSchool > 0 ? "AND SchoolSpells.IdSchool = @IdSchool" : string.Empty)
-                            .ToString();
-
-                        if (!string.IsNullOrWhiteSpace(whereFilter))
-                        {
-                            query = query.Replace("--@Filter", whereFilter);
-                        }
-
-                        SqlCommand sqlCommand = new SqlCommand(query, connection);
-                        sqlCommand.Parameters.AddWithValue("@IdClass", spellFilter.IdClass);
-                        sqlCommand.Parameters.AddWithValue("@ClassLevel", spellFilter.SpellLevel);
-                        sqlCommand.Parameters.AddWithValue("@IdDomain", spellFilter.IdDomain);
-                        sqlCommand.Parameters.AddWithValue("@SpellName", $"%{spellFilter.SpellName}%");
-                        sqlCommand.Parameters.AddWithValue("@IdSchool", spellFilter.IdSchool);
-
-                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                spells.Add(SpellDetailedCreator.GetSpellDetailed(reader));
-                            }
-                        }
+                        query = query.Replace("--@Filter", whereFilter);
                     }
+
+                    spells = connection.Query<SpellDTO>(
+                        query,
+                        new
+                        {
+                            spellFilter.IdClass,
+                            ClassLevel = spellFilter.SpellLevel,
+                            spellFilter.IdDomain,
+                            SpellName = $"%{ spellFilter.SpellName}%",
+                            spellFilter.IdSchool
+                        })
+                        .ToList();                   
                 }
             }
             catch (Exception ex)
@@ -111,19 +108,8 @@ namespace Aemos.Repository
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
-                    if (connection.State == ConnectionState.Open)
-                    {
-                        string query = Resources.SpellResources.GetSpellcastingClasses;
-                        SqlCommand sqlCommand = new SqlCommand(query, connection);
 
-                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                spellcasters.Add(ClassCreator.GetSpellcaster(reader));
-                            }
-                        }
-                    }
+                    spellcasters = connection.Query<BaseClass>(Resources.SpellResources.GetSpellcastingClasses).ToList();
                 }
             }
             catch (Exception ex)
@@ -143,19 +129,8 @@ namespace Aemos.Repository
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
-                    if (connection.State == ConnectionState.Open)
-                    {
-                        string query = Resources.SpellResources.GetSpellSchools;
-                        SqlCommand sqlCommand = new SqlCommand(query, connection);
-                        
-                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                schools.Add(SchoolCreator.GetSchool(reader));
-                            }
-                        }
-                    }
+
+                    schools = connection.Query<SpellSchool>(Resources.SpellResources.GetSpellSchools).ToList();
                 }
             }
             catch (Exception ex)
@@ -168,26 +143,15 @@ namespace Aemos.Repository
 
         public List<SpellDomain> GetSpellDomains()
         {
-            var domais = new List<SpellDomain>();
+            var domains = new List<SpellDomain>();
 
             try
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
-                    if (connection.State == ConnectionState.Open)
-                    {
-                        string query = Resources.SpellResources.GetSpellDomains;
-                        SqlCommand sqlCommand = new SqlCommand(query, connection);
 
-                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                domais.Add(SpellDomainCreator.GetDomain(reader));
-                            }
-                        }
-                    }
+                    domains = connection.Query<SpellDomain>(Resources.SpellResources.GetSpellDomains).ToList();
                 }
             }
             catch (Exception ex)
@@ -195,7 +159,7 @@ namespace Aemos.Repository
                 WarningMessage.ShowWarningMessage(ex.Message);
             }
 
-            return domais;
+            return domains;
         }
     }
 }
