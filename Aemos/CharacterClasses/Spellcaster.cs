@@ -1,5 +1,4 @@
-﻿using Aemos.Repository;
-using System;
+﻿using System;
 
 namespace Aemos.CharacterClasses
 {
@@ -19,12 +18,7 @@ namespace Aemos.CharacterClasses
             ExtraSpells = new decimal[10] { 0, -1, -1, -1, -1, -1, -1, -1, -1, -1 }; ;
             KeyAttributeModifier = 0;
         }
-
-        public void GetDailySpells()
-        {
-            CurrentDailySpells = SpellsRepository.GetSpellsSlots(ClassName, CharacterLevel, Resources.SpellResources.DailySpellsComplement);
-        }
-
+       
         public void GetExtraSpells()
         {
             for (int i = 1; i < MaxSpellCycle; i++)

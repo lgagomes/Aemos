@@ -14,10 +14,13 @@ namespace Aemos.UserControls
 {
     public partial class ctrlSpellCompendium : UserControl
     {
+        private SpellsRepository _spellsRepository;
+
         public ctrlSpellCompendium()
         {
             InitializeComponent();
 
+            _spellsRepository = new SpellsRepository();
         }
 
         private void ctrlSpellCompendium_Load(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace Aemos.UserControls
         private void GetDomains()
         {
             var domains = new List<SpellDomain>() { new SpellDomain { IdDomain = 0, DomainName = "Choose a Domain" } };
-            domains.AddRange(SpellsRepository.GetSpellDomains());
+            domains.AddRange(_spellsRepository.GetSpellDomains());
 
             comboBoxDomain.DataSource = domains;
         }
@@ -39,7 +42,7 @@ namespace Aemos.UserControls
         private void GetSpellcasters()
         {
             var spellcasters = new List<BaseClass>() { new BaseClass { Id = 0, ClassName = "Choose a Class" } };
-            spellcasters.AddRange(SpellsRepository.GetSpellcastingClasses());
+            spellcasters.AddRange(_spellsRepository.GetSpellcastingClasses());
 
             comboBoxClasses.DataSource = spellcasters;
         }
@@ -47,7 +50,7 @@ namespace Aemos.UserControls
         private void GetSchools()
         {
             var schools = new List<SpellSchool>() { new SpellSchool { Id = 0, SchoolName = "Choose a School" } };
-            schools.AddRange(SpellsRepository.GetSpellSchools());
+            schools.AddRange(_spellsRepository.GetSpellSchools());
 
             comboBoxSchools.DataSource = schools;
         }
@@ -64,7 +67,7 @@ namespace Aemos.UserControls
         {
             if (ValidateFields())
             {
-                dataGridViewSpellsDetailed.DataSource = SpellsRepository.GetSpells(PrepareFilter());
+                dataGridViewSpellsDetailed.DataSource = _spellsRepository.GetSpells(PrepareFilter());
             }
         }
 

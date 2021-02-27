@@ -1,5 +1,6 @@
 ﻿using Aemos.CharacterClasses;
 using Aemos.Helpers;
+using Aemos.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,13 @@ namespace Aemos.UserControls
         private const int TEN = 10;
         private const int TWENTY = 20;
 
+        private SpellsRepository _spellsRepository;
+
         public ctrlSpellcasting()
         {
             InitializeComponent();
+
+            _spellsRepository = new SpellsRepository();
         }
 
         #region Initializations
@@ -233,7 +238,9 @@ namespace Aemos.UserControls
         private void LoadSpells()
         {
             _currentSpellcaster.CharacterLevel = Convert.ToInt32(comboBoxLevel.Text);
-            _currentSpellcaster.GetDailySpells();
+
+            _currentSpellcaster.CurrentDailySpells =
+                _spellsRepository.GetSpellsSlots(_currentSpellcaster.ClassName, _currentSpellcaster.CharacterLevel, "DailySpells");
         }
 
         private void FillSpellcyclesTextBox()
@@ -252,7 +259,8 @@ namespace Aemos.UserControls
             {
                 KnowlerOfSpells character = _knowlers.Find(x => x.ClassName == comboBoxClasses.Text.ToString());
                 character.CharacterLevel = Convert.ToInt32(comboBoxLevel.Text);
-                character.GetKnownSpells();
+
+                character.CurrentKnownSpells = _spellsRepository.GetSpellsSlots(character.ClassName, character.CharacterLevel, "KnownSpells");
 
                 int i = 0;
                 foreach (var item in _knownSpells)

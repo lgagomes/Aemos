@@ -20,24 +20,12 @@ namespace AemosTesterForms
 
         private void btnTestSpellsPerDayDatabase_Click(object sender, EventArgs e)
         {
-            Cleric character = new Cleric("Cleric");
-            character.CharacterLevel = 20;
-            character.GetDailySpells();
-
-            PrintSpells(character.CurrentDailySpells);
+           
         }
 
         private void btnTestCastSpellV2_Click(object sender, EventArgs e)
         {
-            Cleric character = new Cleric("Cleric");
-            character.CharacterLevel = 20;
-            character.GetDailySpells();
-
-            PrintSpells(character.CurrentDailySpells);
-
-            character.CastSpell(0);
-
-            PrintSpells(character.CurrentDailySpells);
+            
         }
 
         private void PrintSpells(int[] spellsArray)

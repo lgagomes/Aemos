@@ -1,4 +1,5 @@
 ﻿using Aemos.CharacterClasses;
+using Aemos.Repository;
 using System.Linq;
 using Xunit;
 
@@ -6,17 +7,24 @@ namespace AemosUnitTest
 {
     public class SpellcastingUnitTests
     {
+        private SpellsRepository _spellsRepository;
+
+        public SpellcastingUnitTests()
+        {
+            _spellsRepository = new SpellsRepository();
+        }
+
         [Fact]
         public void TestBardSpellsPerDay()
         {
             // Arrange
-            Bard bard = new Bard("bard");
-            bard.CharacterLevel = 5;
+            Bard bard = new Bard("bard") { CharacterLevel = 5 };
             int[] SpellsPerDayBard = new int[] { 3, 3, 1, 0, 0, 0, 0, 0, 0, 0 };
+
             try
             {
                 // Act
-                bard.GetDailySpells();
+                bard.CurrentDailySpells = _spellsRepository.GetSpellsSlots(bard.ClassName, bard.CharacterLevel, "DailySpells");
 
                 // Assert            
                 Assert.Equal(SpellsPerDayBard, bard.CurrentDailySpells);
@@ -28,14 +36,14 @@ namespace AemosUnitTest
         public void TestSorcererSpellsPerDay()
         {
             // Arrange
-            Sorcerer sorcerer = new Sorcerer("sorcerer");
-            sorcerer.CharacterLevel = 10;
+            Sorcerer sorcerer = new Sorcerer("sorcerer") { CharacterLevel = 10 };
             int[] SpellsPerDaySorcerer = new int[] { 6, 6, 6, 6, 5, 3, 0, 0, 0, 0 };
 
             try
             {
                 // Act
-                sorcerer.GetDailySpells();
+                sorcerer.CurrentDailySpells = 
+                    _spellsRepository.GetSpellsSlots(sorcerer.ClassName, sorcerer.CharacterLevel, "DailySpells");
 
                 // Assert            
                 Assert.Equal(SpellsPerDaySorcerer, sorcerer.CurrentDailySpells);
@@ -47,14 +55,13 @@ namespace AemosUnitTest
         public void TestClericSpellsPerDay()
         {
             // Arrange
-            Cleric cleric = new Cleric("cleric");
-            cleric.CharacterLevel = 20;
+            Cleric cleric = new Cleric("cleric") { CharacterLevel = 20 };
             int[] SpellsPerDayCleric = new int[] { 6, 5, 5, 5, 5, 5, 4, 4, 4, 4 };
 
             try
             {
                 // Act
-                cleric.GetDailySpells();
+                cleric.CurrentDailySpells = _spellsRepository.GetSpellsSlots(cleric.ClassName, cleric.CharacterLevel, "DailySpells");
 
                 // Assert            
                 Assert.Equal(SpellsPerDayCleric, cleric.CurrentDailySpells);
@@ -66,14 +73,13 @@ namespace AemosUnitTest
         public void TestDruidSpellsPerDay()
         {
             // Arrange
-            Druid druid = new Druid("druid");
-            druid.CharacterLevel = 15;
+            Druid druid = new Druid("druid") { CharacterLevel = 15 };
             int[] SpellsPerDayDruid = new int[] { 6, 5, 5, 5, 4, 4, 3, 2, 1, 0 };
 
             try
             {
                 // Act
-                druid.GetDailySpells();
+                druid.CurrentDailySpells = _spellsRepository.GetSpellsSlots(druid.ClassName, druid.CharacterLevel, "DailySpells");
 
                 // Assert            
                 Assert.Equal(SpellsPerDayDruid, druid.CurrentDailySpells);
@@ -85,14 +91,13 @@ namespace AemosUnitTest
         public void TestWizardSpellsPerDay()
         {
             // Arrange
-            Wizard wizard = new Wizard("wizard");
-            wizard.CharacterLevel = 2;
+            Wizard wizard = new Wizard("wizard") { CharacterLevel = 2 };
             int[] SpellsPerDayWizard = new int[] { 4, 2, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             try
             {
                 // Act
-                wizard.GetDailySpells();
+                wizard.CurrentDailySpells = _spellsRepository.GetSpellsSlots(wizard.ClassName, wizard.CharacterLevel, "DailySpells");
 
                 // Assert            
                 Assert.Equal(SpellsPerDayWizard, wizard.CurrentDailySpells);
@@ -104,14 +109,13 @@ namespace AemosUnitTest
         public void TestPaladinSpellsPerDay()
         {
             // Arrange
-            Paladin paladin = new Paladin("Paladin");
-            paladin.CharacterLevel = 14;
+            Paladin paladin = new Paladin("Paladin") { CharacterLevel = 14 };
             int[] SpellsPerDayPaladin = new int[] { 0, 2, 1, 1, 0, 0, 0, 0, 0, 0 };
 
             try
             {
                 // Act
-                paladin.GetDailySpells();
+                paladin.CurrentDailySpells = _spellsRepository.GetSpellsSlots(paladin.ClassName, paladin.CharacterLevel, "DailySpells");
 
                 // Assert            
                 Assert.Equal(SpellsPerDayPaladin, paladin.CurrentDailySpells);
@@ -123,14 +127,13 @@ namespace AemosUnitTest
         public void TestRangerSpellsPerDay()
         {
             // Arrange
-            Ranger ranger = new Ranger("ranger");
-            ranger.CharacterLevel = 11;
+            Ranger ranger = new Ranger("ranger") { CharacterLevel = 11 };
             int[] SpellsPerDayRanger = new int[] { 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 };
 
             try
             {
                 // Act
-                ranger.GetDailySpells();
+                ranger.CurrentDailySpells = _spellsRepository.GetSpellsSlots(ranger.ClassName, ranger.CharacterLevel, "DailySpells");
 
                 // Assert           
                 Assert.Equal(SpellsPerDayRanger, ranger.CurrentDailySpells);
@@ -176,14 +179,13 @@ namespace AemosUnitTest
         {
 
             // Arrange
-            Sorcerer sorcerer = new Sorcerer("sorcerer");
-            sorcerer.CharacterLevel = 1;
+            Sorcerer sorcerer = new Sorcerer("sorcerer") { CharacterLevel = 1 };
             int[] spellsKnownSorcerer = new int[]   {4,2,0,0,0,0,0,0,0,0};
 
             try
             {
                 // Act
-                sorcerer.GetKnownSpells();
+                sorcerer.CurrentKnownSpells = _spellsRepository.GetSpellsSlots(sorcerer.ClassName, sorcerer.CharacterLevel, "KnownSpells");
 
                 // Assert           
                 Assert.Equal(spellsKnownSorcerer, sorcerer.CurrentKnownSpells);
@@ -201,7 +203,7 @@ namespace AemosUnitTest
             try
             {
                 // Act
-                cleric.GetDailySpells();
+                cleric.CurrentDailySpells = _spellsRepository.GetSpellsSlots(cleric.ClassName, cleric.CharacterLevel, "DailySpells");
                 cleric.CastSpell(spellCycle);
 
                 // Assert            

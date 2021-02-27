@@ -11,12 +11,12 @@ using System.Text;
 
 namespace Aemos.Repository
 {
-    public static class SpellsRepository
+    public class SpellsRepository
     {
-        private static readonly string _connectionString = Properties.Settings.Default.SpellsConnectionString;
-        private static readonly int _maxSpellCycle = 9;
+        private readonly string _connectionString = Properties.Settings.Default.SpellsConnectionString;
+        private readonly int _maxSpellCycle = 9;
 
-        public static int[] GetSpellsSlots(string className, int characterLevel, string tableComplement)
+        public int[] GetSpellsSlots(string className, int characterLevel, string tableComplement)
         {
             int[] spellSlots = new int[10];
 
@@ -53,7 +53,7 @@ namespace Aemos.Repository
             return spellSlots;
         }        
 
-        public static List<SpellDTO> GetSpells(SpellFIlter spellFilter)
+        public List<SpellDTO> GetSpells(SpellFIlter spellFilter)
         {
             List<SpellDTO> spells = new List<SpellDTO>();
             try
@@ -102,7 +102,7 @@ namespace Aemos.Repository
             return spells;
         }       
 
-        public static List<BaseClass> GetSpellcastingClasses()
+        public List<BaseClass> GetSpellcastingClasses()
         {
             var spellcasters = new List<BaseClass>();
 
@@ -134,7 +134,7 @@ namespace Aemos.Repository
             return spellcasters;
         }
 
-        public static List<SpellSchool> GetSpellSchools()
+        public List<SpellSchool> GetSpellSchools()
         {
             var schools = new List<SpellSchool>();
 
@@ -166,7 +166,7 @@ namespace Aemos.Repository
             return schools;
         }
 
-        public static List<SpellDomain> GetSpellDomains()
+        public List<SpellDomain> GetSpellDomains()
         {
             var domais = new List<SpellDomain>();
 

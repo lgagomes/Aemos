@@ -21,7 +21,6 @@ namespace AemosTester
 
             switch(testToExecute)
             {
-                case SPELLS: TestSpellsPerDay(); break;
                 case LOAD: TestLoad(); break;
                 case BASE_ATTACK_BONUS: TestBaseAttackBonus();break;
                 case FURY_OF_BLOWS: TestMonkFoBAttackBonus(); break;
@@ -30,81 +29,6 @@ namespace AemosTester
                 default: break;
             }
             Console.Read();
-        }
-
-        private static void TestSpellsPerDay()
-        {
-            string className = "paladin";
-            string fileName = "_daily_spells.xml";
-            try
-            {
-                XmlReader xmlFile = XmlReader.Create(className + fileName, new XmlReaderSettings());
-                DataSet ds = new DataSet();
-                ds.ReadXml(xmlFile);
-
-                Console.WriteLine(className.ToUpper() + " spells per day:\n");
-                Console.WriteLine("\t| Spell Slots per \n\t|   Spell Level");
-
-                switch (className)
-                {
-                    case "paladin": // 4 levels
-                    case "ranger":
-                        Console.WriteLine("Level\t|1 2 3 4");
-                        Console.WriteLine("--------|--------");
-                        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                        {
-                            Console.Write((i + 1) + "º\t|");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[0] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[1] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[2] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[3] + "\n");
-                        }
-                        break;
-
-                    case "bard": // 6 levels + tricks
-                        Console.WriteLine("Level\t|0 1 2 3 4 5 6");
-                        Console.WriteLine("--------|-------------");
-                        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                        {
-                            Console.Write((i + 1) + "º\t|");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[0] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[1] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[2] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[3] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[4] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[5] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[6] + "\n");
-                        }
-                        break;
-
-                    case "cleric": // 9 levels + prayers / tricks
-                    case "druid":
-                    case "sorcerer":
-                    case "wizard":
-                        Console.WriteLine("Level\t|0 1 2 3 4 5 6 7 8 9");
-                        Console.WriteLine("--------|--------------------");
-                        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                        {
-                            Console.Write((i + 1) + "º\t|");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[0] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[1] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[2] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[3] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[4] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[5] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[6] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[7] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[8] + " ");
-                            Console.Write(ds.Tables[0].Rows[i].ItemArray[9] + "\n");
-                        }
-                        break;
-                }
-            }
-
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
         }
 
         private static void TestLoad()

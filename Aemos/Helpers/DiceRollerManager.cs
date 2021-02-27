@@ -19,19 +19,16 @@ namespace Aemos.Helpers
             Dice = new Dice(NumberOfDiceFaces);
             Rolls = new List<int>();
 
-            int rolledValue;
             for (int i = 0; i < NumberOfRolls; i++)
             {
-                rolledValue = Dice.Roll();
-                Rolls.Add(rolledValue);
+                Rolls.Add(Dice.Roll());
             }
 
             TotalRolledValues = Rolls.Sum();
-           
-            if (!AddEachRoll)
-                TotalRolledValues += Modifier;
-            else
-                TotalRolledValues += (Modifier * NumberOfRolls);
+
+            TotalRolledValues = (!AddEachRoll)
+                ? TotalRolledValues += Modifier
+                : TotalRolledValues += (Modifier * NumberOfRolls);          
 
             CheckNegativeRolledValues();
         }
@@ -40,7 +37,9 @@ namespace Aemos.Helpers
         private void CheckNegativeRolledValues()
         {
             if (TotalRolledValues < 0)
+            {
                 TotalRolledValues = 1;
+            }
         }
     }
 }
