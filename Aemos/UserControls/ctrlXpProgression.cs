@@ -66,7 +66,9 @@ namespace Aemos.UserControls
         private void textBoxCharLevel_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(textBoxCharLevel.Text))
+            {
                 UpdateXpRequired();
+            }
         }
 
         private void textBoxCharLevel_KeyPress(object sender, KeyPressEventArgs e)

@@ -112,7 +112,7 @@ namespace Aemos.UserControls
             _selector = new CasterSelector();
             comboBoxClasses.Items.Add("Choose a Class");
 
-            Bard bard = new Bard("Bard")
+            Bard bard = new Bard()
             {
                 CharacterLevel = Convert.ToInt32(comboBoxLevel.Text),
                 Charisma = Convert.ToInt32(textBoxKeyAttribute.Text)
@@ -120,35 +120,35 @@ namespace Aemos.UserControls
             AddSpellcasterClass(bard);
             AddKnowlerOfSpellsClass(bard);
 
-            Cleric cleric = new Cleric("Cleric")
+            Cleric cleric = new Cleric()
             {
                 CharacterLevel = Convert.ToInt32(comboBoxLevel.Text),
                 Wisdom = Convert.ToInt32(textBoxKeyAttribute.Text)
             };
             AddSpellcasterClass(cleric);
 
-            Druid druid = new Druid("Druid")
+            Druid druid = new Druid()
             {
                 CharacterLevel = Convert.ToInt32(comboBoxLevel.Text),
                 Wisdom = Convert.ToInt32(textBoxKeyAttribute.Text)
             };
             AddSpellcasterClass(druid);
 
-            Paladin paladin = new Paladin("Paladin")
+            Paladin paladin = new Paladin()
             {
                 CharacterLevel = Convert.ToInt32(comboBoxLevel.Text),
                 Charisma = Convert.ToInt32(textBoxKeyAttribute.Text)
             };
             AddSpellcasterClass(paladin);
 
-            Ranger ranger = new Ranger("Ranger")
+            Ranger ranger = new Ranger()
             {
                 CharacterLevel = Convert.ToInt32(comboBoxLevel.Text),
                 Wisdom = Convert.ToInt32(textBoxKeyAttribute.Text)
             };
             AddSpellcasterClass(ranger);
 
-            Sorcerer sorcerer = new Sorcerer("Sorcerer")
+            Sorcerer sorcerer = new Sorcerer()
             {
                 CharacterLevel = Convert.ToInt32(comboBoxLevel.Text),
                 Charisma = Convert.ToInt32(textBoxKeyAttribute.Text)
@@ -156,7 +156,7 @@ namespace Aemos.UserControls
             AddSpellcasterClass(sorcerer);
             AddKnowlerOfSpellsClass(sorcerer);
 
-            Wizard wizard = new Wizard("Wizard")
+            Wizard wizard = new Wizard()
             {
                 CharacterLevel = Convert.ToInt32(comboBoxLevel.Text),
                 Intelligence = Convert.ToInt32(textBoxKeyAttribute.Text)

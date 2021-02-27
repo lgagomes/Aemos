@@ -2,9 +2,9 @@
 {
     public class Sorcerer : KnowlerOfSpells
     {
-        public Sorcerer(string classname)
+        public Sorcerer()
         {
-            ClassName = classname;
+            ClassName = "Sorcerer";
             MaxSpellCycle = 10;
             FirstDC = 0;
             KeyAttribute = "Charisma";

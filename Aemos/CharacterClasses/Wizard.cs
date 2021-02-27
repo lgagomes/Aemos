@@ -2,9 +2,9 @@
 {
     public class Wizard : Spellcaster
     {
-        public Wizard(string classname)
+        public Wizard()
         {
-            ClassName = classname;
+            ClassName = "Wizard";
             MaxSpellCycle = 10;
             FirstDC = 0;
             KeyAttribute = "Intelligence";

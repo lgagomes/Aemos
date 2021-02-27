@@ -6,9 +6,9 @@ namespace Aemos.CharacterClasses
     {
         public double[] FuryOfBlowsBonus;
 
-        public Monk(string classname)
+        public Monk()
         {
-            ClassName = classname;
+            ClassName = "Monk";
             CombatantType = 2;
             FuryOfBlowsBonus = new double[5];
             SkillClassModifier = 4;

@@ -49,7 +49,9 @@ namespace Aemos.UserControls
         private void InitializeLevels()
         {
             for (int i = 1; i <= 20; i++)
+            {
                 comboBoxHeaderLevel.Items.Add(i.ToString());
+            }
 
             _canFireLevelChangeEvent = false;
             comboBoxHeaderLevel.SelectedIndex = 0;
@@ -71,14 +73,18 @@ namespace Aemos.UserControls
 
         private void comboBoxHeaderClasses_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(_canFireClassChangeEvent)
+            if (_canFireClassChangeEvent)
+            {
                 ClassChangeEvent?.Invoke(null, null);
+            }
         }
 
         private void comboBoxHeaderLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(_canFireLevelChangeEvent)
+            if (_canFireLevelChangeEvent)
+            {
                 LevelChangeEvent?.Invoke(null, null);
+            }
         }
 
         private void textBoxHeaderAttributeScore_TextChanged(object sender, EventArgs e)

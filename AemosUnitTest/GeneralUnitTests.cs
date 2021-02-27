@@ -10,7 +10,7 @@ namespace AemosUnitTest
         public void TestPositiveModifier()
         {
             // Arrange
-            Cleric cleric = new Cleric("cleric") { Wisdom = 44 /* Act */ };
+            Cleric cleric = new Cleric() { Wisdom = 44 /* Act */ };
             cleric.KeyAttributeModifier = cleric.GetModifier(cleric.Wisdom);
 
             // Assert
@@ -21,7 +21,7 @@ namespace AemosUnitTest
         public void TestNegativeModifier()
         {
             // Arrange
-            Cleric cleric = new Cleric("cleric") { Wisdom = 6 /* Act*/ };
+            Cleric cleric = new Cleric() { Wisdom = 6 /* Act*/ };
             cleric.KeyAttributeModifier = cleric.GetModifier(cleric.Wisdom);
 
             // Assert
@@ -49,9 +49,9 @@ namespace AemosUnitTest
         public void TestBaseAttackBonus()
         {
             // Arrange
-            Barbarian barbarian = new Barbarian("barbarian") { CharacterLevel = 11 };
-            Monk monk = new Monk("monk") { CharacterLevel = 6 };
-            Wizard wizard = new Wizard("wizard") { CharacterLevel = 20 };
+            Barbarian barbarian = new Barbarian() { CharacterLevel = 11 };
+            Monk monk = new Monk() { CharacterLevel = 6 };
+            Wizard wizard = new Wizard() { CharacterLevel = 20 };
 
             double[] barbarianTemplate = { 11, 6, 1, 0 };
             double[] monkTemplate = { 4, 0, 0, 0 };
@@ -72,7 +72,7 @@ namespace AemosUnitTest
         public void TestMonkFuryBlows()
         {
             // Arrange
-            Monk monk = new Monk("monk") { CharacterLevel = 18 };
+            Monk monk = new Monk() { CharacterLevel = 18 };
             double[] template = { 13, 13, 13, 8, 3 };
 
             // Act

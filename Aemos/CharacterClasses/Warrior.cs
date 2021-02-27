@@ -2,9 +2,9 @@
 {
     public class Warrior : BaseClass
     {
-        public Warrior(string classname)
+        public Warrior()
         {
-            ClassName = classname;
+            ClassName = "Warrior";
             CombatantType = 1;
             SkillClassModifier = 2;
         }

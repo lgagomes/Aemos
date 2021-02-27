@@ -62,12 +62,19 @@ namespace Aemos.UserControls
         private void UpdateCarryCapacities()
         {
             if (radioButtonKgs.Checked)
+            {
                 for (int i = 0; i < carryCapacities.Length; i++)
+                {
                     carryCapacities[i].Text = loadCalculator.LoadsKgs[i].ToString("#,0.00");
-
-            else if (radioButtonLbs.Checked)
+                }
+            }
+            else
+            {
                 for (int i = 0; i < carryCapacities.Length; i++)
+                {
                     carryCapacities[i].Text = loadCalculator.LoadsLbs[i].ToString("#,0.00");
+                }
+            }
         }
 
         private void CalculateCarryCapacity()
@@ -83,7 +90,9 @@ namespace Aemos.UserControls
         private void textBoxStrenghtScore_TextChanged(object sender, EventArgs e)
         {
             if (textBoxStrenghtScore != null)
+            {
                 CalculateCarryCapacity();
+            }
         }
 
         private void radioButtonSizeFine_CheckedChanged(object sender, EventArgs e)

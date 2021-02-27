@@ -1,14 +1,13 @@
-﻿using Aemos.Helpers;
-using Aemos.Repository;
-using System;
-using System.Text;
-using System.Windows.Forms;
-using System.Collections.Generic;
-using Aemos.Forms;
-using System.Linq;
-using Aemos.CharacterClasses;
+﻿using Aemos.CharacterClasses;
 using Aemos.DomainClasses;
 using Aemos.DomainClasses.DTOs;
+using Aemos.Forms;
+using Aemos.Helpers;
+using Aemos.Repository;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Forms;
 
 namespace Aemos.UserControls
 {

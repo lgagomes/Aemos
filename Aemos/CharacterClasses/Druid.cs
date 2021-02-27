@@ -2,9 +2,9 @@
 {
     public class Druid : Spellcaster
     {
-        public Druid(string classname)
+        public Druid()
         {
-            ClassName = classname;
+            ClassName = "Druid";
             MaxSpellCycle = 10;
             FirstDC = 0;
             KeyAttribute = "Wisdom";

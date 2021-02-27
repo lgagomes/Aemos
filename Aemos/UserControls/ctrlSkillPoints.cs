@@ -84,35 +84,23 @@ namespace Aemos.UserControls
             _classes = new List<BaseClass>();
             _actualClass = new BaseClass();
 
-            Barbarian barbarian = new Barbarian("Barbarian");
-            Bard bard = new Bard("Bard");
-            Cleric cleric = new Cleric("Cleric");
-            Druid druid = new Druid("Druid");
-            Monk monk = new Monk("Monk");
-            Paladin paladin = new Paladin("Paladin");
-            Ranger ranger = new Ranger("Ranger");
-            Rogue rogue = new Rogue("Rogue");
-            Sorcerer sorcerer = new Sorcerer("Sorcerer");
-            Warrior warrior = new Warrior("Warrior");
-            Wizard wizard = new Wizard("Wizard");
-
-            AddClass(barbarian);
-            AddClass(bard);
-            AddClass(cleric);
-            AddClass(druid);
-            AddClass(monk);
-            AddClass(paladin);
-            AddClass(ranger);
-            AddClass(rogue);
-            AddClass(sorcerer);
-            AddClass(warrior);
-            AddClass(wizard);
-        }
-
-        private void AddClass(BaseClass character)
-        {
-            _classes.Add(character);
-        }        
+            _classes.AddRange(
+                new List<BaseClass> 
+                {
+                    new Barbarian(),
+                    new Bard(),
+                    new Cleric(),
+                    new Druid(),
+                    new Monk(),
+                    new Paladin(),
+                    new Ranger(),
+                    new Rogue(),
+                    new Sorcerer(),
+                    new Warrior(),
+                    new Wizard(),
+                    new Bard(),
+                });           
+        }         
 
         private void UpdateLevelBonusPointsCheckboxes()
         {

@@ -13,14 +13,18 @@ namespace Aemos.Forms
 
         private void btnSpellcastingClasses_Click(object sender, EventArgs e)
         {
-            frmSpellcasting frmSpellcasting = new frmSpellcasting();
-            frmSpellcasting.ShowDialog();
+            using (var frmSpellcasting = new frmSpellcasting())
+            {
+                frmSpellcasting.ShowDialog();
+            }
         }
 
         private void btnSpellCompendium_Click(object sender, EventArgs e)
         {
-            frmSpellCompendium frmSpellCompendium = new frmSpellCompendium();
-            frmSpellCompendium.ShowDialog();
+            using (var frmSpellCompendium = new frmSpellCompendium())
+            {
+                frmSpellCompendium.ShowDialog();
+            }
         }
     }
 }

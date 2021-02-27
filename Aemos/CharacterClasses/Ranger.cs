@@ -2,9 +2,9 @@
 {
     public class Ranger : Spellcaster
     {
-        public Ranger(string classname)
+        public Ranger()
         {
-            ClassName = classname;
+            ClassName = "Ranger";
             MaxSpellCycle = 5;
             FirstDC = 1;
             KeyAttribute = "Wisdom";

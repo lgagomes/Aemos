@@ -18,9 +18,10 @@ namespace Aemos.UserControls
 
         private void UpdateLevelAfterXPGain()
         {
-            textBoxLevelAfterXP.Text = (_xpCalculator.CalculateLevelBySumXP(
-                                    Convert.ToInt64(textBoxActualXP.Text),
-                                    Convert.ToInt64(textBoxReceivedXP.Text))).ToString();
+            textBoxLevelAfterXP.Text = (
+                _xpCalculator.CalculateLevelBySumXP(
+                    Convert.ToInt64(textBoxActualXP.Text),
+                    Convert.ToInt64(textBoxReceivedXP.Text))).ToString();
         }
 
         private void CheckEpicLevel()
@@ -57,8 +58,10 @@ namespace Aemos.UserControls
 
         private void buttonXPProgression_Click(object sender, EventArgs e)
         {
-            frmXpProgression frmXpProgression = new frmXpProgression();
-            frmXpProgression.ShowDialog();
+            using (frmXpProgression frmXpProgression = new frmXpProgression())
+            {
+                frmXpProgression.ShowDialog();
+            }            
         }
     }
 }

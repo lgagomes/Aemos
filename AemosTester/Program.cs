@@ -51,7 +51,7 @@ namespace AemosTester
 
         private static void TestBaseAttackBonus()
         {
-            Paladin paladin = new Paladin("paladin");
+            Paladin paladin = new Paladin();
             paladin.CharacterLevel = 7;
             paladin.CalculateBaseAttackBonus();
 
@@ -63,7 +63,7 @@ namespace AemosTester
 
         private static void TestMonkFoBAttackBonus() // FoB = Fury of Blows
         {
-            Monk monk = new Monk("monk");
+            Monk monk = new Monk();
             monk.CharacterLevel = 16;
             monk.CalculateFuryOfBlowsBonus();
             Console.WriteLine(monk.FuryOfBlowsBonus[0] + " / " +
@@ -75,7 +75,7 @@ namespace AemosTester
 
         private static void TestSkillPointsCalculation()
         {
-            Barbarian barbarian = new Barbarian("barbarian");
+            Barbarian barbarian = new Barbarian();
             barbarian.SkillPointsCalculator = new SkillPointsCalculator();
             barbarian.CharacterLevel = 9;
             barbarian.Intelligence = 1;

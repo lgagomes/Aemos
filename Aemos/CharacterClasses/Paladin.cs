@@ -2,9 +2,9 @@
 {
     public class Paladin : Spellcaster
     {
-        public Paladin(string classname)
+        public Paladin()
         {
-            ClassName = classname;
+            ClassName = "Paladin";
             MaxSpellCycle = 5;
             FirstDC = 1;
             KeyAttribute = "Charisma";

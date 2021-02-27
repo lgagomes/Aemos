@@ -71,9 +71,13 @@ namespace Aemos.UserControls
             rollSummary.AppendFormat("Rolling {0}", textBoxNumberOfDices.Text);
 
             if (string.Equals(labelDiceType.Text, "Custom Dice"))
+            {
                 rollSummary.AppendFormat("d{0}", textBoxCustomDice.Text);
+            }
             else
+            {
                 rollSummary.Append(labelDiceType.Text);
+            }
 
             rollSummary.AppendFormat("{0}{1}", comboBoxModifierSignal.Text, textBoxDiceRollModifier.Text);
             rollSummary.AppendFormat(" at {0}... {1}" , DateTime.Now.ToString("HH:mm:ss"), Environment.NewLine);
@@ -132,10 +136,14 @@ namespace Aemos.UserControls
             List<string> missingInformation = new List<string>();
 
             if (string.Equals(labelDiceType.Text, "__"))
+            {
                 missingInformation.Add(" - DICE TYPE");
+            }
 
             if (string.IsNullOrWhiteSpace(textBoxNumberOfDices.Text))
+            {
                 missingInformation.Add(" - NUMBER OF DICES TO ROLL");
+            }
 
             return missingInformation;
         }
@@ -203,11 +211,11 @@ namespace Aemos.UserControls
             else
             {
                 StringBuilder warnings = new StringBuilder();
-                warnings.AppendFormat("The missing required infos are missing: {0}", Environment.NewLine);
+                warnings.AppendFormat($"The required infos are missing: {Environment.NewLine}");
 
                 foreach (var message in missingFields)
                 {
-                    warnings.AppendFormat("{0} {1}",message,Environment.NewLine);
+                    warnings.AppendFormat($"{message} {Environment.NewLine}");
                 }
                 WarningMessage.ShowWarningMessage(warnings.ToString());
             }

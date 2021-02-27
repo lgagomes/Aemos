@@ -18,7 +18,7 @@ namespace AemosUnitTest
         public void TestBardSpellsPerDay()
         {
             // Arrange
-            Bard bard = new Bard("bard") { CharacterLevel = 5 };
+            Bard bard = new Bard() { CharacterLevel = 5 };
             int[] SpellsPerDayBard = new int[] { 3, 3, 1, 0, 0, 0, 0, 0, 0, 0 };
 
             try
@@ -36,7 +36,7 @@ namespace AemosUnitTest
         public void TestSorcererSpellsPerDay()
         {
             // Arrange
-            Sorcerer sorcerer = new Sorcerer("sorcerer") { CharacterLevel = 10 };
+            Sorcerer sorcerer = new Sorcerer() { CharacterLevel = 10 };
             int[] SpellsPerDaySorcerer = new int[] { 6, 6, 6, 6, 5, 3, 0, 0, 0, 0 };
 
             try
@@ -55,7 +55,7 @@ namespace AemosUnitTest
         public void TestClericSpellsPerDay()
         {
             // Arrange
-            Cleric cleric = new Cleric("cleric") { CharacterLevel = 20 };
+            Cleric cleric = new Cleric() { CharacterLevel = 20 };
             int[] SpellsPerDayCleric = new int[] { 6, 5, 5, 5, 5, 5, 4, 4, 4, 4 };
 
             try
@@ -73,7 +73,7 @@ namespace AemosUnitTest
         public void TestDruidSpellsPerDay()
         {
             // Arrange
-            Druid druid = new Druid("druid") { CharacterLevel = 15 };
+            Druid druid = new Druid() { CharacterLevel = 15 };
             int[] SpellsPerDayDruid = new int[] { 6, 5, 5, 5, 4, 4, 3, 2, 1, 0 };
 
             try
@@ -91,7 +91,7 @@ namespace AemosUnitTest
         public void TestWizardSpellsPerDay()
         {
             // Arrange
-            Wizard wizard = new Wizard("wizard") { CharacterLevel = 2 };
+            Wizard wizard = new Wizard() { CharacterLevel = 2 };
             int[] SpellsPerDayWizard = new int[] { 4, 2, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             try
@@ -109,7 +109,7 @@ namespace AemosUnitTest
         public void TestPaladinSpellsPerDay()
         {
             // Arrange
-            Paladin paladin = new Paladin("Paladin") { CharacterLevel = 14 };
+            Paladin paladin = new Paladin() { CharacterLevel = 14 };
             int[] SpellsPerDayPaladin = new int[] { 0, 2, 1, 1, 0, 0, 0, 0, 0, 0 };
 
             try
@@ -127,7 +127,7 @@ namespace AemosUnitTest
         public void TestRangerSpellsPerDay()
         {
             // Arrange
-            Ranger ranger = new Ranger("ranger") { CharacterLevel = 11 };
+            Ranger ranger = new Ranger() { CharacterLevel = 11 };
             int[] SpellsPerDayRanger = new int[] { 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 };
 
             try
@@ -145,7 +145,7 @@ namespace AemosUnitTest
         public void TestUpdateExtraSpells()
         {
             // Arrange
-            Bard bard = new Bard("bard")
+            Bard bard = new Bard()
             {
                 Charisma = 32
             };
@@ -162,7 +162,7 @@ namespace AemosUnitTest
         [Fact]
         public void TestUpdateSpellsDC()
         {
-            Bard bard = new Bard("bard") { Charisma = 32 };
+            Bard bard = new Bard() { Charisma = 32 };
             bard.KeyAttributeModifier = bard.GetModifier(bard.Charisma);
             int[] spellsDc = new int[10] { 21, 22, 23, 24, 25, 26, 27, -1, -1, -1 };
 
@@ -179,7 +179,7 @@ namespace AemosUnitTest
         {
 
             // Arrange
-            Sorcerer sorcerer = new Sorcerer("sorcerer") { CharacterLevel = 1 };
+            Sorcerer sorcerer = new Sorcerer() { CharacterLevel = 1 };
             int[] spellsKnownSorcerer = new int[]   {4,2,0,0,0,0,0,0,0,0};
 
             try
@@ -197,7 +197,7 @@ namespace AemosUnitTest
         public void TestCastSpell()
         {
             // Arrange
-            Cleric cleric = new Cleric("cleric") { CharacterLevel = 7 };
+            Cleric cleric = new Cleric() { CharacterLevel = 7 };
             int spellCycle = 1;
             int[] SpellsPerDayAfterUser = new int[] { 6, 3, 3, 2, 1, 0, 0, 0, 0, 0 };
             try
