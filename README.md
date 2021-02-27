@@ -26,6 +26,7 @@ Features (so far):
 In the [Eisenhorn book series](http://wh40k.lexicanum.com/wiki/Eisenhorn_(Novel_Series)) set in the [Warhammer 40K](http://wh40k.lexicanum.com/wiki/Warhammer_40,000) universe, [Uber Aemos](http://wh40k.lexicanum.com/wiki/Uber_Aemos) is a character who provides Eisenhorn with useful information and complex computation. That's the goal of this tool, to help players and dungeon masters to save time when dealing with boring calculations and / or searching the books for specific tables.
 
 # Changelog:
+- v 1.9.1: Adds Dapper to retrieve database objects and map to classes.
 - v 1.9.0: Changes database structure of spells, creating separate tables to spellcasters, spells and domais.
 - v 1.8.3: Finished the spell's details form and fixes a bug when serching for wizard or sorcerer spells returns no results
 - v 1.8.2: Finished spells compendium, refactoring in the repository class and adds a new form to show the spell's detail when doubled

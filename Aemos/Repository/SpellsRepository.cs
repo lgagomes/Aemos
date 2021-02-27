@@ -2,13 +2,13 @@
 using Aemos.DomainClasses;
 using Aemos.DomainClasses.DTOs;
 using Aemos.Helpers;
+using Aemos.Repository.DapperAbstraction;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
-using Dapper;
 using System.Linq;
+using System.Text;
 
 namespace Aemos.Repository
 {
@@ -16,6 +16,7 @@ namespace Aemos.Repository
     {
         private readonly string _connectionString = Properties.Settings.Default.SpellsConnectionString;
         private readonly int _maxSpellCycle = 9;
+        private IDapperAbstraction dapperAbstraction;
 
         public int[] GetSpellsSlots(string className, int characterLevel, string tableComplement)
         {
@@ -54,111 +55,47 @@ namespace Aemos.Repository
             return spellSlots;
         }        
 
+        public SpellsRepository()
+        {
+            dapperAbstraction = new DapperAbstraction.DapperAbstraction(Properties.Settings.Default.SpellsConnectionString);
+        }
+
         public List<SpellDTO> GetSpells(SpellFIlter spellFilter)
         {
-            List<SpellDTO> spells = new List<SpellDTO>();
-            try
+            var query = Resources.SpellResources.GetSpells;
+
+            var whereFilter = new StringBuilder()
+                .AppendLine(spellFilter.IdClass > 0 ? "AND ClassSpells.IdClass = @IdClass" : string.Empty)
+                .AppendLine(spellFilter.SpellLevel > 0 ? "AND ClassSpells.ClassLevel = @ClassLevel" : string.Empty)
+                .AppendLine(spellFilter.IdDomain > 0 ? "AND DomainSpells.IdDomain = @IdDomain" : string.Empty)
+                .AppendLine(!string.IsNullOrWhiteSpace(spellFilter.SpellName) ? "AND SpellsCompendium.Name LIKE @SpellName" : string.Empty)
+                .AppendLine(spellFilter.IdSchool > 0 ? "AND SchoolSpells.IdSchool = @IdSchool" : string.Empty)
+                .ToString();
+
+            if (!string.IsNullOrWhiteSpace(whereFilter))
             {
-                using (SqlConnection connection = new SqlConnection(_connectionString))
+                query = query.Replace("--@Filter", whereFilter);
+            }
+
+            return dapperAbstraction.Query<SpellDTO>(query, 
+                new
                 {
-                    connection.Open();
-
-                    var query = Resources.SpellResources.GetSpells;
-
-                    var whereFilter = new StringBuilder()
-                        .AppendLine(spellFilter.IdClass > 0 ? "AND ClassSpells.IdClass = @IdClass" : string.Empty)
-                        .AppendLine(spellFilter.SpellLevel > 0 ? "AND ClassSpells.ClassLevel = @ClassLevel" : string.Empty)
-                        .AppendLine(spellFilter.IdDomain > 0 ? "AND DomainSpells.IdDomain = @IdDomain" : string.Empty)
-                        .AppendLine(!string.IsNullOrWhiteSpace(spellFilter.SpellName) ? "AND SpellsCompendium.Name LIKE @SpellName" : string.Empty)
-                        .AppendLine(spellFilter.IdSchool > 0 ? "AND SchoolSpells.IdSchool = @IdSchool" : string.Empty)
-                        .ToString();
-
-                    if (!string.IsNullOrWhiteSpace(whereFilter))
-                    {
-                        query = query.Replace("--@Filter", whereFilter);
-                    }
-
-                    spells = connection.Query<SpellDTO>(
-                        query,
-                        new
-                        {
-                            spellFilter.IdClass,
-                            ClassLevel = spellFilter.SpellLevel,
-                            spellFilter.IdDomain,
-                            SpellName = $"%{ spellFilter.SpellName}%",
-                            spellFilter.IdSchool
-                        })
-                        .ToList();                   
-                }
-            }
-            catch (Exception ex)
-            {
-                WarningMessage.ShowWarningMessage(ex.Message);
-            }
-            return spells;
-        }       
-
-        public List<BaseClass> GetSpellcastingClasses()
-        {
-            var spellcasters = new List<BaseClass>();
-
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(_connectionString))
-                {
-                    connection.Open();
-
-                    spellcasters = connection.Query<BaseClass>(Resources.SpellResources.GetSpellcastingClasses).ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                WarningMessage.ShowWarningMessage(ex.Message);
-            }
-
-            return spellcasters;
+                    spellFilter.IdClass,
+                    ClassLevel = spellFilter.SpellLevel,
+                    spellFilter.IdDomain,
+                    SpellName = $"%{ spellFilter.SpellName}%",
+                    spellFilter.IdSchool
+                })
+                .ToList();
         }
 
-        public List<SpellSchool> GetSpellSchools()
-        {
-            var schools = new List<SpellSchool>();
+        public List<BaseClass> GetSpellcastingClasses() => 
+            dapperAbstraction.Query<BaseClass>(Resources.SpellResources.GetSpellcastingClasses).ToList();
 
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(_connectionString))
-                {
-                    connection.Open();
+        public List<SpellSchool> GetSpellSchools() => 
+            dapperAbstraction.Query<SpellSchool>(Resources.SpellResources.GetSpellSchools).ToList();
 
-                    schools = connection.Query<SpellSchool>(Resources.SpellResources.GetSpellSchools).ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                WarningMessage.ShowWarningMessage(ex.Message);
-            }
-
-            return schools;
-        }
-
-        public List<SpellDomain> GetSpellDomains()
-        {
-            var domains = new List<SpellDomain>();
-
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(_connectionString))
-                {
-                    connection.Open();
-
-                    domains = connection.Query<SpellDomain>(Resources.SpellResources.GetSpellDomains).ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                WarningMessage.ShowWarningMessage(ex.Message);
-            }
-
-            return domains;
-        }
+        public List<SpellDomain> GetSpellDomains() => 
+            dapperAbstraction.Query<SpellDomain>(Resources.SpellResources.GetSpellDomains).ToList();
     }
 }

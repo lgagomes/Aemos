@@ -159,6 +159,8 @@
     <Compile Include="Helpers\XpPerLevelHolder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\DapperAbstraction\DapperAbstraction.cs" />
+    <Compile Include="Repository\DapperAbstraction\IDapperAbstraction.cs" />
     <Compile Include="Repository\SpellsRepository.cs" />
     <Compile Include="Resources\SpellResources.Designer.cs">
       <AutoGen>True</AutoGen>
